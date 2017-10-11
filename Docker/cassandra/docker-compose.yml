@@ -1,0 +1,8 @@
+version: "3"
+services:
+  mel_cass:
+    container_name: mel_cass
+    image: cassandra_dummy
+    build: .
+    ports:
+      - "9043:9042"
