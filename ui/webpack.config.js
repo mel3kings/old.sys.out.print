@@ -17,12 +17,10 @@ module.exports = {
         }]
     },
     resolve: {
-        extensions: [' ', '.js', '.jsx']
+        extensions: ['.html', '.js', '.jsx']
     },
     devServer: {
-        historyApiFallback: {
-            index: 'src/index.html',
-        },
-        contentBase: './src'
+        historyApiFallback: true,
+        contentBase: './'
     }
 };
