@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import NavBar from '../components/navbar';
 import Home from '../components/Java/home';
+import Showcase from '../components/showcase';
+import HomeBoxes from '../components/home_boxes';
+import TechnologiesBoxes from '../components/technologies_boxes';
+import Footer from '../components/footer';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise';
@@ -12,7 +15,12 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 class App extends React.Component {
     render() {
         return (
-            <div><NavBar/></div>
+            <div>
+                <Showcase/>
+                <HomeBoxes/>
+                <TechnologiesBoxes/>
+                <Footer/>
+            </div>
         );
     }
 }
