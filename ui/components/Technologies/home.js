@@ -1,59 +1,39 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {renderTechPage} from "../../actions/render_page";
-
+import _ from 'lodash';
 class TechHome extends Component {
     componentDidMount(){
-        console.log("COMPONENT MOUNTED");
-        console.log("component mount");
         this.props.renderTechPage();
+    }
+
+    renderBoxes(){
+        return _.map(this.props.tech, data=> {
+            return (
+                <div className="col-lg-3 col-md-6">
+                    <div className="card">
+                        <div className="card-body">
+                            <img src="{data.image}" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
+                            <h3>{data.name}</h3>
+                            <h5 className="text-muted">{data.subtitle}</h5>
+                            <p>{data.description}</p>
+                        </div>
+                    </div>
+                </div>
+
+            );
+        })
     }
     render() {
         return (
             <div className="container">
+                <ul>
+
+                </ul>
                 <br/><br/>
                 <section id="authors" className="my-5 text-center">
                     <div className="row">
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src="../../src/img/java.png" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
-                                    <h3>Java</h3>
-                                    <h5 className="text-muted">Sun Oracle</h5>
-                                    <p>Core Java Concepts, Lambda, Streams, Futures, Memory allocation, etc</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src="../../src/img/aws.png" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
-                                    <h3>AWS</h3>
-                                    <h5 className="text-muted">Amazon Web Services</h5>
-                                    <p>Core Java Concepts, Lambda, Streams, Futures, Memory allocation, etc</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src="../../src/img/aws.png" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
-                                    <h3>Docker</h3>
-                                    <h5 className="text-muted">Amazon Web Services</h5>
-                                    <p>Core Java Concepts, Lambda, Streams, Futures, Memory allocation, etc</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src="../../src/img/aws.png" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
-                                    <h3>Cassandra</h3>
-                                    <h5 className="text-muted">Amazon Web Services</h5>
-                                    <p>Core Java Concepts, Lambda, Streams, Futures, Memory allocation, etc</p>
-                                </div>
-                            </div>
-                        </div>
+                        {this.renderBoxes()}
                     </div>
                 </section>
             </div>
@@ -62,7 +42,7 @@ class TechHome extends Component {
 }
 
 function mapStateToProps(state){
-    return {techRenderer : state.techReducer}
+    return {tech : state.techReducer}
 }
 
 export default connect(mapStateToProps, {renderTechPage})(TechHome)
