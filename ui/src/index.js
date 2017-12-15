@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Home from '../components/Java/home';
+import Home from '../components/Technologies/home';
 import Showcase from '../components/showcase';
 import HomeBoxes from '../components/home_boxes';
 import TechnologiesBoxes from '../components/technologies_boxes';
@@ -30,7 +30,7 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Switch>
-                    <Route path="/test" component={Home} />
+                    <Route path="/technologies" component={Home} />
                     <Route path="/" component={App} />
                 </Switch>
             </div>

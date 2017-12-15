@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
-export default class TechnologiesBoxes extends Component{
+export default class TechnologiesBoxes extends React.Component{
+
     render(){
+        console.log("TESTING");
         return <section id="authors" class="my-5 text-center">
             <div class="container">
                 <div class="row">
@@ -106,3 +108,4 @@ export default class TechnologiesBoxes extends Component{
         </section>
     };
 }
+

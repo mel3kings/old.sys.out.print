@@ -16,9 +16,7 @@ export default class Showcase extends Component{
                                 <a href="#" class="btn btn-outline-secondary btn-lg text-white">
                                     <i class="fa fa-arrow-right"></i> Read More</a>
                             </div>
-                            <div class="col-lg-6">
-                                <img src="../src/img/book.png" alt="" class="img-fluid d-none d-lg-block"/>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

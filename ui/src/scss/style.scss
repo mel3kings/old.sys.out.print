@@ -1,4 +1,4 @@
-$primary: #3292a6;
+$primary: black;
 $primary-overlay:rgba(50,146,166,0.8);
 
 body{
@@ -18,7 +18,7 @@ body{
 
 #showcase{
   position:relative;
-  background:url('../img/mountains.jpg');
+  background:url('../img/computer_science.jpg');
   min-height:600px;
 
   .primary-overlay{
