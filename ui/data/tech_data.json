@@ -3,21 +3,24 @@
     "id" : 1,
     "name":"Java",
     "subtitle": "Sun Oracle",
-    "Image": "",
+    "image": "",
+    "link":"/technologies/java",
     "description": "Core Java Concepts, Lambda, Streams, Futures, Memory Allocation"
   },
   {
     "id" : 2,
     "name":"AWS",
     "subtitle" :"Amazon Web Services",
-    "Image": "",
+    "image": "",
+    "link":"/technologies/aws",
     "description": "AWS Solution Architect Certification Notes"
   },
   {
     "id" : 3,
     "name":"Docker",
     "subtitle" : "",
-    "Image": "",
+    "link":"/technologies/docker",
+    "image": "",
     "description": "hello World"
   }
 

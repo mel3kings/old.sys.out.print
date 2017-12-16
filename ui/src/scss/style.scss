@@ -1,8 +1,20 @@
 $primary: black;
-$primary-overlay:rgba(50,146,166,0.8);
+$primary-overlay:rgba(0,0,0,0.7);
+$dark-overlay:rgba(0,0,0,0.7);
 
 body{
   margin-top:105px;
+  overflow-x:hidden;
+}
+
+.site-theme { color: black; background-color: black; }
+.site-theme-border {border-color: black !important; }
+a.site-link {
+  color: black ;
+}
+
+.site-link:hover{
+  color: black;
 }
 
 .navbar{
@@ -54,4 +66,8 @@ body{
       color:#fff;
     }
   }
+}
+footer#main-footer{
+  background:#000;
+  color:#fff;
 }

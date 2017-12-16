@@ -10,7 +10,7 @@ class TechHome extends Component {
     renderBoxes(){
         return _.map(this.props.tech, data=> {
             return (
-                <div className="col-lg-3 col-md-6">
+                <a href={data.link} className="site-link col-lg-3 col-md-6" key={data.id}>
                     <div className="card">
                         <div className="card-body">
                             <img src="{data.image}" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
@@ -19,17 +19,13 @@ class TechHome extends Component {
                             <p>{data.description}</p>
                         </div>
                     </div>
-                </div>
-
+                </a>
             );
         })
     }
     render() {
         return (
             <div className="container">
-                <ul>
-
-                </ul>
                 <br/><br/>
                 <section id="authors" className="my-5 text-center">
                     <div className="row">
