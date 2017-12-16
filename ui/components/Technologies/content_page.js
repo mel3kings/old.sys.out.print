@@ -10,6 +10,7 @@ class ContentPage extends React.Component {
 
     render() {
         return <div className="container">
+            <h2>{this.props.tech.header}</h2>
              {ReactHtmlParser(this.props.tech.data)}
         </div>
     }
