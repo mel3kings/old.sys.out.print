@@ -1,27 +1,50 @@
 [
   {
-    "id" : 1,
-    "name":"Java",
+    "id": 1,
+    "name": "Java",
     "subtitle": "Sun Oracle",
     "image": "",
-    "link":"/technologies/java",
+    "link": "/technologies/java",
     "description": "Core Java Concepts, Lambda, Streams, Futures, Memory Allocation"
   },
   {
-    "id" : 2,
-    "name":"AWS",
-    "subtitle" :"Amazon Web Services",
+    "id": 2,
+    "name": "AWS",
+    "subtitle": "Amazon Web Services",
     "image": "",
-    "link":"/technologies/aws",
+    "link": "/technologies/aws",
     "description": "AWS Solution Architect Certification Notes"
   },
   {
-    "id" : 3,
-    "name":"Docker",
-    "subtitle" : "",
-    "link":"/technologies/docker",
+    "id": 3,
+    "name": "Docker",
+    "subtitle": "",
+    "link": "/technologies/docker",
+    "image": "",
+    "description": "hello World"
+  },
+  {
+    "id": 4,
+    "name": "Akka",
+    "subtitle": "",
+    "link": "/technologies/akka",
+    "image": "",
+    "description": "hello World"
+  },
+  {
+    "id": 5,
+    "name": "No-SQL",
+    "subtitle": "",
+    "link": "/technologies/no-sql",
+    "image": "",
+    "description": "hello World"
+  },
+  {
+    "id": 6,
+    "name": "JS-Frameworks",
+    "subtitle": "",
+    "link": "/technologies/js-frameworks",
     "image": "",
     "description": "hello World"
   }
-
 ]

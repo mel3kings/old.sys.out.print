@@ -50,7 +50,7 @@
   {
     "id": 9,
     "type": "java",
-    "title": "Java.util.function library",
+    "title": "Functional Interfaces",
     "description": ""
   },
   {
@@ -80,13 +80,183 @@
   {
     "id": 14,
     "type": "aws",
-    "title": "EC2",
+    "title": "Elastic Cloud Compute",
     "description": ""
   },
   {
     "id": 15,
+    "type": "aws",
+    "title": "EC2 AutoScaling",
+    "description": ""
+  },
+  {
+    "id": 16,
+    "type": "aws",
+    "title": "EBS vs EFS",
+    "description": ""
+  },
+  {
+    "id": 17,
+    "type": "aws",
+    "title": "RDS",
+    "description": ""
+  },
+  {
+    "id": 18,
+    "type": "aws",
+    "title": "Simple Storage Service",
+    "description": ""
+  },
+  {
+    "id": 19,
+    "type": "aws",
+    "title": "Storage Gateway",
+    "description": ""
+  },
+  {
+    "id": 20,
+    "type": "aws",
+    "title": "CloudFront",
+    "description": ""
+  },
+  {
+    "id": 21,
+    "type": "aws",
+    "title": "Identity and Access Management",
+    "description": ""
+  },
+  {
+    "id": 22,
+    "type": "aws",
+    "title": "VPC Peering",
+    "description": ""
+  },
+  {
+    "id": 23,
+    "type": "aws",
+    "title": "VPC, NAT, Bastion",
+    "description": ""
+  },
+  {
+    "id": 24,
+    "type": "aws",
+    "title": "Route 53",
+    "description": ""
+  },
+  {
+    "id": 25,
+    "type": "aws",
+    "title": "Simple Queue Service",
+    "description": ""
+  },
+  {
+    "id": 26,
+    "type": "aws",
+    "title": "Simple Notification Service",
+    "description": ""
+  },
+  {
+    "id": 27,
+    "type": "aws",
+    "title": "Kineses",
+    "description": ""
+  },
+  {
+    "id": 28,
+    "type": "aws",
+    "title": "CloudWatch",
+    "description": ""
+  },
+  {
+    "id": 29,
+    "type": "aws",
+    "title": "Exam Notes 1",
+    "description": ""
+  },
+  {
+    "id": 30,
+    "type": "aws",
+    "title": "Exam Notes 2",
+    "description": ""
+  },
+  {
+    "id": 31,
+    "type": "aws",
+    "title": "Exam Notes 3",
+    "description": ""
+  },
+  {
+    "id": 32,
+    "type": "aws",
+    "title": "Soft Limits",
+    "description": ""
+  },
+  {
+    "id": 33,
+    "type": "aws",
+    "title": "Well Architected Framework",
+    "description": ""
+  },
+  {
+    "id": 34,
+    "type": "aws",
+    "title": "Well Architected Framework",
+    "description": ""
+  },
+  {
+    "id": 35,
     "type": "docker",
     "title": "Basic Docker",
     "description": ""
+  },
+  {
+    "id": 36,
+    "type": "docker",
+    "title": "Advanced Docker",
+    "description": ""
+  },
+  {
+    "id": 37,
+    "type": "akka",
+    "title": "Akka Ask",
+    "description": ""
+  },
+  {
+    "id": 38,
+    "type": "akka",
+    "title": "Akka Immutable Messages",
+    "description": ""
+  },
+  {
+    "id": 39,
+    "type": "akka",
+    "title": "Actor model",
+    "description": ""
+  },
+  {
+    "id": 40,
+    "type": "akka",
+    "title": "Actor Hierarchy",
+    "description": ""
+  },
+  {
+    "id": 41,
+    "type": "js-frameworks",
+    "title": "React",
+    "description": ""
+  },
+  {
+    "id": 42,
+    "type": "js-frameworks",
+    "title": "Redux",
+    "description": ""
+  },
+  {
+    "id": 43,
+    "type": "no-sql",
+    "title": "Cassandra",
+    "description": ""
   }
+
+
 ]

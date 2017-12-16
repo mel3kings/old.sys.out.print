@@ -8,8 +8,6 @@ class ContentPage extends React.Component {
         this.props.renderContentPage(this.props.match.params.type, this.props.match.params.id);
     }
 
-
-
     render() {
         return <div className="container">
              {ReactHtmlParser(this.props.tech.data)}

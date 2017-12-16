@@ -10,7 +10,7 @@ class TechHome extends Component {
     renderBoxes(){
         return _.map(this.props.tech, data=> {
             return (
-                <a href={data.link} className="site-link col-lg-3 col-md-6" key={data.id}>
+                <a href={data.link} className="pb-3 site-link col-lg-3 col-md-6" key={data.id}>
                     <div className="card">
                         <div className="card-body">
                             <img src="{data.image}" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
