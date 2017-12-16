@@ -1,73 +1,91 @@
 $primary: black;
-$primary-overlay:rgba(0,0,0,0.7);
-$dark-overlay:rgba(0,0,0,0.7);
+$primary-overlay: rgba(0, 0, 0, 0.7);
+$dark-overlay: rgba(0, 0, 0, 0.7);
 
-body{
-  margin-top:105px;
-  overflow-x:hidden;
+body {
+  margin-top: 105px;
+  overflow-x: hidden;
 }
 
-.site-theme { color: black; background-color: black; }
-.site-theme-border {border-color: black !important; }
+.site-theme {
+  color: black;
+  background-color: black;
+}
+
+.site-theme-border {
+  border-color: black !important;
+}
+
 a.site-link {
-  color: black ;
-}
-
-.site-link:hover{
   color: black;
 }
 
-.navbar{
-  box-shadow:2px 2px 5px $primary;
-  opacity:0.9;
-  background:#fff;
+.site-link:hover {
+  color: black;
+}
 
-  .nav-item{
-    font-size:1.4rem;
-    padding-right:20px;
+a.site-link-inverse {
+  color: whitesmoke;
+  background: black;
+}
+
+.site-link-inverse:hover {
+  color: black;
+  background: whitesmoke;
+}
+
+.navbar {
+  box-shadow: 2px 2px 5px $primary;
+  opacity: 0.9;
+  background: #fff;
+
+  .nav-item {
+    font-size: 1.4rem;
+    padding-right: 20px;
   }
 }
 
-#showcase{
-  position:relative;
-  background:url('../img/computer_science.jpg');
-  min-height:600px;
+#showcase {
+  position: relative;
+  background: url('../img/computer_science.jpg');
+  min-height: 600px;
 
-  .primary-overlay{
-    background:$primary-overlay;
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+  .primary-overlay {
+    background: $primary-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
-.info-header{
-  width:50%;
-  margin:auto;
-  border-bottom:1px #ddd solid;
+.info-header {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px #ddd solid;
 }
 
-#authors{
-  img{
-    margin-top:-50px;
+#authors {
+  img {
+    margin-top: -50px;
   }
 
-  .fa{
-    font-size:25px;
+  .fa {
+    font-size: 25px;
   }
 
-  .card:hover{
-    background:$primary;
-    color:#fff;
+  .card:hover {
+    background: $primary;
+    color: #fff;
 
-    .fa{
-      color:#fff;
+    .fa {
+      color: #fff;
     }
   }
 }
-footer#main-footer{
-  background:#000;
-  color:#fff;
+
+footer#main-footer {
+  background: #000;
+  color: #fff;
 }

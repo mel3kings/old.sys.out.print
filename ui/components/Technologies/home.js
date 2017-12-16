@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {renderTechPage} from "../../actions/render_page";
+import {renderTechPage} from "../../actions/action_render_page";
 import _ from 'lodash';
 class TechHome extends Component {
     componentDidMount(){

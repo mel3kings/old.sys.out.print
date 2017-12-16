@@ -2,29 +2,91 @@
   {
     "id": 1,
     "type": "java",
-    "link": "/technology/java/1",
-    "title": "",
+    "title": "Java Basic Concepts",
     "description": ""
   },
   {
-    "id":2,
+    "id": 2,
     "type": "java",
-    "link": "/technology/java/1",
-    "title": "",
+    "title": "Balanced Braces Algorithm",
     "description": ""
   },
   {
-    "id":3,
+    "id": 3,
+    "type": "java",
+    "title": "Comparable vs Comparator",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "type": "java",
+    "title": "Set vs List vs Map",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "type": "java",
+    "title": "Static vs Instance variables",
+    "description": ""
+  },
+  {
+    "id": 6,
+    "type": "java",
+    "title": "How to turn on Profiler",
+    "description": ""
+  },
+  {
+    "id": 7,
+    "type": "java",
+    "title": "Declaration And Access Control",
+    "description": ""
+  },
+  {
+    "id": 8,
+    "type": "java",
+    "title": "Lambda",
+    "description": ""
+  },
+  {
+    "id": 9,
+    "type": "java",
+    "title": "Java.util.function library",
+    "description": ""
+  },
+  {
+    "id": 10,
+    "type": "java",
+    "title": "Completable Future",
+    "description": ""
+  },
+  {
+    "id": 11,
+    "type": "java",
+    "title": "Streams",
+    "description": ""
+  },
+  {
+    "id": 12,
+    "type": "java",
+    "title": "Hibernate – cascade=”all-delete-orphan”",
+    "description": ""
+  },
+  {
+    "id": 13,
+    "type": "java",
+    "title": "EnumType: Ordinal vs String",
+    "description": ""
+  },
+  {
+    "id": 14,
     "type": "aws",
-    "link": "/technology/aws/1",
-    "title": "",
+    "title": "EC2",
     "description": ""
   },
   {
-    "id":4,
+    "id": 15,
     "type": "docker",
-    "link": "/technology/docker/1",
-    "title": "",
+    "title": "Basic Docker",
     "description": ""
   }
 ]

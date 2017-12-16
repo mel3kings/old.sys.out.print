@@ -15,6 +15,14 @@ a.site-link {
 .site-link:hover {
   color: black; }
 
+a.site-link-inverse {
+  color: whitesmoke;
+  background: black; }
+
+.site-link-inverse:hover {
+  color: black;
+  background: whitesmoke; }
+
 .navbar {
   box-shadow: 2px 2px 5px black;
   opacity: 0.9;
