@@ -6,7 +6,6 @@ import HomeBoxes from '../components/home_boxes';
 import TechnologyList from '../components/Technologies/technology_list';
 import ContentPage from '../components/Technologies/content_page';
 import TechnologiesBoxes from '../components/technologies_boxes';
-import Footer from '../components/footer';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise';
@@ -19,10 +18,8 @@ class App extends React.Component {
         return (
             <div>
                 <Showcase/>
-                <HomeBoxes/>
                 <TechnologiesBoxes/>
-                <Footer/>
-            </div>
+               </div>
         );
     }
 }

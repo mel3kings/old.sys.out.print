@@ -31,6 +31,19 @@ a.site-link-inverse {
     font-size: 1.4rem;
     padding-right: 20px; }
 
+.react {
+  position: relative;
+  min-height: 80vh;
+  height: 80%;
+  background: white; }
+
+html {
+  background: url(../img/computer_science.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 #showcase {
   position: relative;
   background: url("../img/computer_science.jpg");
