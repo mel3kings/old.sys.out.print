@@ -4,6 +4,7 @@
     "name": "Java",
     "subtitle": "Sun Oracle",
     "image": "",
+    "external_link" :"http://www.oracle.com/technetwork/java/javase/downloads/index.html",
     "link": "/technologies/java",
     "description": "Core Java Concepts, Lambda, Streams, Futures, Memory Allocation"
   },
@@ -12,6 +13,7 @@
     "name": "AWS",
     "subtitle": "Amazon Web Services",
     "image": "",
+    "external_link" :"https://aws.amazon.com/",
     "link": "/technologies/aws",
     "description": "AWS Solution Architect Certification Notes"
   },
@@ -20,16 +22,18 @@
     "name": "Docker",
     "subtitle": "",
     "link": "/technologies/docker",
+    "external_link":"https://www.docker.com/",
     "image": "",
-    "description": "hello World"
+    "description": "Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications"
   },
   {
     "id": 4,
     "name": "Akka",
     "subtitle": "",
     "link": "/technologies/akka",
+    "external_link":"https://akka.io/",
     "image": "",
-    "description": "hello World"
+    "description": "Akka is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala"
   },
   {
     "id": 5,
@@ -37,7 +41,7 @@
     "subtitle": "",
     "link": "/technologies/no-sql",
     "image": "",
-    "description": "hello World"
+    "description": "A NoSQL database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases"
   },
   {
     "id": 6,
@@ -45,6 +49,6 @@
     "subtitle": "",
     "link": "/technologies/js-frameworks",
     "image": "",
-    "description": "hello World"
+    "description": "Application framework written in JavaScript. It differs from a JavaScript library in its control flow"
   }
 ]
