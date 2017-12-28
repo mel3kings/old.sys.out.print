@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "type": "java",
+    "type": "algorithms",
     "title": "Balanced Braces Algorithm",
     "description": ""
   },
@@ -256,7 +256,11 @@
     "type": "no-sql",
     "title": "Cassandra",
     "description": ""
+  },
+  {
+    "id": 44,
+    "type": "algorithms",
+    "title": "Prime Numbers and Summation",
+    "description": ""
   }
-
-
 ]

@@ -4,7 +4,7 @@
     "name": "Java",
     "subtitle": "Sun Oracle",
     "image": "",
-    "external_link" :"http://www.oracle.com/technetwork/java/javase/downloads/index.html",
+    "external_link": "http://www.oracle.com/technetwork/java/javase/downloads/index.html",
     "link": "/technologies/java",
     "description": "Core Java Concepts, Lambda, Streams, Futures, Memory Allocation"
   },
@@ -13,7 +13,7 @@
     "name": "AWS",
     "subtitle": "Amazon Web Services",
     "image": "",
-    "external_link" :"https://aws.amazon.com/",
+    "external_link": "https://aws.amazon.com/",
     "link": "/technologies/aws",
     "description": "AWS Solution Architect Certification Notes"
   },
@@ -22,7 +22,7 @@
     "name": "Docker",
     "subtitle": "",
     "link": "/technologies/docker",
-    "external_link":"https://www.docker.com/",
+    "external_link": "https://www.docker.com/",
     "image": "",
     "description": "Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications"
   },
@@ -31,7 +31,7 @@
     "name": "Akka",
     "subtitle": "",
     "link": "/technologies/akka",
-    "external_link":"https://akka.io/",
+    "external_link": "https://akka.io/",
     "image": "",
     "description": "Akka is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala"
   },
@@ -50,5 +50,13 @@
     "link": "/technologies/js-frameworks",
     "image": "",
     "description": "Application framework written in JavaScript. It differs from a JavaScript library in its control flow"
+  },
+  {
+    "id": 7,
+    "name": "Algorithms",
+    "subtitle": "",
+    "link": "/technologies/algorithms",
+    "image": "",
+    "description": "Various solutions to programming challenges"
   }
 ]

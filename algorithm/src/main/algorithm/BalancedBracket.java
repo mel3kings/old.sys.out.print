@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class Balanced {
+/**
+ * Checks if brackets are equal
+ */
+public class BalancedBracket {
     private static final String NO = "NO", YES = "YES";
 
     public static void main(String[] args) {

@@ -8,8 +8,9 @@ export default class TechnologiesBoxes extends React.Component{
                 <div class="row">
                     <div class="col">
                         <div class="container pt-5">
-                            <h1>Are You Ready To Get Started?</h1>
-                            <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita voluptates, consequatur labore placeat doloremque dignissimos exercitationem esse fuga laborum ex!</p>
+                            <h1>Feel free to browse to the Technologies page.</h1>
+                            <p class="d-none d-md-block">I try to cover all new technologies I can get my hands on, this just me playing with new tech coming from a
+                                Java developer point of view, and notes I collect. Click About Me to know more about my history in the industry</p>
                         </div>
                     </div>
                 </div>
