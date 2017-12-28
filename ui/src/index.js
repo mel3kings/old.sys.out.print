@@ -18,7 +18,8 @@ class App extends React.Component {
             <div>
                 <Showcase/>
                 <TechnologiesBoxes/>
-               </div>
+
+            </div>
         );
     }
 }

@@ -14,7 +14,7 @@ export default class Showcase extends Component{
                                 </h1>
                                 <p className="lead">Ramblings/Notes of a programmer</p>
                                 <a href="https://www.linkedin.com/in/melchor-tatlonghari-b111986a/" className="btn btn-outline-secondary btn-lg text-white">
-                                    <i className="fa fa-arrow-right"></i> Read More</a>
+                                    <i className="fa fa-arrow-right"></i> About Me</a>
                             </div>
 
                         </div>
