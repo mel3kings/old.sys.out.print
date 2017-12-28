@@ -5,57 +5,65 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class Balanced {
+    private static final String NO = "NO", YES = "YES";
+
     public static void main(String[] args) {
-        ArrayList<String> testme = new ArrayList(Arrays.asList("{}{}{}{}{}{}()()()[][][]", "[[[[[[[[]]]]]]]()]","[[[]]]}", "({[]})", "{{{(())}}}", "[{{]})", "(){}[]", "{{{()}}}[]{{}}[][][][][][][][]","", null));
-        testme.forEach(value -> System.out.println(checkBalance(value)));
-        print("NEW WAY");
-        testme.forEach(value -> System.out.println(checkBalanceNew(value)));
+        String[] arrays = {"[]", "[{{]})", "[[[]]]}", "({[]})", "{{{(())}}}", "[{{]})", "(){}[]", "{{{()}}}[]{{}}[][][][][][][][]", "", null};
+        ArrayList<String> testme = new ArrayList(Arrays.asList(arrays));
+        testme.forEach(value -> System.out.println(checkBalanceAsString(value)));
+        String result[] = checkBalanceStreams(arrays);
+        for (String x : result) {
+            System.out.println(x);
+        }
     }
 
-    private static void print(Object o) {
-        System.out.println(o.toString());
-    }
-
-    private static String checkBalanceNew(String expr) {
-        Stack<Character> stack = new Stack<>();
-        try {
-            if (null == expr || expr.length() == 1 || expr.length() == 0) {
-                return "NO";
-            }
-            expr.chars().mapToObj(character -> (char) character)
-                    .map(analyze -> {
-                        if (analyze == '[' || analyze == '{' || analyze == '(') {
-                            stack.push(analyze);
-                        }
-                        return analyze;
-                    }).forEach(analyze -> {
-                        if (!stack.empty()) {
-                            char compare = stack.peek();
-                            if ((compare == '[' && analyze == ']') || (compare == '{' && analyze == '}') || (compare == '(' && analyze == ')')) {
-                                stack.pop();
+    private static String[] checkBalanceStreams(String[] values) {
+        String result[] = new String[values.length];
+        checkAll:
+        for (int i = 0; i < values.length; i++) {
+            Stack<Character> stack = new Stack<>();
+            try {
+                String expr = values[i];
+                if (null == expr || expr.length() == 1 || expr.length() == 0) {
+                    result[i] = NO;
+                    continue checkAll;
+                }
+                expr.chars().mapToObj(character -> (char) character)
+                        .map(analyze -> {
+                            if (analyze == '[' || analyze == '{' || analyze == '(') {
+                                stack.push(analyze);
                             }
-                        } else {
-                            throw new IllegalArgumentException();
+                            return analyze;
+                        }).forEach(analyze -> {
+                    if (!stack.empty()) {
+                        char compare = stack.peek();
+                        if ((compare == '[' && analyze == ']') || (compare == '{' && analyze == '}') || (compare == '(' && analyze == ')')) {
+                            stack.pop();
                         }
-                    });
-        } catch (IllegalArgumentException iae) {
-            return "NO";
-        } catch (Exception ex) {
-            return "NO";
+                    } else {
+                        throw new IllegalArgumentException();
+                    }
+                });
+            } catch (Exception ex) {
+                result[i] = NO;
+                continue checkAll;
+            }
+            if (stack.isEmpty()) {
+                result[i] = YES;
+                continue checkAll;
+            } else {
+                result[i] = NO;
+                continue checkAll;
+            }
         }
-
-        if (stack.isEmpty()) {
-            return "YES";
-        } else {
-            return "NO";
-        }
+        return result;
     }
 
-    private static String checkBalance(String wholeExpression) {
-        Stack<Character> stack = new Stack<Character>();
+    private static String checkBalanceAsString(String wholeExpression) {
+        Stack<Character> stack = new Stack<>();
         boolean inserted = false;
-        if (null == wholeExpression || wholeExpression.length() == 1 ||  wholeExpression.length() == 0) {
-            return "NO";
+        if (null == wholeExpression || wholeExpression.length() == 1 || wholeExpression.length() == 0) {
+            return NO;
         }
         for (int x = 0; x < wholeExpression.length(); x++) {
             char analyze = wholeExpression.charAt(x);
@@ -65,25 +73,63 @@ public class Balanced {
             } else if (analyze == ']' || analyze == '}' || analyze == ')') {
                 if (!stack.empty()) {
                     char compare = stack.peek();
-                    if (compare == '[' && analyze == ']') {
-                        stack.pop();
-                    } else if (compare == '{' && analyze == '}') {
-                        stack.pop();
-                    } else if (compare == '(' && analyze == ')') {
+                    if ((compare == '[' && analyze == ']') || (compare == '{' && analyze == '}') || (compare == '(' && analyze == ')')) {
                         stack.pop();
                     }
                 } else {
-                    return "NO";
+                    return NO;
                 }
             }
         }
         if (!inserted) {
-            return "NO";
+            return NO;
         } else if (stack.isEmpty()) {
-            return "YES";
+            return YES;
         } else {
-            return "NO";
+            return NO;
         }
+    }
+
+    private static String[] checkBalanceAsArray(String[] values) {
+        String result[] = new String[values.length];
+        boolean inserted = false;
+        checkAll:
+        for (int i = 0; i < values.length; i++) {
+            Stack<Character> stack = new Stack<>();
+            String wholeExpression = values[i];
+            if (null == wholeExpression || wholeExpression.length() == 1 || wholeExpression.length() == 0) {
+                result[i] = NO;
+                continue checkAll;
+            }
+            for (int x = 0; x < wholeExpression.length(); x++) {
+                char analyze = wholeExpression.charAt(x);
+                if (analyze == '[' || analyze == '{' || analyze == '(') {
+                    inserted = true;
+                    stack.push(analyze);
+                } else if (analyze == ']' || analyze == '}' || analyze == ')') {
+                    if (!stack.empty()) {
+                        char compare = stack.peek();
+                        if ((compare == '[' && analyze == ']') || (compare == '{' && analyze == '}') || (compare == '(' && analyze == ')')) {
+                            stack.pop();
+                        }
+                    } else {
+                        result[i] = NO;
+                        continue checkAll;
+                    }
+                }
+            }
+            if (!inserted) {
+                result[i] = NO;
+                continue checkAll;
+            } else if (stack.isEmpty()) {
+                result[i] = YES;
+                continue checkAll;
+            } else {
+                result[i] = NO;
+                continue checkAll;
+            }
+        }
+        return result;
     }
 }
 
