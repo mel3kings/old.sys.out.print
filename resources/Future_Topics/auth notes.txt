@@ -1,0 +1,22 @@
+riskflo:
+express js
+
+server/main.js calls a proxy server for any request for the payload
+
+
+reducers.js - reducers are declared
+authReducer - for authenticating
+
+componentWillMount is called before the initial render (similar to constructors)
+THIS IS where tokens are set
+
+hoc/authProps.js
+AuthWrapper is called first, which calls authToken
+
+auth.js - sets Auth-Token as header (which is set by tid in the parameter)
+authToken: ownProps.location.query.tid authProp.js line 14
+which calls a concur path call /concur/user
+
+
+TODO find process.env
+find a way to always set correct ip in local-env

@@ -1,0 +1,20 @@
+Lagom notes:
+Entity needs state command event
+- state is what the entity will look like
+- commands are what you need to execute and are handled per command 
+	- actual data is stored in the command before passing onto Entity for persistence
+	- Command triggers Events
+- events are what you actually save to the db, so you need to convert your objects
+	to events
+	- Events update state
+	- event handlers are then used to update the state once a save has been done 
+		- this is done via state().with(event.getDetails());
+		
+Flow:
+	Command -> Event -> State
+
+Handlers are where the magic happens, when you have set a command, it is up to handlers to know what to actually perform
+persistence ids are what is used to confirm if it exist,
+if you do refFor(class, id), in the event handler the data will exist in the state() command
+
+REMEMBER CQRS

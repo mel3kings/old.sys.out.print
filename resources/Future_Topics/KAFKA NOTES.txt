@@ -1,0 +1,70 @@
+KAKFA NOTES:
+
+Source System -> Target System
+Kafka acts as your middle man
+ie, website, pricing data, user transaction -> kafka -> db, audit, email sytem, analytics
+Features:
+Distributed, resilient, fault tolerant, horizontal scalibility, high performance
+
+Use cases:
+messeging system
+activity tracking
+metrics
+applicaiton logs
+streams processing
+Integration: spark, flink, storm, hadoop, big data
+
+EcoSystem:
+Source System -> producers -> Kafka (managed by zookeeper) -> consumers -> Target 
+
+Extended EcoSystem:
+							      Kafka streams
+Source -> Kafka Connect Source -> kafka cluster -> Kafka Connect Sink -> Target System
+									Mirror Maker
+									
+Confluent - private company behind kafka (same as datastax)
+Makes use of Avro Data
+Only use Java for Kafka Schema Registry
+
+Monitoring:
+Landoop (Topics UI, SChema UI, COnnect UI)
+Kafka Manager
+Burrow
+Exhibotr
+Kafka Monitoring
+Kafka Tools
+Kafkat
+Jmx Dump
+
+Series:
+Core concepts
+Connect API
+Streams API
+Cluster Setup
+Security
+
+Architecture:
+Producers -> kafka -> spark, storm, flink -> Realtime analytics
+		            -> Hadoop, s3, RDBMS -> Batch analytics
+
+Topics and Partitions
+Topic - stream of data (similar to tables in database)
+	- no limit, topic is identified by name
+	- topics are split in partitions, which are ordered
+	- each message has an incremental id called the offset
+Key Concepts:
+
+Topic is composed of partitions:
+Partition 0 - 0,1,2,3,4,5
+partition 1 - 0,1,2,3
+partition 2 - 0,1,2,3,4,5,6,7
+
+-Order is guaranteed in a partition
+-data is only kept for 2 weeks (can be configured)
+-immutable
+-data is randomly assiged to a partition, unless using a key
+-unli partition in a topic
+
+Each cluster is composed of broker with its ID
+i.e broker 1,2,3
+even if you have 100 brokers, just connecting to 1 connects you to the cluster
