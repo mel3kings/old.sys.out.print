@@ -1,0 +1,10 @@
+JWT
+msconfig all memory
+-setup docker in cmder
+-docker-compose up cass problem
+com.datastax.driver.core.exceptions.NoHostAvailableException: All host(s) tried for query failed (tried: cass/172.18.0.5:9042 (com.data -solved by optional: true
+
+docker exec -it auth
+netstat -nap
+
+https://stackoverflow.com/questions/26472586/upgrade-docker-on-centos-7
