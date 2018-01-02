@@ -1,0 +1,7 @@
+version: "3"
+services:
+  ui-mel:
+    ports:
+      - "8080:8080"
+    build: .
+
