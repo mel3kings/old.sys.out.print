@@ -9,8 +9,7 @@ export default function (state={}, action){
             console.log("Reducer found: " + action.payload.name.toLowerCase());
             return {...state, [action.payload.name.toLowerCase()] : action.payload};
         case RENDER_TECH_LIST_PAGE:
-            console.log("RETURNING PAYLOAD " + action.payload);
-            return _.mapKeys(action.payload, "id"); // access directly since we did manipulation on action
+            return {...state, "list" : _.mapKeys(action.payload, "id")}; // access directly since we did manipulation on action
         case RENDER_CONTENT_PAGE:
             return action.payload;
         default:

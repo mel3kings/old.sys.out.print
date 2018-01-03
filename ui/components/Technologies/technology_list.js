@@ -4,21 +4,19 @@ import {renderTechPage, renderTechListPage, renderTechPageDetails} from "../../a
 import _ from 'lodash';
 
 class TechnologyList extends React.Component {
-    state = {
-        loading: true
-    };
+
 
     componentWillMount() {
+        this.props.renderTechPageDetails(this.props.match.params.type);
         this.props.renderTechListPage(this.props.match.params.type);
-        this.props.renderTechPageDetails(this.props.match.params.type)
     }
 
     componentDidMount(){
-        this.setState({ loading: false }, this.forceUpdate());
+
     }
 
     renderList() {
-        return _.map(this.props.tech, values => {
+        return _.map(this.props.tech.list, values => {
             const title = values.title;
             if(title){
                 return (<a href={"/technologies/" + values.type + "/" + values.id} className="site-link-inverse list-group-item"
@@ -40,7 +38,7 @@ class TechnologyList extends React.Component {
     render() {
         const loading = this.props.pageDetails;
         if(!loading){ // to prevent 'null pointer' on initial load
-            return <div className="container"><div> Loading...</div></div>
+            return <div className="container"><div> Overloaded, refresh to try again.</div></div>
         }
         return <div className="container">
             <div className="row">
