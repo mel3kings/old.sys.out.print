@@ -21,7 +21,7 @@ class ContentPage extends React.Component {
         };
         return <div className="container">
             <DocumentMeta {...meta} />
-            <h2>{this.props.tech.header} ASD</h2>
+            <h2>{this.props.tech.header}</h2>
              {ReactHtmlParser(this.props.tech.data)}
         </div>
     }
