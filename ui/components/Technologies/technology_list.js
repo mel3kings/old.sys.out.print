@@ -4,9 +4,17 @@ import {renderTechPage, renderTechListPage, renderTechPageDetails} from "../../a
 import _ from 'lodash';
 
 class TechnologyList extends React.Component {
+    state = {
+        loading: true
+    };
+
     componentWillMount() {
         this.props.renderTechListPage(this.props.match.params.type);
         this.props.renderTechPageDetails(this.props.match.params.type)
+    }
+
+    componentDidMount(){
+        this.setState({ loading: false }, this.forceUpdate());
     }
 
     renderList() {

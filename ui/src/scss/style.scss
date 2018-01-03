@@ -104,3 +104,21 @@ footer#main-footer {
   background: #000;
   color: #fff;
 }
+
+.react:empty {
+  height: 80px;
+  background: url('../img/react.svg');
+  background-repeat: no-repeat;
+  background-size: 300px 100px;
+  background-position: center;
+  animation: loading 20s infinite linear;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
