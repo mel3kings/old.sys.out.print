@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js  --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -47,6 +46,7 @@
     "lodash": "^4.17.4",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
+    "react-document-meta": "^2.1.2",
     "react-dom": "^16.2.0",
     "react-html-parser": "^2.0.2",
     "react-redux": "^5.0.6",
