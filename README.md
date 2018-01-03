@@ -23,5 +23,6 @@ package.json exposes the app to outside using host:
 docker commands:
 ```
 docker build -t mel3kings/sysdotoutdotprint .
-docker run -p 80:8080 -p 3000:3000 ui
+docker run -p 80:8080 -p 3000:3000 -d mel3kings/sysdotoutdotprint                                                                                                                                                               /sysdotoutdotprint
+
 ```
