@@ -11,11 +11,11 @@ class ContentPage extends React.Component {
     render() {
         const meta = {
             title: `${this.props.tech.header}`,
-            description:`how to ${this.props.tech.header} tutorial`,
+            description:`how to ${this.props.tech.header} tutorial basic`,
             meta: {
                 charset: 'utf-8',
                 name: {
-                    keywords: `${this.props.match.params.type}, ${this.props.tech.header}, tutorial, how to, java, aws, docker`
+                    keywords: `${this.props.match.params.type}, ${this.props.tech.header}, tutorial, how to, java, aws, docker, basics, basic, how, to`
                 }
             }
         };
