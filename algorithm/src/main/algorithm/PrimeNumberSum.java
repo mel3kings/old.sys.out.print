@@ -3,9 +3,9 @@ package algorithm;
 public class PrimeNumberSum {
     public static void main(String[] args) {
         int input = 989999;
-        input =13;
-        System.out.println(input + " is a Prime? "  + isPrime(input));
-        System.out.println("Summation of values "+ summationOfValues(input));
+        input = 13;
+        System.out.println(input + " is a Prime? " + isPrime(input));
+        System.out.println("Summation of values " + summationOfValues(input));
     }
 
     public static boolean isPrime(int n) {
