@@ -10,6 +10,7 @@ import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise';
 import { Provider } from 'react-redux';
 import reducers from '../reducers';
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 class App extends React.Component {

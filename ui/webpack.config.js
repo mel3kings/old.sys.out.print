@@ -22,6 +22,17 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         contentBase: './',
-        disableHostCheck: true
+        disableHostCheck: true,
+        proxy: {
+            "/get/*":{
+                target: {
+                    host: "localhost",
+                    protocol: 'http:',
+                    port: 3000
+                },
+                changeOrigin: true,
+                secure: false
+            },
+        },
     }
 };

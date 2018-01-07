@@ -16,6 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/mel3kings/sys.out.print.git"
   },
+  "proxy": "http://localhost:3000/",
   "author": "Melchor Tatlonghari",
   "license": "ISC",
   "bugs": {
@@ -34,7 +35,9 @@
     "browserify": "^14.5.0",
     "chai": "^4.1.2",
     "chai-jquery": "^2.0.0",
+    "dns": "^0.2.2",
     "dom": "0.0.3",
+    "fetch": "^1.1.0",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
@@ -44,6 +47,7 @@
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
+    "net": "^1.0.2",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-document-meta": "^2.1.2",

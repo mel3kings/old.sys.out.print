@@ -1,7 +1,12 @@
 version: "3"
 services:
-  ui-mel:
+  ui:
     ports:
       - "8080:8080"
     build: .
-
+    container_name: ui
+  node:
+    ports:
+      - "3000:3000"
+    build: ./node-backend/
+    container_name: node
