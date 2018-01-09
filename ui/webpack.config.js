@@ -26,7 +26,7 @@ module.exports = {
         proxy: {
             "/get/*":{
                 target: {
-                    host: "localhost",
+                    host: "node",
                     protocol: 'http:',
                     port: 3000
                 },

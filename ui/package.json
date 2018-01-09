@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/mel3kings/sys.out.print.git"
   },
-  "proxy": "http://localhost:3000/",
+  "proxy": "http://node:3000/",
   "author": "Melchor Tatlonghari",
   "license": "ISC",
   "bugs": {
