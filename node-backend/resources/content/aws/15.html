@@ -1,0 +1,152 @@
+<div class='entry-content'><p><strong>Autoscaling</strong> &#8211; ensures you have correct number of Ec2 to handle load
+    of your application, whether to scale up or scaled down. AutoScaling groups are the cornerstone of any self-healing
+    application on AWS.</p>
+    <p>Auto scaling <strong><em>is not really intended to respond to instantaneous spikes in traffic</em></strong>, as
+        it will take some time to spin-up the instances that will handle the additional traffic.</p>
+    <p><strong>Pricing</strong> &#8211; Autoscaling is FREE</p>
+    <p><strong>Benefits:</strong> you can scale your resource depending on the demand of your application, hence you
+        only pay for what you actually use, instead for example allocating too much memory on your servers but peak
+        usage only occurs on certain days, as per below:</p>
+    <p><img class='alignnone size-full wp-image-747' src='../../src/img/content/ss24.png' alt='ss1.PNG' width='456'
+            height='296'/></p>
+    <p><strong>Limitation</strong></p>
+    <ul>
+        <li>Autoscale can only be in on one region, but can have multiple Availability zones</li>
+        <li>Autoscale does rebalancing activities to make sure scaling is balanced among AZs this occurs under the
+            following conditions
+            <ul>
+                <li>you issue a request to change AZ for your group</li>
+                <li>explicit call for termination of instance</li>
+                <li>AZ had insufficient capacity recovers</li>
+                <li>Spot market price</li>
+            </ul>
+        </li>
+        <li>Autoscale launches new instances before termination old ones</li>
+    </ul>
+    <p><strong>Scale Out Occurances:</strong></p>
+    <ul>
+        <li>Manual Scaling</li>
+        <li>Dynamic Scaling</li>
+        <li>Scheduled Scaling</li>
+    </ul>
+    <p><strong>Scale In Occurances:</strong></p>
+    <ul>
+        <li>Manually decrease size</li>
+        <li>create scaling policy to decrease size depending on demand</li>
+        <li>scheduled scale</li>
+    </ul>
+    <p><strong>Autoscaling cooldowns &#8211;</strong> ensures that auto scaling does not launch or terminate additional
+        instance before previous scaling takes effect. (does not apply if instance becomes unhealthy). Default cooldown
+        period is <strong>300 seconds</strong></p>
+    <p><strong>Cooldown periods are not supported for step scaling policies or scheduled scaling.</strong></p>
+    <p><strong>Default termination policy </strong></p>
+    <ul>
+        <li>Check if there are any instances in multiple AZ
+            <ol>
+                <li>if Yes select AZ with most instance</li>
+                <li>if No select instance with oldest config &#8211; TERMINATE</li>
+            </ol>
+        </li>
+        <li>Are there multiple instance with oldest config
+            <ol>
+                <li>if yes select instance with most closest to billing hour</li>
+                <li>if No Terminate</li>
+            </ol>
+        </li>
+        <li>Are there multiple instance closest to billing hour
+            <ol>
+                <li>if yes select at random then terminate</li>
+                <li>if no terminate</li>
+            </ol>
+        </li>
+    </ul>
+    <p><strong>Possible termination policies:</strong></p>
+    <ul>
+        <li>OldestInstance</li>
+        <li>newInstance</li>
+        <li>oldestLaunchConfiguration</li>
+        <li>closestToNextInstanceHour</li>
+        <li>Default</li>
+    </ul>
+    <p><strong>Instance Protection &#8211; protects an instance from getting deleted</strong></p>
+    <p><strong>Lifecycle Hooks</strong> &#8211; events you want to trigger when autoscaling occurs, ie create
+        notification or perform some lambda function</p>
+    <p><strong>Standby State &#8211;</strong> you can put an instance on standby state, meaning it is still part of the
+        scaling group but it does not handle application, this is useful for example if you want to upgrade application
+        and just put the instance on standby while others handle the traffic</p></div>
+<div class='entry-content'><p><strong>Autoscaling</strong> &#8211; ensures you have correct number of Ec2 to handle load
+    of your application, whether to scale up or scaled down. AutoScaling groups are the cornerstone of any self-healing
+    application on AWS.</p>
+    <p>Auto scaling <strong><em>is not really intended to respond to instantaneous spikes in traffic</em></strong>, as
+        it will take some time to spin-up the instances that will handle the additional traffic.</p>
+    <p><strong>Pricing</strong> &#8211; Autoscaling is FREE</p>
+    <p><strong>Benefits:</strong> you can scale your resource depending on the demand of your application, hence you
+        only pay for what you actually use, instead for example allocating too much memory on your servers but peak
+        usage only occurs on certain days, as per below:</p>
+    <p><img class='alignnone size-full wp-image-747' src='../../src/img/content/ss24.png' alt='ss1.PNG' width='456'
+            height='296'/></p>
+    <p><strong>Limitation</strong></p>
+    <ul>
+        <li>Autoscale can only be in on one region, but can have multiple Availability zones</li>
+        <li>Autoscale does rebalancing activities to make sure scaling is balanced among AZs this occurs under the
+            following conditions
+            <ul>
+                <li>you issue a request to change AZ for your group</li>
+                <li>explicit call for termination of instance</li>
+                <li>AZ had insufficient capacity recovers</li>
+                <li>Spot market price</li>
+            </ul>
+        </li>
+        <li>Autoscale launches new instances before termination old ones</li>
+    </ul>
+    <p><strong>Scale Out Occurances:</strong></p>
+    <ul>
+        <li>Manual Scaling</li>
+        <li>Dynamic Scaling</li>
+        <li>Scheduled Scaling</li>
+    </ul>
+    <p><strong>Scale In Occurances:</strong></p>
+    <ul>
+        <li>Manually decrease size</li>
+        <li>create scaling policy to decrease size depending on demand</li>
+        <li>scheduled scale</li>
+    </ul>
+    <p><strong>Autoscaling cooldowns &#8211;</strong> ensures that auto scaling does not launch or terminate additional
+        instance before previous scaling takes effect. (does not apply if instance becomes unhealthy). Default cooldown
+        period is <strong>300 seconds</strong></p>
+    <p><strong>Cooldown periods are not supported for step scaling policies or scheduled scaling.</strong></p>
+    <p><strong>Default termination policy </strong></p>
+    <ul>
+        <li>Check if there are any instances in multiple AZ
+            <ol>
+                <li>if Yes select AZ with most instance</li>
+                <li>if No select instance with oldest config &#8211; TERMINATE</li>
+            </ol>
+        </li>
+        <li>Are there multiple instance with oldest config
+            <ol>
+                <li>if yes select instance with most closest to billing hour</li>
+                <li>if No Terminate</li>
+            </ol>
+        </li>
+        <li>Are there multiple instance closest to billing hour
+            <ol>
+                <li>if yes select at random then terminate</li>
+                <li>if no terminate</li>
+            </ol>
+        </li>
+    </ul>
+    <p><strong>Possible termination policies:</strong></p>
+    <ul>
+        <li>OldestInstance</li>
+        <li>newInstance</li>
+        <li>oldestLaunchConfiguration</li>
+        <li>closestToNextInstanceHour</li>
+        <li>Default</li>
+    </ul>
+    <p><strong>Instance Protection &#8211; protects an instance from getting deleted</strong></p>
+    <p><strong>Lifecycle Hooks</strong> &#8211; events you want to trigger when autoscaling occurs, ie create
+        notification or perform some lambda function</p>
+    <p><strong>Standby State &#8211;</strong> you can put an instance on standby state, meaning it is still part of the
+        scaling group but it does not handle application, this is useful for example if you want to upgrade application
+        and just put the instance on standby while others handle the traffic</p></div>

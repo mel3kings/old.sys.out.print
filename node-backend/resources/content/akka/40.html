@@ -1,0 +1,11 @@
+Akka Architecture by default supports parent-child Actor structures. On startup Akka already creates several actors for you:
+<img src='../../src/img/content/ss51.png'/> http://doc.akka.io/docs/akka/current/java/guide/tutorial_1.html
+<ul>
+    <li>Root guardian - to handle all the actors</li>
+    <li>System guardian - Akka System guardian</li>
+    <li>User guardian - user in this case is you, user guardian manages all the actors created by the developer.</li>
+    <li>Usually you can only create Actors under /user guardian, and then you can further nest by creating actors under
+        your actors.
+    </li>
+</ul> To further the previous example, our DemoActor now has a ChildDemoActor. Actor Principle is retained here ChildDemoActor tell command is non blocking, so should you have complex things to do parent actor, child actor is also concurrently doing it's own thing.
+<img src='../../src/img/content/ss52.png'/> Also the value here is, Parent manages the child actors, should the parent actor be terminated, it will terminate all its child actors first. this helps manages actors more efficiently.

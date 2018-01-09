@@ -1,0 +1,69 @@
+Below are more detailed notes on various aspects of Docker, and somewhat more advanced topics with dealing with container/image management. Docker commands are now separated into main modules. previously when you wanted to run a command, you would do docker &lt;command&gt; In the newer version you can say: docker &lt;module&gt; &lt;module_command&gt;
+<strong>Modules</strong>
+<ul>
+    <li>config - Manage Docker configs</li>
+    <li>container - Manage containers</li>
+    <li>image - Manage images</li>
+    <li>network - Manage networks</li>
+    <li>node - Manage Swarm nodes</li>
+    <li>plugin - Manage plugins</li>
+    <li>secret - Manage Docker secrets</li>
+    <li>service - Manage services</li>
+    <li>stack - Manage Docker stacks</li>
+    <li>swarm - Manage Swarm</li>
+    <li>system - Manage Docker</li>
+    <li>volume - Manage volumes</li>
+</ul> <strong>Run vs Start</strong>
+<ul>
+    <li>run - run will always create a new container</li>
+    <li>start - will start an existing one</li>
+</ul> <strong>Images vs Container</strong>
+<ul>
+    <li>Images are template that are collected from dockerhub</li>
+    <li>container is the running instance
+        <ul>
+            <li>you can have multiple containers based on one image</li>
+        </ul>
+    </li>
+</ul>
+<strong>Note:</strong> you can terminate docker by just specifying of container id for example our container id is 1234567, you can stop the container by:
+<em>docker container stop 123</em> Common Docker local ip is usually: 192.168.99.100 <strong>Performance
+    Monitoring: </strong><em>docker container stats</em> SSH inside a server would be:
+<ul>
+    <li><em>docker exec -it nginx</em></li>
+    <li><em>docker container exec -it &lt;container_name&gt; bash/sh/etc</em></li>
+</ul> -i : interactive -t : pseudo TTY <em>linux alpine</em> - small secure linux box
+<strong>Networking</strong> Common commands:
+<ul>
+    <li>docker network ls</li>
+    <li>docker network create</li>
+    <li>docker network connect</li>
+</ul> You can link your containers to a specific network via the flag: <em>--network &lt;network_name&gt;</em> <em>link
+    container via
+    network:</em> docker container run -d --net &lt;network_name&gt; --net-alias &lt;network-alias&gt; &lt;container&gt;
+<strong>TAGGING and PUSHING, CACHING LAYERS</strong> <strong>Logging
+    - </strong>docker already handles the logs, you just need to make sure it goes to stdout or stderr, current trend is leaning to stdout rather than log4j or any other logging frameworks
+<strong>Dockerfile Essentials
+    Format</strong> FROM &lt;IMAGE&gt; WORKDIR &lt;Directory&gt; - THIS IS a CD or Change Directory Command ENV &lt;environment&gt; RUN &lt;RUN COMMANDS&gt; EXPOSE &lt;EXPOSE PORT&gt; CMD &lt;RUN COMMAND EVERYTIME CONTAINER IS LAUNCHED&gt; COPY &lt;from&gt; &lt;to&gt; - copy local to docker
+<strong>Image building</strong>: <em>docker image build -t &lt;tag&gt; &lt;location&gt;</em>
+<em>NOTE:</em> that building the image does not mean you are running it, container and image are totally different
+<strong>Named volume format:</strong> -v &lt;volume_name&gt;:&lt;container_volume&gt; <strong>BIND MOUNT (CANT USE IN
+    DOCKERFILE)</strong> -v full mount : &lt;container_volume&gt; <strong>Notes/Gotchas:</strong>
+<ul>
+    <li>VOLUMES on windows docker toolbox can only be accessible through c:/users via /c/users/</li>
+    <li>IF YOU HAVE AN EXISTING IMAGE, you will need to rebuild that image, know that -volumes does not work on
+        dockerfile
+    </li>
+    <li>in contrast if you want to just run a DockerFile you would do docker build</li>
+</ul> <em>docker-compose up</em> - to build images for development <em>docker-compose build or up
+    --build</em> - to rebuild images, only given that you have a build tag in your yml file <strong>Docker
+    Swarm</strong>
+<ul>
+    <li><em>docker swarm init</em> - creates raft database of root ca,configs secrets - PKI, security automation</li>
+    <li><em>docker node ls</em> - check nodes</li>
+    <li><em>docker service create</em> - create a service part of the swarm</li>
+    <li><em>docker service ls</em> - list of services</li>
+    <li><em>docker service update</em> - update existing service with regards to orchestration</li>
+    <li><em>docker service rm heuristic_shirley</em> - to actually delete service from docker service</li>
+</ul> <strong>CREATING RANCHER
+    MACHINE:</strong> docker-machine create dockermachine --driver virtualbox --virtualbox-cpu-count '-1' --virtualbox-disk-size '8000' --virtualbox-memory '1024' --virtualbox-boot2docker-url=https://github.com/boot2docker/boot2docker/releases/download/v1.10.3/boot2docker.iso docker-machine create dockermachine --driver virtualbox --virtualbox-cpu-count '-1' --virtualbox-disk-size '8000' --virtualbox-memory '1024'

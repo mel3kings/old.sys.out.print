@@ -1,0 +1,47 @@
+SQS : <strong>Message Size</strong> – 256kb <strong>Message Attributes:</strong>
+<ul>
+    <li>Name</li>
+    <li>Type (String/Binary/Number)</li>
+    <li>Value – user value</li>
+</ul> <strong>URL</strong> : The following is the queue URL for a queue named <code
+        class='code'>MyQueue</code> owned by a user with the AWS account number <code
+        class='code'>123456789012</code>. ='programlisting'><code class='nohighlight'>http://sqs.us-east-2.amazonaws.com/123456789012/MyQueue</code></pre>
+<strong>Key Terms:</strong>
+<ul>
+    <li><strong>Receipt Handle</strong> – each time you recieve a message you get a different receipt handle, this is
+        used to handle when you request to delete a message
+    </li>
+    <li><strong>Message Deduplication Id</strong> – the token used for deduplication of sent messages, any messages sent
+        with same aren’t delivered during 5 minute deduplication interval
+    </li>
+    <li><strong>Message Group Id</strong> – group identifier</li>
+    <li><strong>Sequence number</strong></li>
+    <li><strong>Inflight Message – </strong>message received but not yet deleted</li>
+    <li><strong>Dead Letter Queue – </strong>Queue for others queues to target for messages that can’t be processed,
+        this allow messages to be isolated and help determine why it wasn’t procesed.
+    </li>
+</ul> <strong>Two Types of Queues:</strong>
+<ul>
+    <li>Standard
+        <ul>
+            <li>high throughput</li>
+            <li>guaranteed at least once delivery (can be more than once)</li>
+        </ul>
+    </li>
+    <li>FIFO
+        <ul>
+            <li>ordered messages</li>
+            <li>first in first out delivery</li>
+        </ul>
+    </li>
+</ul> <strong>Visibility Timeout (default 30 seconds, Maximum: 12 hours.)</strong>
+<strong> </strong>When a consumer receives and processes a message from a queue, it remains in the queue AWS does not automatically delete the message, consumer must request a delete. This is because queue service are in a distributed system there is no guarantee the message has been received already (ie connection broken, component fail etc) A message once received, to prevent other consumer to reprocess the message, there is a visibility timeout, which a message is not visible to other components. (not a guarantee for standard queues)
+<strong>Increasing the visibility timeout will decrease cost over
+    time.</strong> You can turn off visibility timeout How it works: <p class='fix-link-focus'><img
+        src='../../src/img/content/ss36.png'/></p> <strong>Delay
+    Queues</strong> Works similar like visibility timeout, except message is invisible when first added to queue: <p
+        class='fix-link-focus'><img src='../../src/img/content/ss37.png'/></p> <strong>Long
+    Polling</strong> Long polling reduces number of empty responses by allowing SQS to wait until a message is available before sending a response. it returns a message as soon as any messages becomes available. By default SQS uses short polling, querying only a subset of the servers to determine whether any messages are available. Short Polling occurs when WaitTimeSeconds parameter of a message is set to 0.
+<strong>Short polling may fail to retrieve messages sometimes, but if no messages can be retrieved after multiple
+    attempts, permissions are the more likely cause.</strong>
+<strong>Billing</strong> 1 million messages free per month under free tier

@@ -1,0 +1,90 @@
+Cloudwatch – enables you to monitor AWS resources and applications you run in real time, Sends notification <strong>How
+    it works:</strong> <p class='fix-link-focus'><img src='../../src/img/content/ss40.png'/></p> Concepts:
+<ul>
+    <li>Namespaces- container of cloudwatch</li>
+    <li>Metrics – represents time ordered set of data points published to cloudwatch
+        <ul>
+            <li><strong>Metrics can’t be deleted, automatically expire after 15 months </strong></li>
+            <li>Time stamps</li>
+            <li>Metrics retention
+                <ul>
+                    <li>period 60 seconds – available for 15 days</li>
+                    <li>period of 300 seconds – 63 days</li>
+                    <li>period of 3600 seconds – 455 days</li>
+                    <li>Amazon CloudWatch stores metrics for terminated Amazon EC2 instances or deleted Elastic Load
+                        Balancers for 2 weeks.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Dimension – key value that identifies metric
+        <ul>
+            <li>Comibination of dimension are considered seperate metric</li>
+        </ul>
+    </li>
+    <li>Statistics
+        <ul>
+            <li>Minimum</li>
+            <li>Maximum</li>
+            <li>Sum</li>
+            <li>Average</li>
+            <li>Sample count – count of data points</li>
+            <li>pNN.NN – value of specified percentile</li>
+        </ul>
+    </li>
+    <li>Units – unit of measure – Bytes, seconds, counts, percent</li>
+</ul> <strong>Common Available metrics:</strong>
+<ul>
+    <li>RDS
+        <ul>
+            <li>CPU</li>
+            <li>Connections</li>
+            <li>Memory</li>
+            <li>Read/Write Throughput/latency</li>
+        </ul>
+    </li>
+    <li>EC2
+        <ul>
+            <li>CPU</li>
+            <li>Disk</li>
+            <li>Network</li>
+            <li>Autoscaling size, instances</li>
+        </ul>
+    </li>
+    <li>S3
+        <ul>
+            <li>Bucket size</li>
+            <li>number of objects</li>
+            <li>requests/put/delete/get</li>
+        </ul>
+    </li>
+    <li>SQS
+        <ul>
+            <li>Number of message</li>
+            <li>message size</li>
+            <li>delayed messages</li>
+        </ul>
+    </li>
+</ul> <strong>Memory Utilization requires a custom Cloudwatch metric</strong> CloudWatch
+<strong>CANNOT</strong> see the following:
+<ul>
+    <li>web server visible metrics such as number failed transaction requests -Too detailed for EC2 – Amazon don’t even
+        want to know whether you have or haven’t even installed a web server.
+    </li>
+    <li>operating system visible metrics such as memory utilization – Too detailed for EC2 – Amazon don’t want to
+        interact with your operating system.
+    </li>
+</ul> Limits:
+<table id='d0e904' border='0' cellspacing='0'>
+    <tbody>
+    <tr>
+        <td>Actions</td>
+        <td>5/alarm. This limit cannot be changed.</td>
+    </tr>
+    <tr>
+        <td>Alarms</td>
+        <td>10/month/customer for free. 5000 per region per account.</td>
+    </tr>
+    </tbody>
+</table>

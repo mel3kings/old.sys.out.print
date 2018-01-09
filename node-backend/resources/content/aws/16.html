@@ -1,0 +1,47 @@
+<header class='entry-header'></header>
+<div class='entry-content'><strong>Elastic Block Store </strong>
+    <ul>
+        <li>provides highly available reliable storage volumes</li>
+        <li>Automatically stores in multiple volumes in same availability zone as part of normal operation</li>
+        <li>1 EC2 : can have multiple EBS, not vice versa</li>
+        <li>Long term persistent</li>
+        <li>Simplified data encryption</li>
+        <li><strong>Types</strong>
+            <ul>
+                <li>General Purpose SSD (gp2) – 3000 IOPS
+                    <ul>
+                        <li>max size 16Tib</li>
+                    </ul>
+                </li>
+                <li>Provisioned IOS SSD – 20,000 IPS</li>
+                <li>Throughput Optimized HDD – low cost magnetic storage</li>
+                <li>Cold HDD – lowest cost, lowest performance</li>
+            </ul>
+        </li>
+        <li>EBS volumes are created in a specific Availability Zone, and can then be attached to any instances in that
+            same Availability Zone, need to copy if it is in another region
+        </li>
+        <li>Performance metrics, such as bandwidth, throughput, latency, and average queue length</li>
+        <li>is a block level storage service for use with Amazon EC2. Amazon EBS can deliver performance for workloads
+            that require the lowest-latency access to data from a single EC2 instance.
+        </li>
+        <li> The data from an EBS volume snapshot is durable because EBS snapshots are stored on the Amazon
+            S3-Standard
+        </li>
+        <li><strong>EBS Volumes cannot be attached to an EC2 instance in another AZ.</strong></li>
+        <li> Stopping an EBS-backed on-demand instance, will stop the charges and preserve the data.</li>
+        <li><strong>When a snapshot is being taken against an EBS volume, the volume is still available, and instance
+            can still communicate with it</strong></li>
+        <li><strong>EC2 that are EBS backed only: T2, C4</strong></li>
+    </ul>
+    <strong>EFS (Elastic Files System)</strong>
+    <ul>
+        <li>scalable file storage for EC2</li>
+        <li>you can attach to multiple EC2</li>
+        <li>up to petabytes</li>
+        <li>is a file storage service for use with Amazon EC2. Amazon EFS provides a file system interface, file system
+            access semantics (such as strong consistency and file locking), and concurrently-accessible storage for up
+            to thousands of Amazon EC2 instances.
+        </li>
+    </ul>
+</div>

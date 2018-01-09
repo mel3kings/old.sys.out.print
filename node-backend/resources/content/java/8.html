@@ -1,0 +1,41 @@
+<div class='entry-content'><p><strong>Lambda functions &#8211; </strong>enables you to treat functionality as method
+    arguments.</p>
+    <ul>
+        <li>The <em>forEach()</em> method for handling a collection of data. In this case, we have a list of Person,
+            instead of doing a for loop we are using lambda syntax:
+        </li>
+    </ul>
+    <blockquote><p><img class='alignnone size-full wp-image-244' src='../../src/img/content/ss5.png' alt='' width='488'
+                        height='268'/></p></blockquote>
+    <p>For more complex methods you can wrap it in brackets, acting as anonymous classes.</p>
+    <p><img class='alignnone size-full wp-image-246' src='../../src/img/content/ss6.png' alt='' width='568'
+            height='173'/></p>
+    <p>Lambda expressions can also be used to easily overwrite <strong>SAM</strong> interfaces, or Single Abstract
+        Method interface. These are interfaces that have one sole method that the developer needs to overwrite. Example
+        are <a href='https://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html'><em>Runnable</em> </a>and <a
+                href='https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html'><em>Comparator</em> </a>interface.
+    </p>
+    <p>Instead of creating classes to overwrite theses interface, these can be easily handle by lambda expressions, the
+        below will sort person by name:</p>
+    <p><img class='alignnone size-full wp-image-247' src='../../src/img/content/ss7.png' alt='' width='730'
+            height='83'/></p>
+    <ul>
+        <li>Similar to inner classes, lambda have access to it&#8217;s class variables</li>
+    </ul>
+    <p><img class='alignnone size-full wp-image-248' src='../../src/img/content/ss9.png' alt='' width='562'
+            height='84'/></p>
+    <p>Static Method references using lambda</p>
+    <p><strong>Note</strong>: in this case my class name is <strong>Program</strong>, and I have a static method called
+        <em><strong>processPeople</strong>(),</em> so looking at the below, for each person in my list, call the method
+        <em><strong>processPeople</strong>(), </em>which can be your method to do validation and then save to the
+        database.</p>
+    <p><img class='alignnone size-full wp-image-249' src='../../src/img/content/ss10.png' alt='' width='507'
+            height='156'/></p>
+    <p>Instance Method References using lambda,</p>
+    <p>in this case, we have a separate <strong><em>PersonDAO</em> </strong>class that has a method called <em><strong>saveToDB</strong>(),
+    </em>we needed to initialize the class and called it <em>handler, </em>from there now you can say <strong><em>forEach</em>
+    </strong>person in my list, use <em>handler</em> to <em><strong>saveToDB</strong>. </em>it is much simpler rather
+        than using for loops or iterators to go through each value in your list.</p>
+    <p><img class='alignnone size-full wp-image-250' src='../../src/img/content/ss11.png' alt='' width='412'
+            height='182'/></p>
+    <p>&nbsp;</p></div>

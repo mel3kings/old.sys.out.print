@@ -8,3 +8,6 @@ docker exec -it auth
 netstat -nap
 
 https://stackoverflow.com/questions/26472586/upgrade-docker-on-centos-7
+
+-traversing number with multiples
+- anagram is sets

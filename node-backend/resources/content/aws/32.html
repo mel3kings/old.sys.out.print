@@ -1,0 +1,136 @@
+<ul>
+    <li><strong>Glacier</strong> – 10 gb free retrieval under free tier</li>
+    <li><strong>Instance stores</strong> – cannot be in stopped state; they are either terminated or running</li>
+    <li><strong>EC2 Instance states lifecycle:</strong>
+        <ul>
+            <li>pending</li>
+            <li>running</li>
+            <li>rebooting</li>
+            <li>stopping</li>
+            <li>stopped</li>
+            <li>shutting-down</li>
+            <li>terminated</li>
+        </ul>
+    </li>
+    <li><strong>Cloudfront request if files is not in cache:</strong> holds the request until origin server serves it in
+        the cache of the edge location
+    </li>
+    <li><strong>Cloudformation parameters:</strong>
+        <ul>
+            <li>Outputs: for specifying the outputs</li>
+            <li>Parameters :(name etc)</li>
+            <li>Mappings</li>
+            <li>Resources: resources of cloudformation, type of resources</li>
+        </ul>
+    </li>
+    <li><strong>Multi AZ RDS</strong> helps in maintenance tasks as it will initiate auto failover in standby</li>
+    <li><strong>AWS VPC Platforms</strong>
+        <ul>
+            <li>EC2 Classic</li>
+            <li>EC2-VPC</li>
+        </ul>
+    </li>
+    <li><strong>RDS Soap webservices calls uses HTTPS only</strong></li>
+    <li><strong>Lambda</strong> supports
+        <ul>
+            <li>Java</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>C#</li>
+        </ul>
+    </li>
+    <li>RDS Read Replicas limit: 5</li>
+    <li><strong>AWS CodePipeline</strong> is a continuous delivery service that enables you to model, visualize, and
+        automate the steps required to release your software.
+    </li>
+    <li><strong>CloudTrail logs to S3 bucket</strong> = 5minutes</li>
+    <li><strong>Oracle BYOL (</strong>bring your own license): Standard Edition 2 (SE2), SE1, SE, Enterprise Edition
+        (EE)
+        <ul>
+            <li>Included license: SE1, SE2</li>
+        </ul>
+    </li>
+    <li><strong><a href='http://status.aws.amazon.com/' rel='nofollow'>http://status.aws.amazon.com</a> = AWS Service
+        Health Dashboard</strong></li>
+    <li><strong>Resources that can’t be tagged:</strong>
+        <ul>
+            <li>Dedicated hosts</li>
+            <li>Elastic IP</li>
+            <li>Instance Store volumes</li>
+            <li>Key-Pair</li>
+            <li>NAT GW</li>
+            <li>Placement groups</li>
+            <li>VPC endpoint/flowlog</li>
+        </ul>
+    </li>
+</ul>Amazon Web Services Soft Limits – they are the limits by default but this can be increased by sending a request to Amazon
+<p class='p1'><strong><span class='s1'>IAM</span></strong></p>
+<ul>
+    <li class='p1'><span class='s1'>100 Groups </span></li>
+    <li class='p1'><span class='s1'>250 Roles</span></li>
+    <li class='p1'>5000 users</li>
+</ul> <strong>RDS</strong>
+<ul>
+    <li>40 DB instance</li>
+    <li>100 TB Total Storage</li>
+    <li>35 days maximum backup</li>
+    <li>DynamoDB
+        <ul>
+            <li>400kb item limit size</li>
+            <li>1 read unit – 4kb</li>
+            <li>1 write unit – 1kb</li>
+            <li>Batch Operations – 16mb</li>
+            <li>3 geographic locations</li>
+            <li>Scan maximum – 1mb
+                <ul>
+                    <li>local secondary index – size of all indexed items = 10gb or less</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Aurora DB
+        <ul>
+            <li>retains 6 copies (3 Az with 2 copies)</li>
+            <li></li>
+        </ul>
+    </li>
+</ul> <strong>S3</strong>
+<ul>
+    <li>100 Buckets per account</li>
+    <li>5 TB size limit per bucket</li>
+</ul> <p class='p1'><strong><span class='s1'>EC2:</span></strong></p>
+<ul>
+    <li class='p1'>50 instances per region</li>
+    <li class='p1'><span class='s1'>500 Security group</span></li>
+    <li class='p1'><span class='s1'>100 Rules per security group</span></li>
+    <li class='p1'><span class='s1'>5000 key pairs</span></li>
+</ul> <strong>VPC</strong>:
+<ul>
+    <li>5 Elastic IP</li>
+    <li>5 VPC per region</li>
+    <li class='p1'><span class='s1'>5 internet gateway</span></li>
+    <li class='p1'><span class='s1'>5 NAT Gateways</span></li>
+    <li class='p1'><span class='s1'>50 customer gateway per region</span></li>
+    <li class='p1'><span class='s1'>50 VPN connection</span></li>
+    <li class='p1'><span class='s1'>50 outbound/inbound per group</span></li>
+    <li class='p1'><span class='s1'>200 subnet</span></li>
+    <li class='p1'><span class='s1'>200 routes per table</span></li>
+</ul> <strong>CloudWatch</strong>
+<ul>
+    <li>Store metrics after deletion: 2 weeks.</li>
+</ul> <strong>Regions</strong>
+<ul>
+    <li>There are west-east and central regions</li>
+</ul> <strong>AWS Support Service Level</strong>
+<ul>
+    <li>Basic</li>
+    <li>Developer – non critical – 12 hrs, general – 24 hrs</li>
+    <li>Business – Business impaired issues : 4 hour response time, business down – 1 hour response</li>
+    <li>Enterprise – Critical problem : 15 minutes response time</li>
+</ul> <strong>Underlying AWS you can Access:</strong>
+<ul>
+    <li>Elastic Map Reduce</li>
+    <li>Elastic Beanstalk</li>
+    <li>OpsWork</li>
+    <li>EC2</li>
+</ul>

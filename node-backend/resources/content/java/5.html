@@ -1,0 +1,15 @@
+<div class='entry-content'><p>When you declare a variable static, there is only one copy of that variable per class.
+    Consider the following example (bad encapsulation code do not copy):</p>
+    <p><img class='alignnone size-full wp-image-373' src='../../src/img/content/example1.png' alt='' width='547'
+            height='446'/></p>
+    <p>when we use static, there is only one copy per class, so no matter how many Humans objects we have, there is only
+        one PLANET, notice we only changed planet for human 1 but the changes reflected to human 2 when we printed out
+        the h2.PLANET.</p>
+    <p>In contrast to Instance variables, they are unique per instance of the class, h1 has a different home compared
+        h2.</p>
+    <p>General Rules:</p>
+    <ul>
+        <li> A static variable is initialized when the JVM loads the class</li>
+        <li>A <code>static method</code> <strong>cannot</strong> access <code>Non-static</code> variable or method</li>
+    </ul>
+</div>

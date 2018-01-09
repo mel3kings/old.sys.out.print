@@ -1,0 +1,119 @@
+<strong>CloudTrail</strong>
+<ul>
+    <li>You can use AWS CloudTrail to get a history of AWS API calls and related events for your account. This includes
+        calls made by using the AWS Management Console, AWS SDKs, command line tools, and higher-level AWS services.
+    </li>
+</ul> <strong>Cloudfront</strong>
+<ul>
+    <li>Amazon CloudFront can handle data transfer rate 1,000 Mbps and 1000 requests per second.</li>
+</ul> <strong>S3</strong>
+<ul>
+    <li>S3 Standard – IA offers the high durability, throughput, and low latency of Amazon S3 Standard, with a low per
+        GB storage price and per GB retrieval fee.
+    </li>
+    <li>Only difference of IA with standard is 99.99 availibility!</li>
+    <li>IA has minimum of 128KB bytes, S3 standard has 0 bytes minimum</li>
+    <li>S3 does support website redirects.</li>
+    <li>Using IPv6 support for Amazon S3, applications can connect to Amazon S3 without needing any IPv6 to IPv4
+        translation software or systems.
+    </li>
+    <li>Using an encryption client library, such as the Amazon S3 Encryption Client, you retain control of the keys and
+        complete the encryption and decryption of objects client-side using an encryption library of your choice. Some
+        customers prefer full end-to-end control of the encryption and decryption of objects; that way, only encrypted
+        objects are transmitted over the Internet to Amazon S3.
+    </li>
+    <li>CRR replicates every object-level upload that you directly make to your source bucket. The metadata and ACLs
+        associated with the object are also part of the replication.
+    </li>
+</ul> <strong>Glacier</strong>
+<ul>
+    <li>Because Amazon S3 maintains the mapping between your user-defined object name and Amazon Glacier’s
+        system-defined identifier, Amazon S3 objects that are stored using the Amazon Glacier option are only accessible
+        through the Amazon S3 APIs or the Amazon S3 Management Console.
+    </li>
+</ul> <strong>ELB</strong>
+<ul>
+    <li>ELB supports ipv6</li>
+    <li><strong>Elastic Load Balancing</strong> offers<strong> two types of load balancers</strong> that both feature
+        high availability, automatic scaling, and robust security.
+    </li>
+    <li>These include the <a href='https://aws.amazon.com/elasticloadbalancing/classicloadbalancer/'>Classic Load
+        Balancer</a> that routes traffic based on either application or network level information, and the <a
+            href='https://aws.amazon.com/elasticloadbalancing/applicationloadbalancer/'>Application Load Balancer</a>
+        that routes traffic based on advanced application level information that includes the content of the request.
+    </li>
+    <li>The Classic Load Balancer is ideal for simple load balancing of traffic across multiple EC2 instances, while the
+        Application Load Balancer is ideal for applications needing advanced routing capabilities, microservices, and
+        container-based architectures.
+    </li>
+    <li>Two components:
+        <ul>
+            <li>the load balancers</li>
+            <li>controller service – verify the load balancers</li>
+        </ul>
+    </li>
+    <li>To ensure traffic is evenly distributed: <strong>“Enable Cross-Zone Load Balancing”</strong></li>
+    <li>Connection draining is the concept of ensuring traffic are not sent anymore to instances that are deregistering
+        or unhealthy.
+    </li>
+</ul> <strong>EC2</strong>
+<ul>
+    <li>Cluster group can only be in one AZ</li>
+    <li>Amazon’s SLA guarantees a Monthly Uptime Percentage of at least 99.95% for Amazon EC2 and Amazon EBS within a
+        Region.
+    </li>
+    <li>EBS volumes can be attached to an ec2 instance in the same AZ</li>
+    <li>The AMIs will need to be copied to the new Region prior to deployment.</li>
+</ul> <strong>RDS</strong>
+<ul>
+    <li>By default, the scan operation processes data sequentially. DynamoDB returns data to the application in 1 MB
+        increments, and an application performs additional scan operations to retrieve the next 1 MB of data.
+    </li>
+    <li>The easiest way would be to take a snapshot of your DB Instance outside VPC and restore it to VPC by specifying
+        the DB Subnet Group you want to use.
+    </li>
+    <li>To automatically failover from one geographic location to another you should use Multi-AZ for RDS.</li>
+    <li>You should implement database partitioning and spread your data across multiple DB Instances.</li>
+    <li>Databases generally do not require public access from the Internet, so a private subnet is the better choice
+        from a security perspective. /28 is the smallest possible subnet in an AWS VPC.
+    </li>
+    <li><em><strong>RDS replication : MULTI-AZ – Synchronous , Read-Replica – Asynch</strong></em></li>
+    <li>At this time, you cannot have a multi-AZ copy of your read replica.</li>
+    <li>Read Replicas are supported by Amazon RDS for MySQL and PostgreSQL.</li>
+    <li>Infrequent IO:Amazon RDS Magnetic Storage would be the most suitable.</li>
+    <li>At the present time, encrypting an existing DB Instance is not supported. To use Amazon RDS encryption for an
+        existing database, create a new DB Instance with encryption enabled and migrate your data into it.
+    </li>
+</ul> <strong>SMS (Server Migration Service) </strong>
+<ul>
+    <li>Improvement of VM Import/Export</li>
+    <li>Simplify migration process, orchetrate multi-server migrations, test, support, minimize downtime</li>
+    <li>50 concurrent VM migrations per account</li>
+    <li>90 days service usage</li>
+</ul> <strong>Others</strong>
+<ul>
+    <li>Amazon DevPay and FPS – for paying</li>
+    <li>It’s always best practice to grant users access via IAM roles and groups even if they only need access once</li>
+    <li>SWF has a gurantee that processes are only executed once against SQS</li>
+    <li>Availability Zones offer you the ability to operate production applications and databases which are more highly
+        available, fault tolerant and scalable than would be possible from a single data center.
+    </li>
+    <li>You can use <strong>AWS Config</strong> to continuously record configurations changes to Amazon RDS DB
+        Instances, DB Subnet Groups, DB Snapshots, DB Security Groups, and Event Subscriptions and receive notification
+        of changes through Amazon Simple Notification Service (SNS).
+    </li>
+    <li>SSD volumes must be between 1 GiB – 16 TiB.</li>
+    <li>Economies of scale: The AWS Well-Architected framework has been developed to help cloud architects build the
+        most secure, high-performing, resilient, and efficient infrastructure possible for their applications. This
+        framework provides a consistent approach to application and solution architecture that will scale with your
+        needs over time.
+    </li>
+    <li>AWS Config – enables you to keep track of all the config you have for your rersources</li>
+    <li>In <b>cloud</b> computing, <b>elasticity</b> is defined as “the degree to which a system is able to adapt to
+        workload changes by provisioning and de-provisioning resources in an autonomic manner, such that at each point
+        in time the available resources match the current demand as closely as possible<strong>“</strong></li>
+    <li><strong>Paying account and linked account for Consolidated billing</strong></li>
+</ul> <strong>Trusted Advisor </strong>
+<ul>
+    <li><strong>Covers Performance, cost optimization, security and fault tolerance</strong></li>
+</ul>

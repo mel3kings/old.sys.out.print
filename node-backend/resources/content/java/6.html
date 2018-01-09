@@ -1,0 +1,18 @@
+<div class='entry-content'><p>There are instances where you would want to check memory allocation for your application
+    in cases where your application sometimes randomly crashes. This is usually due to memory leaks in the
+    application.</p>
+    <p>Once you install JDK in your machine it comes with visualvm. It is just a matter connecting to it.</p>
+    <p>Steps:</p>
+    <p>1.) Make sure application server is running</p>
+    <p>2.) go to visualvm: <br/> <img class='alignnone size-full wp-image-357' src='../../src/img/content/example2.png'
+                                      alt='' width='744' height='510'/></p>
+    <p>3.) You will see a pop-up window, under remote, key-in: localhost:8080 (or whatever port you are in)</p>
+    <p>4.) Successfully logged in you will see, on the upper right you can perform a heap dump (current state of memory
+        allocation and you will see which class are taking the most memory). On this dashboard you can monitor how the
+        application is handling memory, threads, and Garbage Collection.</p>
+    <p><img class='img-responsive' src='../../src/img/content/ss3.png' alt='' width='1200' height='800'/></p>
+    <p>4.) Once you click heap dump you will be redirected to this page, at which point you can find the biggest objects
+        in your application:</p>
+    <p><img class='alignnone size-full wp-image-361' src='../../src/img/content/ss4.png' alt='' width='1200'
+            height='795'/></p>
+    <p>5.) you can also see in the classes tab which specific classes are eating up the memory</p>

@@ -1,0 +1,12 @@
+Prime Number<br/><br/>Given a number n, check if this number is a prime:<br/><br/>E.g:<br/>
+<ul>
+    <li>15 returns false</li>
+    <li>13 returns true</li>
+</ul> <br/><strong><strong>Solution<br/></strong></strong>
+<pre class='prettyprint'><span>public static boolean </span><span>isPrime</span><span>(</span><span>int </span><span>n</span><span>) {<br/></span><span> </span><span>if </span><span>((</span><span>n </span><span>&gt; </span><span>2 </span><span>&amp;&amp; </span><span>n </span><span>% </span><span>2 </span><span>== </span><span>0</span><span>) || </span><span>n </span><span>== </span><span>1</span><span>) {<br/></span><span> </span><span>return false</span><span>;<br/></span><span> }<br/></span><span> </span><span>for </span><span>(</span><span>int </span><span>i </span><span>= </span><span>3</span><span>; </span><span>i </span><span>&lt;= (</span><span>int</span><span>) </span><span>Math</span><span>.</span><span>sqrt</span><span>(</span><span>n</span><span>); </span><span>i </span><span>+= </span><span>2</span><span>) {<br/></span><span> </span><span>if </span><span>(</span><span>n </span><span>% </span><span>i </span><span>== </span><span>0</span><span>) {<br/></span><span> </span><span>return false</span><span>;<br/></span><span> }<br/></span><span> }<br/></span><span> </span><span>return true</span><span>;<br/></span><span>}</span></pre>
+<br/>Get all the sum of all the digits in the given number.<br/><br/>e.g<br/>
+<ul>
+    <li>15 returns 6 (1+5)</li>
+    <li>34 returns 7 (3+4)</li>
+</ul> <br/><strong>Solution:</strong><br/>
+<pre class='prettyprint'><span>public static int </span><span>summationOfValues</span><span>(</span><span>int </span><span>input</span><span>) {<br/></span><span> </span><span>int </span><span>sum </span><span>= </span><span>0</span><span>;<br/></span><span> </span><span>int </span><span>copyInput </span><span>= </span><span>input</span><span>;<br/></span><span> </span><span>while </span><span>(</span><span>copyInput </span><span>&gt; </span><span>0</span><span>) {<br/></span><span> </span><span>sum </span><span>= </span><span>sum </span><span>+ </span><span>copyInput </span><span>% </span><span>10</span><span>;<br/></span><span> </span><span>copyInput </span><span>= </span><span>copyInput </span><span>/ </span><span>10</span><span>;<br/></span><span> }<br/></span><span> </span><span>return </span><span>sum</span><span>;<br/></span><span>}</span></pre>

@@ -1,0 +1,88 @@
+<strong>Cassandra</strong> are non-relational/NoSQL is a highly scalable, high-performance distributed database designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. Cassandra used by giants like NetFlix, eBay, Twitter and Reddit.
+<strong>Snitches </strong> Determines how Cassandra can tell the topology of the infrastructure. In layman's term how nodes would talk to each other.
+<strong>Types of Snitches</strong>
+<ol>
+    <li>Dynamic</li>
+    <li>Simple</li>
+    <li>Rack Inferring</li>
+    <li>Property File</li>
+    <li>Gossiping Property File</li>
+    <li>Ec2</li>
+    <li>Ec2 MultiRegion</li>
+</ol> By Default, for nodes to work each nodes should have same snitch type, for example: <strong>PropetyFileSnitch
+    Example</strong> Node1: 130.77.100.147=&lt;DataCenter&gt;:&lt;Rack&gt; Node2: 130.77.100.148=&lt;DataCenter&gt;:&lt;Rack&gt; Node3: 130.77.100.149=&lt;DataCenter&gt;:&lt;Rack&gt;
+<em>Con for propertyFileSnitch</em>: very tedious as you need to update manually for each node <h2><strong>Key
+    Concepts</strong></h2> <strong>Internal
+    communication</strong> : Gossip - is how to node communicate with each other - runs every 1 second <strong>External
+    Communication</strong> : CQL / Thrift <strong>Data distribution</strong>
+<ul>
+    <li>data rows are distributed</li>
+    <li>partitioner is used to determine distribution</li>
+    <li>Murmur3 is default partitioner, it determine a hash to which node to distribute toEach node has a hash
+        determined to handle which set of hash to handle
+    </li>
+    <li>You can use murmur3 calculator to determine hash</li>
+</ul> <strong>Replication Factor</strong> - replication of data to different nodes for high availability <strong>Virtual
+    Nodes</strong> - each node can have small token ranges (256 by default) <strong>main config
+    file:</strong> cassandra.yaml <strong>partitioner</strong>: partioner type <strong>COMMANDS:</strong>
+<pre>CREATE KEYSPACE sampleWITH replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1};</pre>
+<pre>INSERT INTO sample.activity (id,description, datetime, code)VALUES ('1', 'test', '2017-10-10 01:01:01', 'CODE'); INSERT INTO sample.activity (id) VALUES ('2'); select * from sample.activity; CREATE TABLE sample.activity ( id text PRIMARY KEY, description text, datetime timestamp, code text); <strong>COPY FROM CSV command:</strong> copy activity (id, code, description) from '/var/lib/cassandra/import.csv' WITH header = false AND delimiter = '|';</pre>
+<strong>Docker side
+    notes:</strong> docker exec -it &lt;container_name&gt; cqlsh - to run cqlsh from docker docker cp to copy files into container OR Just add in Dockerfile
+<strong>Data
+    Storage:</strong> DATA is stored via partition key and can be viewed via cassandra-client: Partition key 1: events events events Partition key 2: events events events Data is stored on disk by both disk and in memory using memcache, then flushed to disk as SSTable
+<em><strong>NOTE</strong> WHERE CLAUSE GENERALLY NEED TO INCLUDE PARTITION KEY
+</em>can't query using other columns that are not partition key, you need secondary <em>indexes</em> <em><strong>CONTRARY
+    TO SQL</strong> - SECONDARY INDEXES DOES NOT MAKE THE QUERY FASTER, INSTEAD IT CREATES A HIDDEN TABLE UNDERNEATH
+    ANOTHER OPTION IS TO CREATE ANOTHER TABLE FOR SPECIFICALLY THAT QUERY ONLY.</em> <strong>Secondary INDEXES</strong>
+<ul>
+    <li>PRO: you dont need to manually maintain</li>
+    <li>CON: Slower, as it accesses all nodes</li>
+</ul> For example you have a activities table, with code column where code is not a partition if you want to query activities per code, you can create a table with
+<em><span style='text-decoration: underline;'>activities_per_code</span>
+</em>table, where you use code in this table as primary
+<ul>
+    <li>PRO: you dont need to access all nodes when querying another table</li>
+    <li>CON: harder to maintain</li>
+</ul>
+<pre><strong>HOW TO CREATE INDEX:</strong> CREATE INDEX &lt;index_name&gt; ON &lt;table&gt; (column_name);</pre>
+<ol>
+    <li><strong>HARDWARE:</strong> minimum 8gb per node prod 32gb of ram per node</li>
+    <li>minimum core 4 gb common 8gb core</li>
+    <li>Disk: ( do NOT SHARE) SSD are prefered 500gb to 1tb commit log should be seperate</li>
+</ol> When updates are called, it just keeps adding to it then it determines which is the latest versions <strong>Command:</strong>
+<strong>SOURCE</strong>: executes a series of commands in a file
+<strong>DELETE</strong> command - delete a value from a row, or delete a whole row
+<strong>TRUNCATE/DELETE</strong> are as is <strong>DESCRIBE
+    KEYSPACES</strong> When you delete a data, a tombstone is created, to allow nodes to replicate this gc_grace_seconds, 10 days by default
+<strong>Compaction</strong> is when is when delete is actually done, Compaction is when SStables are merged, can be triggered manually via nodetool command
+<strong>nodetool sstable2json -</strong> convert tables to json
+<strong>TTL</strong> for cleanup of data, you can specify ttl on insert data to automatically delete said datayou can update TTL value as well
+<pre>execute nodetool commands in docker, check node status: docker exec -it mel_cass sh -c 'nodetool status'</pre>
+<strong> NETWORKING </strong>ports:
+<ul>
+    <li>7000 for gossiping</li>
+    <li>9042: expose</li>
+    <li>9160: thrift</li>
+    <li>7199: JMX</li>
+</ul> <strong>Cassandra.yml</strong> <strong>listen_address</strong> - ip for other nodes to find <strong>
+    rpc_address</strong> - ip for your app to find cassandra
+<strong>seeds</strong> - for declaring all the seeds in your cassandra <strong>bootstrap</strong>
+<ul>
+    <li>adding more cluster</li>
+    <li>auto-bootstrap should be true in cassandra.yml</li>
+    <li>num_tokens - number of tokens to be handled by node</li>
+    <li>cluster name should be the same</li>
+    <li>you can just specify one or two seeds on one cluster and it will autodetect other nodes</li>
+</ul> When a node auto bootstraps, say node 1 has data ABC, and node 2 joins and should handle BCnode1 has still that data, you need a cleanup command to clean node 1
+<strong>cleanup command</strong>:nodetool -h &lt;ip&gt; cleanup
+<strong>Cassandra-stress</strong> - used for stress-testing cassandra <strong>MONITORING</strong>:
+<strong>JConsole</strong> - Java UI <strong>Nodetool</strong> - cassandra console <strong>Datastax Ops
+    Center</strong> - you need to install opscenter agent <strong>nodetool decommission</strong>
+<ul>
+    <li>choose to decommission a node, tokens are assigned to other nodes, copies to other data</li>
+    <li>node has still data, better have a clean node</li>
+    <li>so clean the whole data first: rm -r commitlog data saved_caches</li>
+    <li>nodetool removenode - so that tokens are reassinged to other nodes</li>
+    <li>nodetool removenode &lt;id&gt;</li>
+</ul> repair node comes into play if you have more then a replication factor of 1, you need to repair in the following cases: node has been down replication factor of keyspace increased token ranges has been changed

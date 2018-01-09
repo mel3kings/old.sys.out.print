@@ -1,0 +1,21 @@
+Dealing with high concurrency, highly scalable applications. Again, just want to emphasize this site does not aim to give a complete comprehension of given topic, but rather an overview, or review of certain topics. It is still recommended to do a reading on the actual documentation.
+<strong>Recommended Reading:</strong> http://doc.akka.io/docs/akka/current/java/guide/tutorial_1.html <strong>What is
+    Actor
+    Architecture? </strong>In a very oversimplified explanation, it is framework to handle highly concurrent applications. Actor aims to eliminate the call stack problem:
+<ul>
+    <li>ProcessA calls a method on ProcessB</li>
+    <li>ProcessB has a very long method that takes more than 5 seconds to complete</li>
+    <li>ProcessA is just waiting for ProcessB to end</li>
+    <li>ProcessB ends and returns a result</li>
+    <li>ProcessA resumes its operations</li>
+</ul> <img src='../../src/img/content/ss49.png'/>
+<br/> (Photo reference: http://doc.akka.io/docs/akka/current/java/guide/actors-motivation.html#the-illusion-of-a-call-stack) With Actor Architecture, Actors are the processes and they just pass around messages, in the scenario above, ProcessA will just the task to ProcessB and continue on. With that said, lets dive in. Here are some basic jargons/requirements for Actor Architecture:
+<ol>
+    <li><strong>AbstractActor </strong>-classes require to extend AbstractActor to act as an Actor</li>
+    <li><strong>Receive</strong> -method to map method signature ( method from AbstractActor)</li>
+    <li><strong>Props</strong> - configuration class to specify options of creation of actors</li>
+    <li><strong>ActorSystem</strong> - is similar to Spring context, manages lifecycles of Actors</li>
+    <li><strong>tell </strong>- fire and forget mechanism of Actors</li>
+</ol> Basic Hello world using Actors: <img src='../../src/img/content/ss50.png'/>
+<br/> Breaking down the codes: ActorSystem, creates an hierarchy of your actors that are under whatever name you give it. Props creates an instance of DemoActor, with possible configuration (none in this case) DemoActor extends Abstract Actor, with the required method. RecieveBuilder, creates a Receive for you, which really is just defining the parameters signature of your Actor. In this case if you can accept a parameter String.class, which in turn will just print out 'Demoing + parameter' Your output in the code above will result in the below, notice that 'Am I Blocking' is written first even though it is written in the codes last, it is because actors are not blocking, we fired a request to demoactor and the execution continued.
+<blockquote>Am I Blocking? Demoing This is the message sent</blockquote>

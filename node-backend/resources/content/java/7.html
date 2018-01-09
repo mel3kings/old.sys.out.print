@@ -1,0 +1,83 @@
+<div class='entry-content'><p><strong>Identifiers</strong></p>
+    <ul>
+        <li>identifiers begin with letter, underscore or currency</li>
+        <li>After the first letters, identifiers can contain digits</li>
+        <li>can be any length</li>
+        <li>must be camelCase methods
+            <ul>
+                <li>Example of all valid identifier</li>
+            </ul>
+        </li>
+    </ul>
+    <pre>String b, _hello, $holder, number5, reallyreallyreallyreallylongName;</pre>
+    <p><strong>Declaration Rules</strong></p>
+    <ul>
+        <li>source code file can only have one public class</li>
+        <li>file name must match class name</li>
+        <li>one package statement, with multiple imports
+            <ul>
+                <li>package must be first line</li>
+                <li>import must come after</li>
+            </ul>
+        </li>
+        <li>file can have more than one non public class</li>
+    </ul>
+    <p><strong>Class Access Modifiers</strong></p>
+    <ul>
+        <li>four access levels
+            <ul>
+                <li>public</li>
+                <li>protected</li>
+                <li>private</li>
+                <li>default</li>
+            </ul>
+        </li>
+        <li>Classes: public and default</li>
+        <li>Class visibility revolves around whether another class can:
+            <ul>
+                <li>Create ans instance of another class</li>
+                <li>extend another class</li>
+                <li>access methods and variables of another class</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Non Access Class Modifiers</strong></p>
+    <ul>
+        <li>non access modifiers: final, abstract, or strictfp</li>
+        <li>class cannot be both final and abstract &#8211; contradicting</li>
+        <li>final class cannot be subclassed</li>
+        <li>abstract cannot be instantiated</li>
+        <li>single abstract method means the whole class must be abstract</li>
+        <li>abstract class can have both concrete and abstract class</li>
+        <li>first concrete class to extend abstract must implement all of its abstract methods</li>
+    </ul>
+    <p><strong>Interface</strong></p>
+    <ul>
+        <li>Interface are contracts for what a class can do</li>
+        <li>interfaces are implemented by class</li>
+        <li>interface can only have abstract methods</li>
+        <li>interface methods are default public and default</li>
+        <li>interface can have constants but they are implicity <em>public static and final</em></li>
+        <li>A legal nonabstract implementing class has the following properties:
+            <ul>
+                <li> It provides concrete implementations for the interface&#8217;s methods.</li>
+                <li> It must follow all legal override rules for the methods it implements.</li>
+                <li> It must not declare any new checked exceptions for an implementation method.</li>
+                <li> It must not declare any checked exceptions that are broader than the exceptions declared in the
+                    interface method.
+                </li>
+                <li>It may declare runtime exceptions on any interface method implementation regardless of the interface
+                    declaration.
+                </li>
+                <li>It must maintain the exact signature (allowing for covariant returns) and return type of the methods
+                    it implements (but does not have to declare the exceptions of the interface).
+                </li>
+                <li>Interfaces cannot extend a class, or implement a class or interface</li>
+                <li>Interfaces can extend one or more other interfaces</li>
+                <li><em>A class can extend only one class (no multiple inheritance), but it can implement many
+                    interfaces.</em></li>
+            </ul>
+        </li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></div>

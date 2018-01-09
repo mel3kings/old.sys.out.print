@@ -1,0 +1,20 @@
+allows delivery or sending of message to subscribing endpoints. <strong>Two Types of clients:</strong>
+<ul>
+    <li>Publisher – publishes the message to a topic</li>
+    <li>Subscriber/Consumer – consumes the message
+        <ul>
+            <li>Lambda</li>
+            <li>SQS</li>
+            <li>HTTP/S</li>
+            <li>Email</li>
+            <li>SMS</li>
+        </ul>
+    </li>
+</ul> <strong>Publisher -&gt; Amazon SNS Topic -&gt; Subscriber</strong> <strong>Common
+    scenario</strong>: Fanout Publisher receives for example an order for some product, it is sent to Topic, multiple SQS queues consumes the message and is allocated to seperate instances for parallel processing
+<p class='fix-link-focus'><img src='../../src/img/content/ss38.png'/></p> <strong>Other uses:</strong>
+<ul>
+    <li>Application Alerts</li>
+    <li>Push Email/Text Messaging</li>
+    <li>Mobile Push Notification</li>
+</ul> &nbsp;

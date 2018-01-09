@@ -1,0 +1,19 @@
+Amazon Storage Gateway provides on-premise storage infrastructure for clients. <p class='fix-link-focus'><img
+        src='../../src/img/content/ss26.png'/></p> <strong>Types:</strong>
+<ul>
+    <li>Gateway Stored Volume – files are stored on site, asynchronously uploads backup to AWS</li>
+    <li>Gateway Cached Volume – frequent accessed files are stored on local, while others are stored in AWS, there is no
+        access to those files if you are connecting via internet and you lose internet connection (best to use Direct
+        Connect in this scenario)
+    </li>
+    <li>Gateway Virtual Tape – for replacing physical tapes, enables you to upload data from virtual tapes to AWS.</li>
+</ul> <strong>Amazon S3
+    Import/Export</strong> – enables high speed upload/download of data transfer using Amazon high speed internal network.
+<strong>Capabilities:</strong>
+<ul>
+    <li>Import/Export to Disk</li>
+    <li>Import to S3</li>
+    <li>Import to Glacier</li>
+    <li>Export to S3</li>
+</ul> <strong>Amazon Import/Export
+    Snowball</strong> – Import/Export to S3 via Amazon physical device. It is much faster than specified above, but will require you to purchase/rent Amazon Snowball device. It is usually recommended by Amazon to use this when importing or exporting large amount of data. &nbsp;

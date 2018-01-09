@@ -1,0 +1,6 @@
+On all our previous example we have been using <em><span
+        style='text-decoration: underline;'><strong>Tell</strong></span></em> method to send messages to actors, in Akka this is known as fire-and-forget. Which means you send a message and there is no blocking, Actors, handle a separate thread to handle the actual work. But what happens when you need a return value? you pass a message and some time down the line you want to know what is the response. Here is where
+<em><strong>Ask</strong></em> comes in to play: <img src='../../src/img/content/ss48.png'/> Ask makes use of Java's
+<strong>completable</strong> future, to see that when do the response does come back, we can then do some things to it. On the
+<strong>Actor</strong> side, we make use of
+<strong>getSender.tell</strong> to return the actual message to CompletableFuture object.

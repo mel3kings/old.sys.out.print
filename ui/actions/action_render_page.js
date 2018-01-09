@@ -48,14 +48,8 @@ export function renderContentPage(type, id) {
             console.log(response);
             return response.data;
         }).catch(err => {
-        });
 
-        filteredRequest = axios.get('/data/java_content_data.json').then(response => {
-            return _.filter(response.data, {'id': id});
-        }).then(res => {
-            return _.get(res, 0);
         });
-
 
         return {
             type: RENDER_CONTENT_PAGE,

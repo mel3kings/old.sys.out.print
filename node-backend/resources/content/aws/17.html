@@ -1,0 +1,185 @@
+Services:
+<ul>
+    <li>RDS Databases covered:
+        <ul>
+            <li>Maria</li>
+            <li>Oracle</li>
+            <code></code>
+            <li>SQL Server</li>
+            <li>Postgre SQL</li>
+            <li>Aurora</li>
+            <li>MySQL</li>
+        </ul>
+    </li>
+    <li>Dynamo DB – NO SQL databases
+        <ul>
+            <li>MemCache</li>
+            <li>Redis</li>
+        </ul>
+    </li>
+    <li>Redshift – Data Warehousing</li>
+    <li>Database Migration Service (DMS)</li>
+</ul> Types of Processing:
+<ul>
+    <li>Online Transaction Processing (OLTP)
+        <ul>
+            <li>Standard processing</li>
+            <li>Transactional data ie get one order detail</li>
+        </ul>
+    </li>
+    <li>Online Analytics process (OLAP)
+        <ul>
+            <li>more complex computation</li>
+            <li>query is done on a copy as to not disturb production</li>
+        </ul>
+    </li>
+</ul> <strong>Database Backups:</strong>
+<ul>
+    <li>Automated Backup
+        <ul>
+            <li>Retention period – default is 7 days, up to 35 days</li>
+            <li>saved on S3</li>
+            <li>on by default</li>
+        </ul>
+    </li>
+    <li>DB-Snapshots – manually turned on</li>
+    <li>Encryption at rest supported using KMS</li>
+    <li>Encrypting existing DB currently not supported</li>
+    <li>
+        <div>In RDS, changes to the backup window take effect Immediately</div>
+    </li>
+</ul> <strong>Multi Availability Zone
+    Replication</strong> – replicate DB to another AZ for DR not for performance, this enables auto failover from geographic location to another.
+<strong>Exam NOTES:</strong>
+<ul>
+    <li>Dynamo DB can scale on the fly, RDS cannot.</li>
+    <li>RDS can scale on read not on write (Read Replica)</li>
+    <li>You CANNOT RDP or SSH to RDS instance</li>
+    <li>At the present time, encrypting an existing DB Instance is not supported. To use Amazon RDS encryption for an
+        existing database, create a new DB Instance with encryption enabled and migrate your data into it. (manually
+        import data)
+    </li>
+</ul> Read Replica on RDS:
+<ul>
+    <li>Replicate RDS on different RDS</li>
+    <li>Async replication is done</li>
+    <li>Replicas are only read copies, and each EC2 instance can connect to a replica</li>
+    <li>Automated backup is required for read replica</li>
+    <li>replicas can have replicas (this will have performance implications)</li>
+    <li>NO multi AZ</li>
+    <li>replicas can be promoted to their own DBs</li>
+</ul> <h2><strong>Dynamo DB features </strong> – No SQL services from AWS</h2>
+<ul>
+    <li>consistent latency on scale</li>
+    <li>stored on SSD (store sdata in partition)</li>
+    <li>3 geographic locations</li>
+    <li>Eventual consistency (1 second), strong consistent read (</li>
+    <li>cheaper on read than write</li>
+    <li>push button scaling</li>
+    <li> DynamoDB is automatically redundant across multiple availability zones.</li>
+    <li>terms:
+        <ul>
+            <li><strong>Tables</strong> – similar to RDS</li>
+            <li><strong>Items</strong> – similar to columns, items is a group of attributes that represent one object in
+                a table, ie a person table, each item would represent one person
+                <ul>
+                    <li>400 KB limit on item size</li>
+                </ul>
+            </li>
+            <li><strong>Attributes</strong> – each item are composed attribute ie. FirstName, LastName, Age etc</li>
+        </ul>
+    </li>
+    <li><strong>Primary Key</strong>
+        <ul>
+            <li><strong>Partition Key –</strong> simple PK hash function to identify items</li>
+            <li><strong>Partition key and sort key</strong> – composite pk which parition key as above and sort key
+                which is sorted by sort key value
+            </li>
+        </ul>
+    </li>
+    <li>API : Control plane (CRUD tables), Data plane (CRUD Data), DynamoDb Streams</li>
+    <li>Data Types – Scalar (number, String, binary, boolean, null) Document (JSON document [list/map]), Set Type
+        (String set, number set, binary set)
+    </li>
+    <li><strong>Read Consistency</strong>
+        <ul>
+            <li>Eventually Consistent Reads</li>
+            <li>Strongly Consistent Reads</li>
+        </ul>
+    </li>
+    <li><strong>Provisioned throughput: 1 read unit = 4kb, 1 write unit 1kb</strong></li>
+    <li><strong>Batch Operations</strong>: you can get up to 16mb of data, which can be as many as 100 items</li>
+    <li><strong>Conditional Writes</strong> – prevents concurrent overwrite of same row by using <strong>ReturnConsumedCapacity</strong>
+    </li>
+    <li><strong>Scan – </strong>as opposed to query, scan returns all of the data attributes for every item in a table
+        or index, maximum of 1mb
+        <ul>
+            <li>Scan uses sequential scanning, you can use parellel scan by using segments for faster retrieval of large
+                amounts of data
+            </li>
+        </ul>
+    </li>
+</ul> <strong>Redshift</strong><strong> – </strong>Data warehousing mechanism from AWS
+<ul>
+    <li>Typical database block sizes range from 2 KB to <b>32 KB</b>. Amazon Redshift uses a block size of <b>1 MB</b>
+    </li>
+    <li><strong>Single node</strong> can be up to <strong>160gb</strong></li>
+    <li><strong>multinodes</strong> can contain up to <strong>128 nodes</strong>
+        <ul>
+            <li><strong>leader node</strong>– receives query</li>
+            <li><strong>compute node</strong> – performs query
+                <ul>
+                    <li>Node slices – nodes are partitioned into slices, each slice a portion of memory and disk space
+                        is allocated to do the workload
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul> <strong>Performance</strong>:
+<ul>
+    <li>Columnar Data Storage – column based storage (RDS is row based)</li>
+    <li>Can handle large data set with fewer I/O</li>
+    <li>Advanced Data Compression – 10 times faster than RDS
+        <ul>
+            <li>columns are all the same type hence it is faster than RDS</li>
+            <li>no indexes/views</li>
+        </ul>
+    </li>
+    <li>Massive Parallel Processing (MPP)</li>
+    <li>Query optimizer</li>
+    <li>Compiled Code – leader node compiles the code already eliminating overhead of interpreting code and distributes
+        across all nodes
+    </li>
+</ul> <strong>ElastiCache</strong><strong> </strong> – Caching mechanism of AWS<strong>Features</strong>:
+<ul class='itemizedlist' type='disc'>
+    <li class='listitem'>Automatic detection and recovery from cache node failures.</li>
+    <li class='listitem'>Automatic failover (Multi-AZ) of a failed primary cluster to a read replica in Redis
+        replication groups.
+    </li>
+    <li class='listitem'>Flexible Availability Zone placement of nodes and clusters.</li>
+    <li class='listitem'>Integration with other AWS services such as Amazon EC2, CloudWatch, CloudTrail, and Amazon SNS
+        to provide a secure, high-performance, managed in-memory caching solution.
+    </li>
+</ul> <strong>Engines</strong>
+<ul>
+    <li>MemCached
+        <ul>
+            <li>memory object caching</li>
+            <li>not AZ</li>
+        </ul>
+    </li>
+    <li>Redis
+        <ul>
+            <li>key/value pair storing</li>
+            <li>sets/list</li>
+            <li>master – slave replicatin</li>
+            <li>AZ</li>
+        </ul>
+    </li>
+</ul> <strong>AuroraDB </strong>– Amazon created SQL, this is always recommended when using AWS cloud computing database
+<ul>
+    <li>scaling capability</li>
+    <li><strong>3 Az with 2 copies – total of 6 copies stored by default (highly durable)</strong></li>
+    <li>replication is done immediately and also Free</li>
+</ul>

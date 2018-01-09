@@ -1,0 +1,90 @@
+<div class='entry-content'><p><strong><span style='text-decoration: underline;'>Terms:</span></strong></p>
+    <ul>
+        <li><strong>EC2 Instances</strong> &#8211; Virtual Computing Environments</li>
+        <li><strong>AMI</strong> (Amazon Machine Images) &#8211; preconfigured EC2 templates for your instances. ie. can
+            be SQL server, Bastion, NAT instances etc
+        </li>
+        <li><strong>Instance Types</strong> &#8211; Processing power of your EC2 configurations. ie. CPU, memory,
+            storage, network capacity are separated as Instance Types
+        </li>
+        <li><strong>Key pairs </strong>&#8211; Secure login information for your instances</li>
+        <li><strong>EBS (Amazon Elastic Block Store) &#8211; </strong>persistent storage volumes for your EC2</li>
+        <li><strong>Region/AZ (Availability Zone) &#8211; </strong>Various physical locations of your resources</li>
+        <li><strong>Elastic IP Address</strong> &#8211; static IP address for dynamic cloud computing</li>
+    </ul>
+    <p><span style='text-decoration: underline;'><strong>Instances Types:</strong></span></p>
+    <p><strong>to remember all the types easily here is an acronym: DRMCGFTPX</strong> (<strong>think: Doctor Mac Gift
+        Pix, credit to acloudguru for acronym</strong>)</p>
+    <p><strong>D</strong>(ense disk)<strong> R</strong>(AM memory-intensive)<strong> M</strong>(icro)<strong> C</strong>(ompute
+        for processsing)<strong> G</strong>(raphics) <strong>I</strong>(nput/Output) <strong>F</strong>(pga or field
+        programmable arrays )<strong> T</strong>(2 micro)<strong> P</strong>(ics)<strong> X</strong>(treme)</p>
+    <p><span style='text-decoration: underline;'><strong>Pricing Model:</strong></span></p>
+    <ul>
+        <li><strong>On &#8211; Demand</strong> :pay only what you request and what you use, no up-front fees</li>
+        <li><strong>Spot : </strong>flexible rates, you bid for what price you are willing to pay, somewhat sort of
+            stock market for ec2 instances
+        </li>
+        <li><strong>Reserved : </strong>Pay upfront for a period you want to pay for your instance, and in return you
+            get a significant discount depending on which you are signing up for. (longer period and more instance =
+            more discount)
+            <ul>
+                <li><strong>Payment options:</strong> All Upfront, Partial Upfront, and No Upfront.</li>
+                <li><strong>Can I move a reserved instance from one region to another? No</strong></li>
+            </ul>
+        </li>
+    </ul>
+    <p>Access to EC2 can be the following:</p>
+    <ul>
+        <li>EC2 Console</li>
+        <li>AWS Web API Call</li>
+        <li>AWS SDK</li>
+        <li>AWS Command Line interface</li>
+    </ul>
+    <p><span style='text-decoration: underline;'><strong>Amazon Machine Image (AMI)</strong></span></p>
+    <ul>
+        <li>Preconfigured Virtual servers</li>
+        <li>auto-assign public IP</li>
+        <li>Termination protection off by default (you can delete the image by clicking on delete action if termination
+            protection is turned on)
+        </li>
+        <li>Root device by default is not encrypted (there are ways to encrypt it)</li>
+        <li>EBS backed &#8211; default is delete the volume with instance</li>
+    </ul>
+    <p><span style='text-decoration: underline;'><strong>Placements Groups</strong> </span><em>&#8211; </em>AWS feature
+        that enables EC2 instances (usually of similar instance types) to communicate with each other if in the same
+        Availability Zone with high bandwith and low latency. Restrictions: Unique per AWS account, can&#8217;t move
+        existing EC2 to placement groups, one AZ per group.</p>
+    <p><img class='alignnone size-full wp-image-279' src='../../src/img/content/ss23.png' alt='ss1.PNG' width='517'
+            height='323'/></p>
+    <p><strong>Volume Storage: </strong>Will be discussed in another entry</p>
+    <p><span style='text-decoration: underline;'><strong>Additional Features to be noted</strong></span></p>
+    <p><strong>CloudWatch</strong></p>
+    <ul>
+        <li>Enables performance monitoring</li>
+        <li>set on EC3 creation</li>
+        <li>Standard config gives you statuse very 5 mins vs Detailed config gives you per minute but with additional
+            charges
+        </li>
+        <li>Has Dashboards, Events, Alarms, Logs</li>
+    </ul>
+    <p><strong>AutoScaling</strong></p>
+    <ul>
+        <li>Enables you to scale your EC2, to increase/decrease in number depending on load and availability</li>
+        <li>It checks health status via Elastic Load Balancer</li>
+    </ul>
+    <p><strong>Elastic Load Balancer</strong></p>
+    <ul>
+        <li>Health check for your instances</li>
+        <li>Gives you ability for Cross Zone load balancing</li>
+        <li>No Ip given, only DNS</li>
+    </ul>
+    <p><strong>Security Group</strong></p>
+    <ul>
+        <li>Gives you ability to control inbound and outbound traffic , ie enable port 8080, 1433 (sql ), 443 (https),
+            22 (SSH)
+        </li>
+        <li><strong>Stateful by default</strong>, if you enable inbound port 8080 it is immediately given outbound as
+            well
+        </li>
+    </ul>
+</div>

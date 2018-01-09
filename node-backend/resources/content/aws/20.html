@@ -1,0 +1,40 @@
+Amazon Storage Gateway provides on-premise storage infrastructure for clients. <p class='fix-link-focus'><img
+        src='../../src/img/content/ss27.png'/></p> <strong>Types:</strong>
+<ul>
+    <li>Gateway Stored Volume – files are stored on site, asynchronously uploads backup to AWS</li>
+    <li>Gateway Cached Volume – frequent accessed files are stored on local, while others are stored in AWS, there is no
+        access to those files if you are connecting via internet and you lose internet connection (best to use Direct
+        Connect in this scenario)
+    </li>
+    <li>Gateway Virtual Tape – for replacing physical tapes, enables you to upload data from virtual tapes to AWS.</li>
+</ul> <strong>Amazon S3
+    Import/Export</strong> – enables high speed upload/download of data transfer using Amazon high speed internal network.
+<strong>Capabilities:</strong>
+<ul>
+    <li>Import/Export to Disk</li>
+    <li>Import to S3</li>
+    <li>Import to Glacier</li>
+    <li>Export to S3</li>
+</ul> <strong>Amazon Import/Export
+    Snowball</strong> – Import/Export to S3 via Amazon physical device. It is much faster than specified above, but will require you to purchase/rent Amazon Snowball device. It is usually recommended by Amazon to use this when importing or exporting large amount of data. &nbsp;
+<strong>AWS
+    CloudFront</strong> – is a cloud global content delivery network (CDN) designed to accelerate delivery of your content to users by caching data to an AWS location (called edge location) closer to your user. i.e if your S3 bucket is located in Europe, it would take a lot longer for U.S customers to access these files. CloudFront enables you to create a cache location of your S3 files:
+<p class='fix-link-focus'><img src='../../src/img/content/ss28.png' width='800' height='500'/></p> <strong>It is now
+    possible to expedite uploads to S3 by writing directly to an Edge
+    Location.</strong> Updating Cache Data on Cloudfront – While the first 1000 invalidation paths per month are free, additional invalidation paths are $0.005 per request.
+<strong>CDN Sources:</strong>
+<ul>
+    <li>S3 Bucket</li>
+    <li>Elastic Load Balancer</li>
+    <li>Route 53</li>
+    <li>EC2</li>
+    <li>Non-AWS resources</li>
+</ul> <strong>Capabilities/Features</strong>
+<ul>
+    <li><a href='http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html'>RMTP
+        (Real-Time Messaging Protocol) Distribution </a></li>
+    <li>Web Distribution</li>
+    <li>Configure TTL (Time To Live) of your objects in cloudfront before they are refreshed again</li>
+    <li><a href='http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html'>Restrict Viewer
+        Access </a></li>
+</ul> <strong>NOTE: CloudFront PCI DSS Compliance – allows processing, storage and transmission of credit card.</strong>

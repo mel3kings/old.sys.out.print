@@ -1,0 +1,8 @@
+<div class='entry-content'><p>How to Map Enum to hibernate class:</p>
+    <pre class='prettyprint'>@Entity @table('d_user_group') \n public class UserGroup{ \n @Enumerated(EnumType.STRING) \n @Column(name='user_group_status') \n private UserGroupStatusEnum userGroupStatus; \n public enum UserGroupStatusEnum{ \n Active, Draft; \n } \n }</pre>
+    <p>In the case above we have a table<em> d_user_group</em>, that will have a column <em>user_group_status</em>, that
+        only accepts <em>Enum</em> as a parameter. If you specify <em>EnumType.String</em> it will store the actual
+        words from your Enum:</p>
+    <p class='fix-link-focus'><img src='../../src/img/content/ss22.png'/></p>
+    <p>Selecting <em>EnumType.Ordinal</em> in contrast will store Integer based on ordering, so Active will be 0, Draft
+        will be 1, and so on.</p></div>

@@ -1,0 +1,39 @@
+This is not suppose to be a comprehensive guide on how to use React JS, but more of a cheat sheet if you need a refresher on how react works.
+<strong>React Key concepts</strong>
+<ul>
+    <li><strong>components structured</strong> - Files are separated in what they call components, and each part of the
+        page would have their own js files, for example a page with youtube videos can be broken down like so:
+    </li>
+    <li>each js would require an <strong>export </strong>to determine which will be used by the main js. for example,
+        search bar would need to export an input type so that the main app js when he imports search_bar he can make use
+        of a input type that is the search bar
+    </li>
+</ul> <img src='../../src/img/content/ss53.png'/><br/> <strong>Class Based component:</strong>
+<ul>
+    <li>we use class based components, if we want a component to maintain some sort of state</li>
+    <li>Note that &lt;<strong>class&gt;</strong> <strong>extends Component</strong></li>
+    <li>Constructor is the class constructor</li>
+    <li>render is what is actually displayed</li>
+    <li>note the <strong>export default</strong> at the bottom</li>
+</ul><br/>  <img src='../../src/img/content/ss55.png'/><br/>  <strong>Functional Components</strong>
+<ul>
+    <li>are used for simple components that are used for just displaying, and no need to keep track of state.</li>
+    <li>for example the below, just takes a parameter and displays them as a list &lt;ul&gt;</li>
+</ul> <br/> <img class='../../src/img/content/ss54.png'/><br/>  <strong>Component-level
+    State</strong> Class state are a similar concept to object oriented programming, whereas a class has instance variables (state) and they are initialized in the constructor and maintained by the class.
+<em>Note that they are only component level state, and the changes are only reflected locally on that
+    js</em> For example, the below initializes a couple of variables like <em>results, arrayNum, selectedNum, query</em>
+<br/> <img src='../../src/img/content/ss56.png'/> <br/> <em>True value of React JS is when state is altered, it
+    automatically re-renders the page or it <strong>reacts</strong> to it.</em> <strong>Importing
+    syntax</strong> when importing from a library provided by react, you can just implicitly say: <em>import React from
+    'react'; </em> where 'react' is the library provided and React is the module you want to import. However if importing from user created js files like importing a search bar from an external js, you have to explicitly state which folder that js is located, see below:
+<strong><br/> <img src='../../src/img/content/ss58.png'/><br/> </strong> <strong>Function
+    Callback</strong> In react you can pass methods to be used by other js. This is a more complex way of passing method, and should be answered really by redux. by for completeness sake, if you are using only react. for example the below, note the
+<strong>valueSearch</strong> method, we declare it in the Main App component, because we want to set the state to change if say the user performs a search.
+<br/> <img src='../../src/img/content/ss56.png'/>
+<br/> However, search bar is in a different component other than main app component, hence we passed the <strong>valueSearch</strong> method via:
+<em>&lt;SearchBar <strong>onSearchBarQuery</strong>={query =&gt; this.<strong>valueSearch</strong>(query)}/&gt;</em>
+<em><strong>onSearchBarQuery </strong>- is now the new method name in search bar js, which actually just performs the
+    valueSearch.</em> So if we check search bar again, you have an input type that has a call changeState <strong>onChange,</strong> which actually performs
+<strong>onSearchBarQuery</strong> which in turn calls <strong>valueSearch</strong> <br/> <img
+        src='../../src/img/content/ss59.png'/>

@@ -1,0 +1,51 @@
+<div class='entry-content'><p>As in previous topic, we can use functional interfaces to use in lambda expression see
+    topic on: Java 8 interfaces</p>
+    <p>However Java 8 goes on more to provide us mechanism to easier create lambda expressions. See <a
+            href='https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html'>java.util.function
+        library</a>. No need to create an functional interface and just overwrite existing ones in this library.</p>
+    <p>This library can be divided in to four sections:</p>
+    <h2><strong>Consumers</strong></h2>
+    <p>Consumers are interfaces that focuses on accepting parameters. for example: <a
+            href='https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html'>BiConsumer</a> &#8211;
+        as the api reads, this accepts two arguments and produces no result:</p>
+    <p><img class='alignnone size-full wp-image-269' src='../../src/img/content/ss15.png' alt='' width='602'
+            height='177'/></p>
+    <p>The same logic applies to all the *<strong>Consumer</strong> in the library like <a
+            title='interface in java.util.function'
+            href='https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleConsumer.html'>DoubleConsumer</a>,
+        <a href='https://docs.oracle.com/javase/8/docs/api/java/util/function/LongConsumer.html'>LongConsumer</a>, and
+        so forth.</p>
+    <h2><strong>Functions</strong></h2>
+    <p>Functions are interfaces that are focused on doing accepting a parameter and returning a result. for example: <a
+            href='https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html'>BiFunction </a>&#8211;
+        as the api reads, accepts two arguments and returns one result we can use it as below:</p>
+    <p><img class='alignnone size-full wp-image-270' src='../../src/img/content/ss-10.png' alt='' width='521'
+            height='154'/></p>
+    <p>The same logic applies to all the *<strong>Function</strong> in the library like <a
+            title='interface in java.util.function'
+            href='https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleToLongFunction.html'>DoubleToLongFunction</a>,
+        <a title='interface in java.util.function'
+           href='https://docs.oracle.com/javase/8/docs/api/java/util/function/LongToDoubleFunction.html'>LongToDoubleFunction</a>,
+        and so forth.</p>
+    <h2><strong>Supplier</strong></h2>
+    <p>In contrast, <a href='https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html'>Supplier </a>methods
+        just returns an object without an parameters: <br/> <img class='alignnone size-full wp-image-271'
+                                                                 src='../../src/img/content/ss16.png' alt='' width='508'
+                                                                 height='94'/></p>
+    <p>This applies to all *<strong>Supplier</strong> methods, like <a
+            href='https://docs.oracle.com/javase/8/docs/api/java/util/function/IntSupplier.html'>IntSupplier</a>, <a
+            href='https://docs.oracle.com/javase/8/docs/api/java/util/function/BooleanSupplier.html'>BooleanSupplier</a>,
+        and so forth.</p>
+    <h2><strong>Operator</strong></h2>
+    <p>Finally we have <a href='https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html'>UnaryOperator </a>methods
+        in the library, it is much similar to consumer, but in a way it just accepts an object and returns that same
+        type.</p>
+    <p>The best way to use UnaryOperators are for when using objects you have created, see example below.</p>
+    <p>In this case I have created a People class, and the output will also be the same class:</p> <br/>
+    <p><img class='alignnone size-full wp-image-272' src='../../src/img/content/ss17.png' alt='' width='491'
+            height='482'/></p>
+    <p>Same applies to other *<strong>Operators</strong> method in the library however the others have a predefined data
+        type. for example <a
+                href='https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html'>DoubleUnaryOperator</a>,
+        <a href='https://docs.oracle.com/javase/8/docs/api/java/util/function/IntUnaryOperator.html'>IntUnaryOperator</a>,
+        and so forth.</p></div>

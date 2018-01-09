@@ -1,0 +1,139 @@
+<strong>Amazon Kinesis
+    –</strong> real time processing of streaming data at massive scale ie website clickstream, application logs, social media feeds
+<strong>Uses:</strong>
+<ul>
+    <li>Used to consume big data – can analyze from big amount of data, for example twitter can scan all the tweets for
+        negative/positive comments
+    </li>
+    <li>Processing large amount of data</li>
+</ul> <strong>Exam tips</strong>
+<ul>
+    <li>Business Intelligence – think Redshift</li>
+    <li>Consuming big data – think Kineses</li>
+    <li>Big Data Processing – think Elastic Map Reduce</li>
+</ul> <strong>EC2 – EBS Backed vs Instance Store</strong>
+<ul>
+    <li>EBS back volumes are persistent, Instance store are not persistent (Ephemeral)</li>
+    <li>EBS can be dettached/reattached</li>
+    <li>Instance store cannot be detached</li>
+    <li>EBS volume can be stopped, data will persist</li>
+    <li>Instance store cannot be stopped, if an EC2 has EBS root volume is stopped with Instance stores as additional
+        volumes, all data with instance stores will be lost
+    </li>
+</ul> <strong>Exam Tips</strong>
+<ul>
+    <li>EBS Backed – Store Data Long Term</li>
+    <li>Instance Store – should be used for long term</li>
+</ul> <strong>OpsWorks</strong>
+<ul>
+    <li>Orchestration Service that uses Chef</li>
+    <li>Chef – converts infra to code, to maintain consistent state, consists of <strong>recipes, cook books,
+        chef</strong></li>
+</ul> <strong>Elastic Transcode</strong>
+<ul>
+    <li>Convert media to different formats, ie one video can be played to mp4, to iphone or ipad, laptop etc</li>
+    <li>pay based on minutes per transcode, and resolution</li>
+</ul> <strong>SWF – Actors</strong>
+<ul>
+    <li>Workflow starter</li>
+    <li>Deciders</li>
+    <li>Activity Worker</li>
+    <li>Domain – group of related workflows</li>
+</ul> <strong>EC2 – get public IP address</strong>
+<ul>
+    <li>curl http://169.254.169,254/latest/meta-data/</li>
+    <li>META DATA for public ip, USER DATA is for user data</li>
+</ul> <strong>Consolidated Billing</strong>
+<ul>
+    <li>Paying Account – linked to different accounts (dev/production/backoffice)</li>
+    <li>paying account will get all the monthly bill, does not access the resources of different accounts</li>
+    <li>Soft limit is 20</li>
+    <li>Benefits:
+        <ul>
+            <li>One bill per AWS account,</li>
+            <li>easy to track all the costs,</li>
+            <li>Volume pricing discount for all accounts (AWS gives you discount the more you use their services, for
+                example for S3 since there are multiple users, you use more gb, and hence take advantage of the discount
+                provided, instead of paying individual)
+            </li>
+        </ul>
+    </li>
+</ul> <strong>Tagging and Resource Group</strong>
+<ul>
+    <li>Tags- are key value pair for metadata, ie. EC2 can have tags</li>
+    <li>Resource Group make it easy for you to group resources using your tags, ie group your resources based on region
+        or by dev or whatever metadata you specify
+    </li>
+    <li>you can export as csv for resource group so you can generate reports</li>
+    <li><strong>Tag Editor</strong> – enables you to edit all your resource and add them tags</li>
+</ul> &nbsp; <strong>Amazon Lex is a service for building conversational interfaces using voice and text. Polly is a
+    service that turns text into lifelike speech.</strong><strong>Amazon Kinesis
+    –</strong> real time processing of streaming data at massive scale ie website clickstream, application logs, social media feeds
+<strong>Uses:</strong>
+<ul>
+    <li>Used to consume big data – can analyze from big amount of data, for example twitter can scan all the tweets for
+        negative/positive comments
+    </li>
+    <li>Processing large amount of data</li>
+</ul> <strong>Exam tips</strong>
+<ul>
+    <li>Business Intelligence – think Redshift</li>
+    <li>Consuming big data – think Kineses</li>
+    <li>Big Data Processing – think Elastic Map Reduce</li>
+</ul> <strong>EC2 – EBS Backed vs Instance Store</strong>
+<ul>
+    <li>EBS back volumes are persistent, Instance store are not persistent (Ephemeral)</li>
+    <li>EBS can be dettached/reattached</li>
+    <li>Instance store cannot be detached</li>
+    <li>EBS volume can be stopped, data will persist</li>
+    <li>Instance store cannot be stopped, if an EC2 has EBS root volume is stopped with Instance stores as additional
+        volumes, all data with instance stores will be lost
+    </li>
+</ul> <strong>Exam Tips</strong>
+<ul>
+    <li>EBS Backed – Store Data Long Term</li>
+    <li>Instance Store – should be used for long term</li>
+</ul> <strong>OpsWorks</strong>
+<ul>
+    <li>Orchestration Service that uses Chef</li>
+    <li>Chef – converts infra to code, to maintain consistent state, consists of <strong>recipes, cook books,
+        chef</strong></li>
+</ul> <strong>Elastic Transcode</strong>
+<ul>
+    <li>Convert media to different formats, ie one video can be played to mp4, to iphone or ipad, laptop etc</li>
+    <li>pay based on minutes per transcode, and resolution</li>
+</ul> <strong>SWF – Actors</strong>
+<ul>
+    <li>Workflow starter</li>
+    <li>Deciders</li>
+    <li>Activity Worker</li>
+    <li>Domain – group of related workflows</li>
+</ul> <strong>EC2 – get public IP address</strong>
+<ul>
+    <li>curl http://169.254.169,254/latest/meta-data/</li>
+    <li>META DATA for public ip, USER DATA is for user data</li>
+</ul> <strong>Consolidated Billing</strong>
+<ul>
+    <li>Paying Account – linked to different accounts (dev/production/backoffice)</li>
+    <li>paying account will get all the monthly bill, does not access the resources of different accounts</li>
+    <li>Soft limit is 20</li>
+    <li>Benefits:
+        <ul>
+            <li>One bill per AWS account,</li>
+            <li>easy to track all the costs,</li>
+            <li>Volume pricing discount for all accounts (AWS gives you discount the more you use their services, for
+                example for S3 since there are multiple users, you use more gb, and hence take advantage of the discount
+                provided, instead of paying individual)
+            </li>
+        </ul>
+    </li>
+</ul> <strong>Tagging and Resource Group</strong>
+<ul>
+    <li>Tags- are key value pair for metadata, ie. EC2 can have tags</li>
+    <li>Resource Group make it easy for you to group resources using your tags, ie group your resources based on region
+        or by dev or whatever metadata you specify
+    </li>
+    <li>you can export as csv for resource group so you can generate reports</li>
+    <li><strong>Tag Editor</strong> – enables you to edit all your resource and add them tags</li>
+</ul> &nbsp; <strong>Amazon Lex is a service for building conversational interfaces using voice and text. Polly is a
+    service that turns text into lifelike speech.</strong>

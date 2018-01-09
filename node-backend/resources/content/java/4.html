@@ -1,0 +1,40 @@
+<div class='entry-content'><p>Basic Question in Java is usually what is the difference between Set/List/Map.</p>
+    <p><strong>Set &#8211;</strong> is used usually used when you want to keep a collection of items that have no
+        duplicates. Plain and simple. So think set when you want a unique collection of items.</p>
+    <ul>
+        <li>Variations
+            <ul>
+                <li>TreeSet (interface: SortedSet) &#8211; sorts the value in the set by natural ordering or
+                    comparator
+                </li>
+                <li>HashSet &#8211; no ordering, puts objects in different buckets based on their hash, faster than
+                    treeset
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>List &#8211; </strong>is used with regards to just keeping a sequence of objects, it does not care about
+        duplicates the primary focus of sequence and iteration</p>
+    <ul>
+        <li>Variations
+            <ul>
+                <li>ArrayList &#8211; basic list of items, random access, thread-safe</li>
+                <li>Vector &#8211; non thread safe version of Arraylist</li>
+                <li>Linked List &#8211; items are doubly linked to each other</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Map </strong><strong>&#8211; </strong>on the other hand has a key-value collection, you assign a key to a
+        particular object, say you have 2 dog objects, you can assign different keys for each dog objects, like: <em>Brownie</em>
+        and <em>Blackie</em>. So if you fetch from the collection <em>Blackie</em>, it will return that specific object
+        associated to that key.</p>
+    <ul>
+        <li>Variations
+            <ul>
+                <li>TreeMap (interface SortedMap) &#8211; ordered version of map</li>
+                <li>HashMap &#8211; no ordering of map, different buckets per object based on hash</li>
+                <li>LinkedHashMap &#8211; doubly linked objects version of map</li>
+            </ul>
+        </li>
+    </ul>
+    <p>&nbsp;</p></div>

@@ -1,0 +1,85 @@
+<ul>
+    <li>Object based storage on cloud (meaning you cannot install any programs, you use AWS EBS for installing programs
+        in storage)
+    </li>
+    <li><strong>up to 5 terabytes PER one object</strong>
+        <ul>
+            <li>no limit on all objects</li>
+        </ul>
+    </li>
+    <li>files are stored in “buckets”</li>
+    <li>uses universal namespace for buckets, i.e bucket name should be unique throughout whole AWS</li>
+    <li>Uses Rest webservice for API calls</li>
+    <li>100 buckets soft limit (you can request more to AWS)</li>
+    <li>Static web hosting bucket naming convention for URL: <strong><a href='https://.s3-website-.amazonaws.com%C2%A0/'
+                                                                        rel='nofollow'>https://.s3-website-.amazonaws.com </a></strong>
+    </li>
+    <li>Event notification subscriber: SNS, SES, Lambda</li>
+</ul> Access
+<ul>
+    <li>Read after write for <strong>PUTS</strong> (you can immediately access whatever file you upload in s3 buckets)
+    </li>
+    <li>Eventual Consistency for <strong>UPDATE</strong> (overwrite <strong>PUTS</strong>) and <strong>DELETE</strong>
+        (it may take a while before the change propagates throughout different regions)
+    </li>
+</ul> Storage Details/Capabilities
+<ul>
+    <li>Key Value mechanism for objects</li>
+    <li>Versioning control (AWS keeps tracks of previous version of object, given that you have enabled versioning for
+        your bucket)
+    </li>
+    <li>Cross Region Replication – buckets can be replicated accross different regions</li>
+    <li>Metadata is also stored (data about your data)</li>
+    <li>Access control can be configured for s3</li>
+    <li><em>Lifecycle Management</em>: frequently accessed files can be stored in standard bucket, moved to infrequent
+        access if not accessed by any user for a few months , and finally moved to glacier if not accessed by any user
+        for a number of years. Lifecycle management allows you to tweak when to move files from certain bucket to
+        another. below are the types of buckets in detail.
+    </li>
+</ul> Types
+<ul>
+    <li><strong>S3 Standard</strong>
+        <ul>
+            <li>99.99% availability</li>
+            <li>99.999999999% Durability (eleven 9s)</li>
+            <li>Tiered storage available</li>
+            <li>Lifecycle Management (You can move to archive if files have not been accessed a long time)</li>
+            <li>Versioning</li>
+            <li>Encryption (Encryption at transit: SSL, Encryption at rest: AES-256, different ways of encryption
+                detailed below)
+            </li>
+            <li>Secure Data Access</li>
+        </ul>
+    </li>
+    <li><strong>S3 Infrequent Access</strong>
+        <ul>
+            <li>Lower costs than standard</li>
+            <li>virtually the same except you have only 99.9% availability</li>
+        </ul>
+    </li>
+    <li><strong>Glacier</strong>
+        <ul>
+            <li><strong>40 Terabytes per individual archives</strong>
+                <ul>
+                    <li>No limit to all</li>
+                </ul>
+            </li>
+            <li>Archiving option of AWS</li>
+            <li>Extremely low cost</li>
+            <li>same durability</li>
+            <li>takes 3-6 hours before you can access any files</li>
+        </ul>
+    </li>
+</ul> From Amazon comparison of bucket types: <p class='fix-link-focus'><img src='../../src/img/content/ss25.png'/>
+</p> Additional Option for bucket types:<strong>Reduced Redundancy
+    Storage</strong>: further cheaper version of your buckets,reduces the durabiliy to 99.99% instead of 99.9999999999%, this is for files that can be lost, i.e thumbnails of your pictures that can be regenerated anyways
+<strong>Important Note: Buckets MUST BE LOWER CAPS</strong><strong>Static website
+    hosting: </strong>buckets can be used to host static website (no javascript, no server side scripting, no processing just plain html files). The benefits of using buckets as static website hosting is for temporary web pages, like for example creating a temporary web page for a movie poster that will be displayed for a few days only. Buckets will then handle your auto-scaling, load-balancing should there be a lot of traffic to visiting your site and you wouldn’t need to worry about your site going down.
+<strong>Security:</strong>Transit : SSL/TLS At Rest:
+<ul>
+    <li>Server Side Encryption (SSE)</li>
+    <li>SSE-S3 – S3 Key – AWS S3 has the master key</li>
+    <li><strong>SSE-C – Customer provided Key – Customer is you, ie, you want to have your own keys, not your clients’
+        keys.</strong></li>
+    <li>Client Side Encryption</li>
+</ul>

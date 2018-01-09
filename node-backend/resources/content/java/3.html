@@ -1,0 +1,81 @@
+<div class='entry-content'><p><strong>Purpose</strong>: Comparable/Comparator are used to allow comparison of two or
+    more objects. For example you have Person object and you want to add a natural ordering of each person by age. In
+    other words to keep the order of each person from youngest to oldest or vice versa in a ordered collection like <a
+            href='https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html'>TreeSet</a> (There are other ordered
+    collections for maps, list, sets as well)</p>
+    <p><em>If you read the documentation on TreeSet it says it is using natural ordering. For primitive data types like
+        String, integer, there is already a default natural ordering, (for numbers/integers it is ascending for String
+        it using <a href='https://en.wikipedia.org/wiki/Lexicographical_order'>lexicographically ordering </a>
+        (Dictionary ordering)), but you need to manually specify natural ordering for specific objects that you create,
+        ie Person object:</em></p>
+    <pre>public class Person{ private Integer age; //setters and getters }</pre>
+    <h3><strong>Comparable</strong></h3>
+    <ul>
+        <li>Enables you to <strong>implement</strong> an <strong>interface</strong> from any of your class, forcing you
+            to override the method <strong>compareTo()</strong> to enable you to compare this object
+            to<strong> </strong>another instance of the object
+        </li>
+        <li>Comparable can be invoked with generic type invocation, for the case below we used
+            <strong>Comparable</strong><em><strong>&lt;Person&gt;,</strong> </em>so that <em>compareTo()</em> method
+            accepts Person as an parameter, otherwise it will accept object and you will have to typecast it to Person
+            object.
+        </li>
+        <li>compareTo() method returns an int, so that:
+            <ul>
+                <li>if you return a negative integer = this Person object is less than the other Person</li>
+                <li>if you return 0 = this person is equal to the other person</li>
+                <li>if you return positive integer = this person is greater than the other person</li>
+                <li>so if you are ordering by age</li>
+            </ul>
+        </li>
+    </ul>
+    <pre class='prettyprint'>public int compareTo(Person otherPerson) { \n if(this.age &gt; otherPerson.getAge()){ return 1; } \n else if(this.age == otherPerson.getAge()){ return 0; } \n else{ return -1; } }</pre>
+    <p><strong>Example</strong>: (for simplicities sake, i&#8217;ve used Integer as data type and compared it using
+        Integer&#8217;s compareTo method)</p>
+    <pre class='prettyprint'>public class Person implements Comparable&lt;Person&gt;{ \n private Integer age; \n public int compareTo(Person otherPerson){ \n return this.age.compareTo(otherPerson.getAge()); } }</pre>
+    <ul>
+        <li>Once you have implemented Comparable, any object you add to any collection type that maintains natural
+            ordering (<em>TreeSet, SortedSet, TreeMap</em>) will have automatically sorted your objects.
+        </li>
+    </ul>
+    <h3><strong>Comparator</strong></h3>
+    <ul>
+        <li>Comparator uses a seperate <strong>class</strong> that enables you to compare two objects at a time.</li>
+        <li>It has a method called <strong>compare(object o1, object </strong><strong>o2)</strong>, that enables you to
+            compare two objects and returns int as well similar to comparable.
+        </li>
+        <li>Similar to the example above, we are sorting by age but notice that we had to create a new class called
+            <strong>PersonComparator </strong>and then <strong>extend </strong>the class Comparator with the generic
+            type invocation of Person.
+        </li>
+        <li>Comparator returns integer whereas, same as comparable:
+            <ul>
+                <li>if you return a negative integer = this Person object is less than the other Person</li>
+                <li>if you return 0 = this person is equal to the other person</li>
+                <li>if you return positive integer = this person is greater than the other person</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre class='prettyprint'>public class PersonComparator implements Comparator&lt;Person&gt;{ \n public int compare(Person p1, Person p2){ return p1.getAge().compareTo(p2.getAge()); } }</pre>
+    <p><strong>To use:</strong></p>
+    <p>you would need to use a collection that can accept a comparator as a parameter, for examples sake I am using <a
+            href='https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html'>LinkedList </a></p>
+    <pre class='prettyprint'>LinkedList&lt;Person&gt; personList = new LinkedList&lt;Person&gt;(); \n Person person1 = new Person(); \n person1.setAge(15); \n Person person2 = new Person(); \n person2.setAge(20); \n personList.add(person1); \n personList.add(person2); \n <strong>Collections.sort(personList, new PersonComparator());</strong></pre>
+    <p>There other collections that accepts comparator as a constructor parameter, for example TreeSet:</p>
+    <pre><strong>TreeSet&lt;Person&gt; personSet = </strong> <strong> new TreeSet&lt;Person&gt;(new PersonComparator());</strong></pre>
+    <p><strong>Conclusion</strong></p>
+    <p>Although both comparable and comparator provide same functionality it is more of a design <strong>whether you
+        want to be implementing a interface or creating a new class.</strong></p>
+    <p><strong> This can also be a matter of access to the class</strong>, if you are using a third party API, and you
+        don&#8217;t have access to the Person object, then you are forced to use comparator instead.</p>
+    <p>Also, a <strong>major hindrance</strong> for <strong>comparable</strong> is it is only limited to one
+        implementation only, if you wanted to add more implementation for example, sort Person object by telephone
+        number you can no longer use comparable, instead use <strong>comparator</strong> to create different
+        implementations of different sortings.</p>
+    <p><strong>Offical documentation: </strong></p>
+    <ul>
+        <li>https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html</li>
+        <li>https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html</li>
+    </ul>
+</div>

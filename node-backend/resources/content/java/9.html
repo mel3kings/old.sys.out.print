@@ -1,0 +1,50 @@
+<div class='entry-content'><p>There are several changes for interfaces, including the addition of
+    <strong>static</strong> and <strong>default</strong> methods. Interfaces in java 8 is more and more similar to
+    abstract method. Consider the example below:</p>
+    <p><img class='alignnone size-full wp-image-256' src='../../src/img/content/ss12.png' alt='' width='470'
+            height='284'/></p>
+    <p>Key notes:</p>
+    <p><strong>static</strong></p>
+    <ul>
+        <li>static methods inside interfaces are only accessible inside the interface.</li>
+        <li>No way to access from outside the interface, see <span style='text-decoration: underline;'><em>initializeTestData()</em></span><em> </em>method
+            above.
+        </li>
+    </ul>
+    <p><strong>default</strong></p>
+    <ul>
+        <li>default are concrete methods for interfaces, that can be or not overwritten</li>
+        <li>this enables you to give default behaviour of interfaces without having to implement them, for example in
+            this case, <em>testable</em> has a default behaviour of printing out some text.
+        </li>
+        <li><em>you can&#8217;t have multiple interfaces with same method that is implemented by one class see the
+            below:</em></li>
+        <li>both <em>Testable, Untestable have the same method test(), resulting in a compiler error</em></li>
+    </ul>
+    <p><em><img class='alignnone size-full wp-image-259' src='../../src/img/content/ss13.png' alt='' width='461'
+                height='387'/></em></p>
+    <p><strong>the code above will require you to provide a test method in your class.</strong></p>
+    <h2>Lambda and Functional Interfaces</h2>
+    <p>There is a new of interaction for lambda and interfaces. First of, what are <strong><span
+            style='text-decoration: underline;'><em>functional interfaces</em></span></strong>? These are interfaces
+        that only have one sole method. A great example of this is the interface <em>Runnable, </em>when you want to run
+        threads. Another interface well known is <em>Comparable, </em>for when you want to compare objects.</p>
+    <p>Now with lambda you can instantiate functional interfaces instantly, consider the below:</p>
+    <p><img class='alignnone size-full wp-image-260' src='../../src/img/content/ss14.png' alt='' width='547'
+            height='259'/></p>
+    <p><strong>Key Notes:</strong></p>
+    <ul>
+        <li>Notice the syntax for <em><span style='text-decoration: underline;'>R</span><span
+                style='text-decoration: underline;'>unnable</span></em>, whatever we pass inside the curly brackets,
+            will automatically be the implementation of the single method in the interface.
+        </li>
+        <li>You can create your own functional interface, and have parameters as well, see syntax for <em><span
+                style='text-decoration: underline;'>Bounceable</span></em></li>
+        <li>Functional interfaces cannot have more than one method, otherwise lambda expressions will not know which
+            method to use
+        </li>
+        <li>There is a new package in java that is solely containing functional interfaces for lambda expressions, will
+            look into that in the next post.
+        </li>
+    </ul>
+    <p>&nbsp;</p></div>

@@ -1,0 +1,13 @@
+By default Akka does not make your variables immutables, so if you are passing around message/objects with mutable variables there is still a case where you can experience a deadlock. That is why it is highly recommended to use immutable messages when integrating with Akka Actors. What are immutable messages? Basically these are variables that cannot be changed any more. In Java jargon these are final variables. A simple example here is this
+<strong>SampleMessage</strong> class file, in this case we only have one variable which is <strong><em>final </em>message</strong>, and can only be set on constructor of the class and can no longer be changed.
+<br/> <img src='../../src/img/content/ss46.png'/><br/> Let's see a more detailed example: <br/> <img
+        src='../../src/img/content/ss47.png'/> Code breakdown: Line 12 - create an <em><strong>actorSystem</strong>
+</em>with 'messages' as the name Line 13 - Creates an actual <em><strong>Actor</strong> </em>through <span
+        style='text-decoration: underline;'><em><strong>ActorRef</strong></em></span>, through
+<em><strong>Props</strong></em>, we pass two parameters, see Line 19, in this case, it could be a database connection or whatever references you want to pass to the Actor. Line 15 - we
+<span style='text-decoration: underline;'><em><strong>tell </strong></em></span>the actor to handle SampleMessage class Line 18 - we create the Actor by extend
+<em><span style='text-decoration: underline;'><strong>AbstractActor</strong> </span></em>and handling <em><strong>createReceive</strong>
+</em>Method, via <span
+        style='text-decoration: underline;'><em><strong>ReceiveBuilder</strong></em></span>, in laymans terms we are declaring that if the Actor param is a SampleMessage.class then call handleMessage method. Line 30 - we have the
+<strong>immutable</strong> SampleMessage class
+<strong>Note: </strong>You shouldn't create your whole messages via constructor if you have a lot of parameters, say you have PersonObject with alot of variables like name, age, address, etc. Use a external library like Immutables (https://immutables.github.io/) to generate an object with final references.

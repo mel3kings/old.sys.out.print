@@ -1,0 +1,39 @@
+What is Docker?
+<blockquote>'Docker is the world’s leading software container platform. Developers use Docker to eliminate “works on my
+    machine” problems when collaborating on code with co-workers. Operators use Docker to run and manage apps
+    side-by-side in isolated containers to get better compute density. Enterprises use Docker to build agile software
+    delivery pipelines to ship new features faster, more securely and with confidence for both Linux and Windows Server
+    apps.'
+</blockquote> https://www.docker.com/what-docker Basically, it is a container for your applications, you setup your docker with all the prerequisites for your web-applications and then you deploy the whole container. Say for example, you web-application needs to connect to mysql, or a messaging queue(e.g kafka), you setup docker once, and that same container you publish in different environments. It will be clearer once you we dive in to the details:
+<strong>Setting up docker.</strong><br/> 1.) <strong>You need to install docker on your
+    machine</strong>, download the necessary installer: <a href='https://docs.docker.com/docker-for-windows/install/'>https://docs.docker.com/docker-for-windows/install/</a> For windows home:
+<a href='https://www.docker.com/products/docker-toolbox'>https://www.docker.com/products/docker-toolbox</a> Note: Docker is different if you are just using windows home, windows pro enables you to virtualization hence docker is can run smoothly, for those os that does not support virtualization use
+<a href='https://www.docker.com/products/docker-toolbox'>docker-toolbox</a> 2.) <strong>Create an account in <a
+        href='https://hub.docker.com/'>dockerhub</a></strong>, docker hub is like dockers repository, this is where finished images/repository are published, and are just pulled on the fly to your container. For example, if you want mysql in your container you would just pull from this one:
+<a href='https://hub.docker.com/_/mysql/'>dockerhub
+    mysql</a> and then tweak it to your configuration. Once installed, run docker/docker-toolbox and you should be able to see this screen, note the ip:
+<strong> 192.168.99.100</strong> This ip acts as your <strong>localhost</strong> or
+<strong>127.0.0.1</strong>, so any applications running are accessible via this ip <br/> <strong><img
+        src='../../src/img/content/ss41.png'/></strong><br/> 3.) <strong>Login into docker
+    hub</strong> in your docker application via running the below: <strong>docker login </strong> <img
+        src='../../src/img/content/ss42.png'/>
+<br/> I have mine already logged in, but you should see something similar. 4.) <strong>Pull hello-world image via this
+    command, </strong>if you are wondering where we got hello-world, it is located in <a
+        href='https://hub.docker.com/r/tutum/hello-world/'>docker-hub
+    tutum/hello-world.</a> We are just pulling a image from docker-hub. <strong>docker pull tutum/hello-world</strong>
+<img src='../../src/img/content/ss43.png'/> <br/> 4.) Run the actual image, using this command: <strong>docker run -d -p
+    8080:80 --name first_example tutum/hello-world</strong> The flags are explained below
+<ul>
+    <li><strong>run</strong> - docker run command</li>
+    <li><strong>-d</strong> - run in background</li>
+    <li><strong>-p</strong> - publish to port 80, (THIS IS VERY IMPORTANT, since we are running in our docker, we need
+        to be able publish this outside our container otherwise we won't be able to hit the application from outside
+        docker.
+    </li>
+    <li><strong>--name</strong> : pass the name of container</li>
+    <li><strong>tutum/hello-world</strong> - lastly, the image we want to run</li>
+</ul> Use this command to see the running instances : <strong>docker ps</strong> <strong><img
+        src='../../src/img/content/ss44.png'/></strong> notice that it says ports: 0.0.0.0/8080 -&gt; 80 tcp, this is the port we exposed to so it should be reachable now via: http://192.168.99.100:8080/
+<img src='../../src/img/content/ss45.png'/> *Yes that is the docker ip! if we don't specify -p flag when running we won't be able to hit this in our local browsers. Congrats you have now started your own docker container! Check out this page for command references, which are pretty straight-forward:
+<a href='https://docs.docker.com/engine/reference/commandline/docker/'>
+    https://docs.docker.com/engine/reference/commandline/docker/</a>

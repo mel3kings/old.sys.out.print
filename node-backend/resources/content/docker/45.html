@@ -1,0 +1,31 @@
+<p>Dockerizing a&nbsp; React App</p> <p>What you need:</p>
+<ul>
+    <li>(prerequisite) A build mechanism (webpack/gulp/grunt)</li>
+    <li>Working React App with proper package.json</li>
+    <li>Docker</li>
+</ul> <p>&nbsp;</p> <p>At this point in time you should already have a working knowledge of React/Docker. Otherwise it
+    might seem like a blur to you. So diving right in, first you package.json needs to get update to have --host 0.0.0.0
+    as per below. This is so that when you run the React app inside your container it is accessible outside the
+    container.</p>
+<pre class='prettyprint'>{<br/> \"name\": \"sys.out.print\",<br/> \"version\": \"1.0.0\",<br/> \"description\": \"\",<br/> \"main\": \"index.js\",<br/> \"scripts\": {<br/> \"start\": \"node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host 0.0.0.0\",<br/> \"build\": \"webpack\"<br/> }<br/>}</pre>
+<p>&nbsp;</p> <p>here is the DockerFile you will need:</p>
+<pre class='prettyprint'>FROM node:6.12<br/>ADD local/ src/<br/>WORKDIR src/<br/>RUN npm install<br/><br/>ENV NODE_ENV=production<br/>ENV PORT=8080<br/>EXPOSE 8080<br/><br/>CMD [ \"npm\", \"start\" ]<br/><br/><br/></pre>
+<p>Disecting this:</p>
+<ul>
+    <li>FROM node:6.12 - we are basing from node from docker hub</li>
+    <li>ADD local/ src/ - at this point we are copying our local files to the docker image, it is advisable at this
+        point the all the js and other resources have been minified to be production ready
+    </li>
+    <li>WORKDIR src/ - we changing directory inside the image, similar to cd src/</li>
+    <li>RUN npm install - running npm install inside the image, given that we have a proper package.json, it will
+        install all the dependencies to your docker container
+    </li>
+    <li>ENV NODE_ENV=production - set any environment variables here<br/>ENV PORT=8080</li>
+    <li>EXPOSE 8080 - expose to port 8080</li>
+    <li>CMD [ \"npm\", \"start\" ] - this is where it all glues down together, we say that the default command is npm
+        start, so when you do a docker run, it actually runs npm start. it is comma seperated as it can take multiple
+        parameters.
+    </li>
+</ul> <p>your build mechanism ofcourse should have been run before you built the dockerfile to an image. Might do a
+    tutorial on builds on a seperate page.</p> <p>&nbsp;</p> <p>Docker commands on running and building:</p>
+<pre class='prettyprint'>docker build -t mel3kings/sysdotoutdotprint .<br/>docker run --name service -p 80:8080 -p 3000:3000 -d mel3kings/sysdotoutdotprint /sysdotoutdotprint And thats it you are done!</pre>

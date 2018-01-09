@@ -1,0 +1,117 @@
+Virtual Private Cloud is your network configuration for your AWS resources
+<ul>
+    <li>public subnet by default means you have one subnet in your route tables whose target is a Internet Gateway
+        enabling access to the public
+    </li>
+    <li>on there other hand private subnet for you private resources that shouldn’t be available to public</li>
+</ul> <strong>VPC Wizard:</strong>
+<ul>
+    <li>can opt for vpc with public/private subnet/ and with Hardware VPN accese</li>
+</ul> <strong>VPC Security Groups</strong>
+<ul>
+    <li>Configuration of inbound and outbound traffic for your resources</li>
+    <li>All outbound traffic by default is allowed when you create a new one</li>
+    <li>Security groups is stateful – if you enable an inbound traffic, traffic will also flow outbound regardless of
+        the security group
+    </li>
+    <li>You can specify allow rules, but not deny rules.</li>
+</ul> <strong>VPC Network ACL (Access Control List)</strong>
+<ul>
+    <li>By default allows all inbound and outbound</li>
+    <li>ACL is stateless – contrast to Security group</li>
+    <li>Associated to subnet</li>
+    <li>Evaluated per order</li>
+</ul> <strong>Route
+    Table</strong> A routing table is a set of rules, often viewed in table format, that is used to determine where data
+<a href='http://searchnetworking.techtarget.com/definition/packet'>packet</a>s traveling over an <a
+        href='http://searchunifiedcommunications.techtarget.com/definition/Internet-Protocol'>Internet
+    Protocol</a> (IP) network will be directed. All IP-enabled devices, including <a
+        href='http://searchnetworking.techtarget.com/definition/router'>router</a>s and <a
+        href='http://searchtelecom.techtarget.com/definition/switch'>switch</a>es, use routing tables. <p
+        class='fix-link-focus'><img src='../../src/img/content/ss31.png'/></p> <strong>NETWORK ACL vs Security
+    Groups</strong> Security groups filters which traffic goes in and out to your instances, ie which ports can be access, in contrast Network ACL operates at a subnet level, ie which IP can SSH to your instance
+<ul>
+    <li>Network ACL – applies to network level, that it can apply to many instances</li>
+    <li>Security Group – applies only to instance level, so if you need it in one instance only may need to apply to
+        Security group only
+    </li>
+</ul> <strong>VPN Connections</strong>
+<ul>
+    <li><strong>By default, instances that you launch into a virtual private cloud (VPC) can’t communicate with your own
+        network. You can enable access to your network from your VPC by attaching a virtual private gateway to the
+        VPC</strong></li>
+    <li>AWS Hardware VPN – enables customers to connect between VPC and remote network</li>
+    <li>AWS Direct Connect – provides private connection to AWS without internet</li>
+    <li>CloudHub – more than one remote network</li>
+    <li>Software VPN – can be setup via software VPN</li>
+</ul> <strong>Components</strong>
+<ul>
+    <li>Virtual Private Gateway – VPN connector on AWS side</li>
+    <li>Customer Gateway – customer side</li>
+</ul> <p class='fix-link-focus'><img src='../../src/img/content/ss32.png'/></p> Redundancy: <p class='fix-link-focus'>
+    <img class='../../src/img/content/ss33.png'/></p>
+<ul>
+    <li>Route Tables – determine where traffic is determined</li>
+</ul> <strong>NAT – Network Address Translation</strong>
+<ul>
+    <li>Enables private instances to connect to the internet, but prevents the internet from initiating connection with
+        instances
+    </li>
+</ul> How it works: <p class='fix-link-focus'><img class='../../src/img/content/ss34.png'/> private IP is replaced with
+    NATs public IP</p> <strong>NAT Key points</strong>
+<ul>
+    <li> needs to be launched in public subnet</li>
+    <li>needs to be assocaited with public/elastic ip address</li>
+    <li>disable source/destination flag check – this flag directly conflics with how NAT works as per above</li>
+    <li>Security group should allow inbound/outbound</li>
+    <li>Route table should configured to have an internet gateway</li>
+</ul> <strong>NAT Gateway vs NAT Instance</strong>
+<table>
+    <tbody>
+    <tr>
+        <td>NAT Gateway</td>
+        <td>NAT Instance</td>
+    </tr>
+    <tr>
+        <td>AWS managed instance</td>
+        <td>User created instance, configured to be NAT</td>
+    </tr>
+    <tr>
+        <td>10 gbps burst</td>
+        <td>availability and bandwith depends on the instance type</td>
+    </tr>
+    <tr>
+        <td>no Security Group</td>
+        <td>must have security group</td>
+    </tr>
+    <tr>
+        <td>one elastice IP address associated</td>
+        <td>manually disable source/destination check</td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                <li>specific AZ, with redundancy</li>
+                <li>TCP, UDP, ICMP support</li>
+                <li>ports – 1024- 65535</li>
+                <li>cannot send through VPC endpoints</li>
+            </ul>
+        </td>
+        <td></td>
+    </tr>
+    </tbody>
+</table> <strong>High Availabiltiy NAT Instance design:</strong>
+<ul>
+    <li>one NAT instance per AZ</li>
+    <li>all private subnet route teables to the same zone NAT instance</li>
+    <li>configure AutoScaling for instances</li>
+    <li>have it grow if CPU reaches a certain threshold</li>
+    <li>create bootstrap scripts for updating NAT instances</li>
+</ul> <strong>BASTION</strong>
+<ul>
+    <li>structure for fortication to protect things behind it</li>
+    <li>in AWS also known as a Jump Server</li>
+    <li>used to access instances in private subnet</li>
+</ul> <strong>How it
+    works:</strong> There is no direct access available to connect to your Web Server, you would have to SSH to bastion instance first, users access your server through load balancer.
+<p class='fix-link-focus'><img src='../../src/img/content/ss35.png'/></p>
