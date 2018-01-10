@@ -23,6 +23,7 @@ app.get('/get/:type/:id', function (req, res) {
     var url = __dirname + '/resources/content/' + req.params.type + "/" + req.params.id +".html";
     var data = fs.readFileSync(url, {encoding: 'utf8', highWaterMark: 1 * 1024});
     var header = _.get(properties.keys, req.params.id);
+    console.log("Fetching header with " + req.params.id + " resulted to :" + header);
     res.json({id: req.params.id, data: data, header:header});
 });
 

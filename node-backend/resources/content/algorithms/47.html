@@ -1,0 +1,78 @@
+<b> Given n what is the sum of all number up to n</b>
+<p>
+    This is a common problem in programming world, and we will discuss what are the common solutions that we use and how
+    to optimize it.
+    let's dive right in:
+</p>
+Now in order to add all the sums up to 100, let us first visualize whats going on
+<pre class="prettyprint">
+    1    2    3   4   5   6   7   8   9   10
+    21   22   23   24   25   26   27   28   29   30
+    31   32   33   34   35   36   37   38   39   40
+    41   42   43   44   45   46   47   48   49   50
+    51   52   53   54   55   56   57   58   59   60
+    61   62   63   64   65   66   67   68   69   70
+    71   72   73   74   75   76   77   78   79   80
+    81   82   83   84   85   86   87   88   89   90
+    91   92   93   94   95   96   97   98   99   100
+</pre>
+
+<p> Now it is easy to for the easy solution, and just iterate over it right? and using simple iteration we would have
+    something like: </p>
+
+<pre>1 + 2 + 3 ... + 100</pre>
+<pre class="prettyprint">
+      public static int manuallyAdding(int n) {
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+</pre>
+<p>
+    This is well and good, if you only have a few data set. like up to 10 only, but what happens when you have an
+    extraordinarily big number? like 99999999?
+    How is iterating going to affect your memory for the application. there will be a performance hit for sure. Here is
+    a more optimized way to do it
+</p>
+<div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-9837645739197927"
+         data-ad-slot="9609259343"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+<p> First carefully look at all the number, notice that if you add the ends of the numbers going to the center they are
+    all the same for example:</p>
+<pre class="prettyprint">
+    1 + 100 = 101
+    2 + 99 = 101
+    3 + 98 = 101
+    ...
+    50 + 51 = 101
+</pre>
+<p> they are all equal to n + 100, remember our n was 100, and all the sums of the ends are all equal to n + 1 = 101
+    and notice that if you get n / 2 pairs of 101's.
+
+    Drawing from this logic we can say that the summation of numbers are:
+</p>
+<pre class="prettyprint">
+    (n/2)(n + 1)
+    50 * (100 + 1)
+    50 * 101 = 5050
+</pre>
+
+<p>
+    So we can always use this formula rather than iterating over the values, which is much faster as well.
+    We want to help you with your progression but do not want to give away all the answers (this will be
+    counter-productive and will hurt you
+    in the long run. this is the hint needed to solve the problem for Euler #1, if you grasp this idea correctly you
+    should be able to answer it
+    just give it some thought.
+</p>

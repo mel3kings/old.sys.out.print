@@ -2,6 +2,7 @@ FROM node:6.12
 ADD ui/ src/
 WORKDIR src/
 RUN node -v
+RUN ls
 RUN npm install
 
 ENV NODE_ENV=production

@@ -3,10 +3,12 @@ services:
   ui:
     ports:
       - "8080:8080"
+    image: mel3kings/sysdotoutdotprint:latest
     build: .
     container_name: ui
   node:
     ports:
       - "3000:3000"
+    image: mel3kings/nodesysoutprint:latest
     build: ./node-backend/
     container_name: node

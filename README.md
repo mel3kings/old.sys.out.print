@@ -20,13 +20,10 @@ package.json exposes the app to outside using host:
 
 ```
 
-docker commands ui:
+docker commands:
 ```
+docker network create mynetwork
 docker build -t mel3kings/sysdotoutdotprint .
-docker run --name service -p 80:8080 -p 3000:3000 -d mel3kings/sysdotoutdotprint                                                                                                                                                               /sysdotoutdotprint
-```
-docker commands node:
-```
-docker build -t mel3kings/nodejssysoutprint .
-
+docker run --name ui -p 80:8080 -d --network mynetwork mel3kings/sysdotoutdotprint 
+docker run --name node -p 3000:3000 -d --network mynetwork mel3kings/nodesysoutprint 
 ```

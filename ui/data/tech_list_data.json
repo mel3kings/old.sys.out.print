@@ -274,5 +274,11 @@
     "type": "algorithms",
     "title": "Big O Notation",
     "description": ""
+  },
+  {
+    "id": 47,
+    "type": "algorithms",
+    "title": "Sum of all number to n - Euler # 1",
+    "description": ""
   }
 ]
