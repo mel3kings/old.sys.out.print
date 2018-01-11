@@ -1,5 +1,15 @@
 <div class='entry-content'><p>How to Map Enum to hibernate class:</p>
-    <pre class='prettyprint'>@Entity @table('d_user_group') \n public class UserGroup{ \n @Enumerated(EnumType.STRING) \n @Column(name='user_group_status') \n private UserGroupStatusEnum userGroupStatus; \n public enum UserGroupStatusEnum{ \n Active, Draft; \n } \n }</pre>
+    <pre class='prettyprint'>
+        @Entity
+        @table('d_user_group')
+        public class UserGroup {
+            @Enumerated(EnumType.STRING)
+            @Column(name = 'user_group_status')
+            private UserGroupStatusEnum userGroupStatus;
+
+            public enum UserGroupStatusEnum {Active, Draft;}
+        }
+    </pre>
     <p>In the case above we have a table<em> d_user_group</em>, that will have a column <em>user_group_status</em>, that
         only accepts <em>Enum</em> as a parameter. If you specify <em>EnumType.String</em> it will store the actual
         words from your Enum:</p>

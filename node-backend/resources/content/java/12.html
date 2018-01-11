@@ -1,5 +1,13 @@
 <div class='entry-content'><p>Hibernate Class:</p>
-    <pre class='prettyprint'>@Entity @Table(name='Person') \n public class Person{ \n @OneToMany(mappedBy = 'children', cascade = CascadeType.ALL, orphanRemoval = true) \n private Set&lt;Child&gt; children; \n ... //setters and getters }</pre>
+    <pre class='prettyprint'>
+        @Entity
+        @Table(name = 'Person')
+        public class Person {
+            @OneToMany(mappedBy = 'children', cascade = CascadeType.ALL, orphanRemoval = true)
+            private Set<Child>children;
+                //setters and getters
+        }
+    </pre>
     <p>&nbsp;</p>
     <p>Error occurs when in controller you are trying to set it to null instead of clearing the set/list, the following
         pseudo code will throw an exception as “A collection with cascade=”all-delete-orphan” was no longer referenced

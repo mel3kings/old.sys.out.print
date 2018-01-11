@@ -8,7 +8,18 @@
         it using <a href='https://en.wikipedia.org/wiki/Lexicographical_order'>lexicographically ordering </a>
         (Dictionary ordering)), but you need to manually specify natural ordering for specific objects that you create,
         ie Person object:</em></p>
-    <pre>public class Person{ private Integer age; //setters and getters }</pre>
+    <pre class="prettyprint">public class Person {
+    private Integer age;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+}
+    </pre>
     <h3><strong>Comparable</strong></h3>
     <ul>
         <li>Enables you to <strong>implement</strong> an <strong>interface</strong> from any of your class, forcing you
@@ -29,10 +40,43 @@
             </ul>
         </li>
     </ul>
-    <pre class='prettyprint'>public int compareTo(Person otherPerson) { \n if(this.age &gt; otherPerson.getAge()){ return 1; } \n else if(this.age == otherPerson.getAge()){ return 0; } \n else{ return -1; } }</pre>
+    <pre class='prettyprint'>
+        public int compareTo(Person otherPerson) {
+            if (this.age < otherPerson.getAge()) {
+                return 1;
+            } else if (this.age == otherPerson.getAge()) {
+                return 0;
+            } else {
+                return -1;
+            }
+        }
+    </pre>
     <p><strong>Example</strong>: (for simplicities sake, i&#8217;ve used Integer as data type and compared it using
         Integer&#8217;s compareTo method)</p>
-    <pre class='prettyprint'>public class Person implements Comparable&lt;Person&gt;{ \n private Integer age; \n public int compareTo(Person otherPerson){ \n return this.age.compareTo(otherPerson.getAge()); } }</pre>
+    <pre class="prettyprint">
+        public class Person implements Comparable<Person> {
+            private Integer age;
+
+            public Integer getAge() {
+                return age;
+            }
+
+            public void setAge(Integer age) {
+                this.age = age;
+            }
+
+            public int compareTo(Person otherPerson) {
+                if (this.age < otherPerson.getAge()) {
+                    return 1;
+                } else if (this.age == otherPerson.getAge()) {
+                    return 0;
+                } else {
+                    return -1;
+                }
+            }
+        }
+
+    </pre>
     <ul>
         <li>Once you have implemented Comparable, any object you add to any collection type that maintains natural
             ordering (<em>TreeSet, SortedSet, TreeMap</em>) will have automatically sorted your objects.
@@ -57,11 +101,29 @@
         </li>
     </ul>
     <p><strong>Example:</strong></p>
-    <pre class='prettyprint'>public class PersonComparator implements Comparator&lt;Person&gt;{ \n public int compare(Person p1, Person p2){ return p1.getAge().compareTo(p2.getAge()); } }</pre>
+    <pre class='prettyprint'>
+        import java.util.Comparator;
+        public class PersonComparator implements Comparator<Person> {
+            public int compare(Person p1, Person p2) {
+                return p1.getAge().compareTo(p2.getAge());
+            }
+        }
+    </pre>
     <p><strong>To use:</strong></p>
     <p>you would need to use a collection that can accept a comparator as a parameter, for examples sake I am using <a
             href='https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html'>LinkedList </a></p>
-    <pre class='prettyprint'>LinkedList&lt;Person&gt; personList = new LinkedList&lt;Person&gt;(); \n Person person1 = new Person(); \n person1.setAge(15); \n Person person2 = new Person(); \n person2.setAge(20); \n personList.add(person1); \n personList.add(person2); \n <strong>Collections.sort(personList, new PersonComparator());</strong></pre>
+    <pre class='prettyprint'>
+        public static void main(String[] args) {
+            LinkedList<Person> personList = new LinkedList<Person>();
+            Person person1 = new Person();
+            person1.setAge(15);
+            Person person2 = new Person();
+            person2.setAge(20);
+            personList.add(person1);
+            personList.add(person2);
+            Collections.sort(personList, new PersonComparator());
+         }
+    </pre>
     <p>There other collections that accepts comparator as a constructor parameter, for example TreeSet:</p>
     <pre><strong>TreeSet&lt;Person&gt; personSet = </strong> <strong> new TreeSet&lt;Person&gt;(new PersonComparator());</strong></pre>
     <p><strong>Conclusion</strong></p>

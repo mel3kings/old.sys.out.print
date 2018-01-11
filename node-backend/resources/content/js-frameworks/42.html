@@ -12,11 +12,22 @@
     <li>allows you to mapstate to props so you wire up the reducer data to the props binding Action Creators syntax</li>
     <li>the difference with a normal function is that it will pass to all reducers</li>
 </ul>
-<pre>import {bindActionCreators} from 'redux';</pre>
+<pre class="prettyprint">import {bindActionCreators} from 'redux';</pre>
 <ul>
     <li>for binding action creators this will be part of props as well</li>
-</ul> ='prettyprint'><strong>Some
-    Functions </strong> function mapDispatchToProps(dispatch){ \n return bindActionCreators({selectName : selectName}, dispatch); } \n is the same as: this.props.selectName \n export function selectName(name){ \n console.log('this name has been selected ' + name.name return{ type: 'BOOK_SELECTED', payload: name }; }</pre>
+</ul>
+<pre class='prettyprint'>
+    function mapDispatchToProps(dispatch){
+        return bindActionCreators({selectName : selectName}, dispatch);
+    }</pre>
+
+        //is the same as: this.props.selectName
+<pre class='prettyprint'>
+        export function selectName(name){
+            console.log('this name has been selected ' + name.name);
+            return{ type: 'BOOK_SELECTED', payload: name };
+        }
+</pre>
 <strong>NOTES</strong> When creating a new js, know first whether is the a COMPONENT OR A CONTAINER
 <ul>
     <li><strong>COMPONENT</strong> is just a react file, it just cares with displaying, no state whatsoever</li>
@@ -30,33 +41,26 @@
         </ul>
     </li>
 </ul>
-<pre>import promise from 'redux-promise';</pre> <strong>Pulling data from reducer to Container:</strong>
-<ol>
-    <li>
-        <pre> import connect from {react-redux}</pre>
-    </li>
-    <li>
-        <pre> function mapStateToProps(state){ // parameter state return {data: state.data}}</pre>
-    </li>
-    <li>
-        <pre> export default connect(mapStateToProps)(className)</pre>
-    </li>
-</ol> <strong>Routes</strong>: using routes to manipulate pages via URL redirecting
+<pre class="prettyprint">import promise from 'redux-promise';</pre> <strong>Pulling data from reducer to Container:</strong>
+    <pre class="prettyprint">import connect from {react-redux}</pre>
+    <pre class="prettyprint">
+        function mapStateToProps(state){
+        // parameter state return {data: state.data}}
+    </pre>
+    <pre class="prettyprint">export default connect(mapStateToProps)(className)</pre>
+ <strong>Routes</strong>: using routes to manipulate pages via URL redirecting
 <strong>Note</strong> that React/Redux really is a SPA (Single Page Application) but the Routes determine what components to display making it seem like there are multiple pages
-<pre> &lt;Route path='/Posts/new' component={PostsNewPage}/&gt;</pre>
-<pre>React bootsrap css: &lt;link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css'&gt;</pre>
+<pre class="prettyprint"> &lt;Route path='/Posts/new' component={PostsNewPage}/&gt;</pre>
+<pre class="prettyprint">React bootsrap css: &lt;link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css'&gt;</pre>
 <strong>Redux-form - </strong>Form validation and form submission in Redux
-<ul>
-    <li>
-        <pre>import {reducer as formReducer} from 'redux-form'; ... form: formReducer</pre>
-    </li>
-    <li>
-        <pre>import {Field, reduxForm} from 'redux-form';</pre>
-    </li>
-</ul> <strong>Creating Fields:</strong
-<pre class='prettyprint'>&lt;Field label='Title' name='title' type='text' component={this.renderField} /&gt; \n renderField(field){ \n return(&lt;div className='form-group'&gt; &lt;label&gt;{field.label}&lt;/label&gt; \n &lt;input className='form-control' type={field.type} {...field.input}/&gt; &lt;/div&gt;)} \n export default reduxForm({ form: 'PostsNew' })(PostsNew)</pre>
+        <pre class="prettyprint">import {reducer as formReducer} from 'redux-form'; ... form: formReducer</pre>
+        <pre class="prettyprint">import {Field, reduxForm} from 'redux-form';</pre>
+<strong>Creating Fields:</strong
+<pre class='prettyprint'>
+    &lt;Field label='Title' name='title' type='text' component={this.renderField}
+    /&gt;  renderField(field){  return(&lt;div className='form-group'&gt; &lt;label&gt;{field.label}&lt;/label&gt;  &lt;input className='form-control' type={field.type} {...field.input}/&gt; &lt;/div&gt;)}  export default reduxForm({ form: 'PostsNew' })(PostsNew)</pre>
 <strong>connecting redux form to action controller:</strong>
-<pre>export default reduxForm({ validate, form: 'PostsNewForm' })( connect (null, {savePosts})(PostsNew) );</pre>
+<pre class="prettyprint">export default reduxForm({ validate, form: 'PostsNewForm' })( connect (null, {savePosts})(PostsNew) );</pre>
 <strong>Notes: this.props.match.params.id</strong> - to get params on URL from REACT ROUTER<strong> </strong> <strong>MAP
     STATE TO
     PROPS</strong> - Props is declared in root combineReducers, so if you name an object in root reducer as postProps is declared in root combineReducers, so if you name an object in root reducer as post then it can be access in map state to props as post
