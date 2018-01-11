@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {renderTechPage} from "../../actions/action_render_page";
+import {renderTechPage, performAnalytics} from "../../actions/action_render_page";
 import _ from 'lodash';
+
 class TechHome extends Component {
     componentDidMount(){
         this.props.renderTechPage();
+        this.props.performAnalytics(window.location.pathname + window.location.search);
     }
 
     renderBoxes(){
@@ -41,4 +43,4 @@ function mapStateToProps(state){
     return {tech : state.techReducer}
 }
 
-export default connect(mapStateToProps, {renderTechPage})(TechHome)
+export default connect(mapStateToProps, {renderTechPage, performAnalytics})(TechHome)

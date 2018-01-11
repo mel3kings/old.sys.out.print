@@ -11,10 +11,15 @@ import promise from 'redux-promise';
 import {Provider} from 'react-redux';
 import reducers from '../reducers';
 import Favicon from 'react-favicon';
+import ReactGA from 'react-ga';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 class App extends React.Component {
+    componentWillMount(){
+        ReactGA.initialize('UA-93890669-1');
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }
     render() {
         return (
             <div>
@@ -27,7 +32,7 @@ class App extends React.Component {
 
 ReactDOM.render(
     <div>
-        <Favicon url="favicon.ico"/>
+        <Favicon url="/src/img/favicon.ico"/>
         <Provider store={createStoreWithMiddleware(reducers)}>
             <BrowserRouter>
                 <div>

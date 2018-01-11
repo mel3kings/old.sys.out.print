@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {renderTechPage, renderTechListPage, renderTechPageDetails} from "../../actions/action_render_page";
+import {renderTechPage, renderTechListPage, renderTechPageDetails, performAnalytics} from "../../actions/action_render_page";
 import _ from 'lodash';
 
 class TechnologyList extends React.Component {
@@ -9,6 +9,7 @@ class TechnologyList extends React.Component {
     componentWillMount() {
         this.props.renderTechPageDetails(this.props.match.params.type);
         this.props.renderTechListPage(this.props.match.params.type);
+        this.props.performAnalytics(window.location.pathname + window.location.search);
     }
 
     componentDidMount(){
@@ -70,4 +71,4 @@ function mapStateToProps(state ,ownProps) {
     });
 }
 
-export default connect(mapStateToProps, {renderTechPage, renderTechListPage, renderTechPageDetails})(TechnologyList)
+export default connect(mapStateToProps, {renderTechPage, renderTechListPage, renderTechPageDetails, performAnalytics})(TechnologyList)

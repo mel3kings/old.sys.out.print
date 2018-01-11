@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {renderTechPage, renderTechListPage, renderContentPage} from "../../actions/action_render_page";
+import {renderTechPage, renderTechListPage, renderContentPage, performAnalytics} from "../../actions/action_render_page";
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import DocumentMeta from 'react-document-meta';
 class ContentPage extends React.Component {
     componentWillMount() {
         this.props.renderContentPage(this.props.match.params.type, this.props.match.params.id);
+        this.props.performAnalytics(window.location.pathname + window.location.search);
     }
 
     render() {
@@ -35,4 +36,4 @@ function mapStateToProps(state) {
     return {tech: state.techReducer}
 }
 
-export default connect(mapStateToProps, {renderTechPage, renderTechListPage,renderContentPage})(ContentPage)
+export default connect(mapStateToProps, {renderTechPage, renderTechListPage,renderContentPage,performAnalytics})(ContentPage)

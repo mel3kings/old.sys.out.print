@@ -5,6 +5,7 @@ export const RENDER_TECH_PAGE = 'render_tech';
 export const RENDER_TECH_PAGE_DETAILS = 'render_tech_page_details';
 export const RENDER_TECH_LIST_PAGE = 'render_tech_list';
 export const RENDER_CONTENT_PAGE = 'render_content';
+export const ANALYTICS = 'google_analytics';
 
 export function renderTechPage() {
     const request = axios.get('../data/tech_data.json');
@@ -42,7 +43,6 @@ export function renderTechListPage(type) {
 }
 
 export function renderContentPage(type, id) {
-
     try {
         let filteredRequest = axios.get('/get/' + type + '/' + id).then(response => {
             console.log(response);
@@ -50,7 +50,6 @@ export function renderContentPage(type, id) {
         }).catch(err => {
 
         });
-
         return {
             type: RENDER_CONTENT_PAGE,
             payload: filteredRequest
@@ -58,8 +57,12 @@ export function renderContentPage(type, id) {
     } catch (e) {
         console.log(e.toString());
     }
-    console.log("what happened");
-
 }
 
+export function performAnalytics(url){
+    return {
+        type:ANALYTICS,
+        payload:url
+    };
+}
 
