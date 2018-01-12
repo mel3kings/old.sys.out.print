@@ -1,6 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
-import {renderTechPage, renderTechListPage, renderTechPageDetails, performAnalytics} from "../../actions/action_render_page";
+import {
+    renderTechPage,
+    renderTechListPage,
+    renderTechPageDetails,
+    performAnalytics, renderContentPage
+} from "../../actions/action_render_page";
+import {bindActionCreators} from 'redux';
 import _ from 'lodash';
 
 class TechnologyList extends React.Component {
@@ -12,15 +18,16 @@ class TechnologyList extends React.Component {
         this.props.performAnalytics(window.location.pathname + window.location.search);
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
     }
 
     renderList() {
         return _.map(this.props.tech.list, values => {
             const title = values.title;
-            if(title){
-                return (<a href={"/technologies/" + values.type + "/" + values.id} className="site-link-inverse list-group-item"
+            if (title) {
+                return (<a href={"/technologies/" + values.type + "/" + values.id}
+                           className="site-link-inverse list-group-item"
                            key={values.id}> {values.title}</a>);
             }
 
@@ -38,8 +45,10 @@ class TechnologyList extends React.Component {
 
     render() {
         const loading = this.props.pageDetails;
-        if(!loading){ // to prevent 'null pointer' on initial load
-            return <div className="container"><div> Overloaded, refresh to try again.</div></div>
+        if (!loading) { // to prevent 'null pointer' on initial load
+            return <div className="container">
+                <div> Overloaded, refresh to try again.</div>
+            </div>
         }
         return <div className="container">
             <div className="row">
@@ -56,19 +65,27 @@ class TechnologyList extends React.Component {
                     </div>
                 </div>
                 <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                       {this.renderList()}
+                    {this.renderList()}
                 </div>
             </div>
         </div>
     }
 }
 
-function mapStateToProps(state ,ownProps) {
+function mapStateToProps(state, ownProps) {
     console.log(state.techReducer[ownProps.match.params.type]);
     return Object.assign({}, state, {
         tech: state.techReducer,
         pageDetails: state.techReducer[ownProps.match.params.type]
     });
 }
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        renderTechPage,
+        renderTechListPage,
+        renderTechPageDetails,
+        performAnalytics
+    }, dispatch);
+}
 
-export default connect(mapStateToProps, {renderTechPage, renderTechListPage, renderTechPageDetails, performAnalytics})(TechnologyList)
+export default connect(mapStateToProps, mapDispatchToProps)(TechnologyList)

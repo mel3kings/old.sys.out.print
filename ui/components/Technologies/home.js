@@ -1,16 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
-import {renderTechPage, performAnalytics} from "../../actions/action_render_page";
+import {bindActionCreators} from 'redux';
+import {
+    renderTechPage, performAnalytics
+} from "../../actions/action_render_page";
 import _ from 'lodash';
 
-class TechHome extends Component {
-    componentDidMount(){
+class TechHome extends React.Component {
+    componentDidMount() {
         this.props.renderTechPage();
         this.props.performAnalytics(window.location.pathname + window.location.search);
     }
 
-    renderBoxes(){
-        return _.map(this.props.tech, data=> {
+    renderBoxes() {
+        return _.map(this.props.tech, data => {
             return (
                 <a href={data.link} className="pb-3 site-link col-lg-3 col-md-6" key={data.id}>
                     <div className="card">
@@ -25,6 +28,7 @@ class TechHome extends Component {
             );
         })
     }
+
     render() {
         return (
             <div className="container">
@@ -39,8 +43,14 @@ class TechHome extends Component {
     }
 }
 
-function mapStateToProps(state){
-    return {tech : state.techReducer}
+function mapStateToProps(state) {
+    return {tech: state.techReducer}
 }
 
-export default connect(mapStateToProps, {renderTechPage, performAnalytics})(TechHome)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        renderTechPage, performAnalytics
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TechHome)

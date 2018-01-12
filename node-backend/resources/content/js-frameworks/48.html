@@ -1,0 +1,97 @@
+ES6 Basic Syntax <br/>
+<p>
+    As most of you are already aware we have js-frameworks already that further the Javascript as a language.
+    At the core of these frameworks sits ES6, it gives additional flexibility/functionality to the plain vanilla JS
+    Here are some basic syntax to work as a refresher for you if you are just starting out playing around these
+    frameworks
+</p>
+<h4>New Variable Types</h4>
+<br/>
+Previously in Javascript you would declare variables using the following syntax:
+<pre class="prettyprint">
+    var a = "hello";
+</pre>
+JS did not have any notion of what kind of variable is this, var is one size fits all.
+With ES6, comes to variation of var initialisation
+
+<pre class="prettyprint">
+    let a = "hello";
+    const b = "world";
+</pre>
+
+<ul>
+    <li> let - is a temporary variable, that is expected to change this is typically used when you that the var is
+    constantly changing</li>
+    <li> const - in contrast, const is a final variable, and will throw syntax error when you try to reassign,
+    this allows for perfomance improvements since the engine will know that there will be no reallocation of this
+    variable and does not need to keep track of its changes. </li>
+</ul>
+
+A typical use of const in React would be, when you want to specify a constant that could be access globally by your
+application, for example below:
+
+<pre class="prettyprint">
+    export const RENDER_TECH_PAGE = 'render_tech';
+</pre>
+
+on the other files, you would just import the variable:
+<pre class="prettyprint">
+    import {RENDER_TECH_PAGE} from "../actions/action_render_page";
+</pre>
+
+<h4>Concatenation using ... and `` </h4>
+
+In ES6 we can concatenate using the syntax ... <br/>
+Consider the following example:
+<pre class="prettyprint">
+    let a =[1, 2 ,3];
+    let b = [6, ...a ,10];
+    console.log(b);
+</pre>
+This will output: 6 1 2 3 10 <br/>
+where as previously you had to do manual concatenation of variables, or method calls using .concat()
+
+On the other hand, we can use the same topic, we can do deconstruction as well
+consider the following:
+
+<pre class="prettyprint">
+    let people =['Greg', 'Mel'];
+    let [person1, person2] = people;
+    console.log(person1, person2);
+</pre>
+The essentially maps your array constants to the new variables.
+
+<br/>
+<i> Pitfall</i>
+if you already have a different assignment to certain variables
+you can use this syntax to reassign it, consider the following below:
+
+<pre class="prettyprint">
+    let person1 = 'Mike';
+    let person2 = 'Agnes';
+    let people =['Greg', 'Mel'];
+    ([person1, person2] = people);
+    console.log(person1, person2);
+</pre>
+
+<br/>
+<h4>String Manipulation</h4>
+Previously in Vanilla JS to add String together you would do the below:
+
+<pre class="prettyprint">
+    var a = 'Hello';
+    var b = 'World';
+    var c = a + ' ' + b;
+    console.log(c);
+</pre>
+
+New of doing it is to use ``
+<pre class="prettyprint">
+    let luke = 'blue';
+    let vader = 'red';
+    let message = `Luke first uses a ${luke}-colored lightsaber';
+    console.log(message);
+</pre>
+
+`` - tells the engine to translate the variables, this is essentially usefully when dealing with alot of string
+manipulation, instead of bombarding it with + to concat Strings

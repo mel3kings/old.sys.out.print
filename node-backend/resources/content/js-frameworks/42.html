@@ -50,17 +50,21 @@
     <pre class="prettyprint">export default connect(mapStateToProps)(className)</pre>
  <strong>Routes</strong>: using routes to manipulate pages via URL redirecting
 <strong>Note</strong> that React/Redux really is a SPA (Single Page Application) but the Routes determine what components to display making it seem like there are multiple pages
-<pre class="prettyprint"> &lt;Route path='/Posts/new' component={PostsNewPage}/&gt;</pre>
+<pre class="prettyprint">  &lt;Route path='/Posts/new' component={PostsNewPage}&gt;</pre>
 <pre class="prettyprint">React bootsrap css: &lt;link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css'&gt;</pre>
 <strong>Redux-form - </strong>Form validation and form submission in Redux
         <pre class="prettyprint">import {reducer as formReducer} from 'redux-form'; ... form: formReducer</pre>
         <pre class="prettyprint">import {Field, reduxForm} from 'redux-form';</pre>
-<strong>Creating Fields:</strong
+<strong>Creating Fields:</strong>
 <pre class='prettyprint'>
-    &lt;Field label='Title' name='title' type='text' component={this.renderField}
-    /&gt;  renderField(field){  return(&lt;div className='form-group'&gt; &lt;label&gt;{field.label}&lt;/label&gt;  &lt;input className='form-control' type={field.type} {...field.input}/&gt; &lt;/div&gt;)}  export default reduxForm({ form: 'PostsNew' })(PostsNew)</pre>
+     &lt;Field label='Title' name='title' type='text' component={this.renderField}>
+            renderField(field){
+            return(
+        &lt;div className='form-group'>
+            &lt;label>{field.label}&lt;/label>
+            &lt; input className='form-control' type={field.type} {...field.input}>
+         &lt;/div>)}  export default reduxForm({ form: 'PostsNew' })(PostsNew)</pre>
 <strong>connecting redux form to action controller:</strong>
 <pre class="prettyprint">export default reduxForm({ validate, form: 'PostsNewForm' })( connect (null, {savePosts})(PostsNew) );</pre>
-<strong>Notes: this.props.match.params.id</strong> - to get params on URL from REACT ROUTER<strong> </strong> <strong>MAP
-    STATE TO
-    PROPS</strong> - Props is declared in root combineReducers, so if you name an object in root reducer as postProps is declared in root combineReducers, so if you name an object in root reducer as post then it can be access in map state to props as post
+<strong>Notes: this.props.match.params.id</strong> - to get params on URL from REACT ROUTER
+<strong>MAP STATE TO PROPS</strong> - Props is declared in root combineReducers, so if you name an object in root reducer as postProps is declared in root combineReducers, so if you name an object in root reducer as post then it can be access in map state to props as post

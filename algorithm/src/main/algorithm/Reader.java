@@ -1,10 +1,7 @@
 package algorithm;
 
-public interface Reader {
-    public void reader(String x, Object authentication);
-}
 
-abstract class ReaderImpl implements Reader {
+abstract class ReaderImpl {
     protected Object authentication;
     ReaderImpl(Object authentication) throws Exception{
         if(null == authentication){
