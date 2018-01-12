@@ -4,7 +4,7 @@ import {
     renderTechPage,
     renderTechListPage,
     renderTechPageDetails,
-    performAnalytics, renderContentPage
+    performAnalytics
 } from "../../actions/action_render_page";
 import {bindActionCreators} from 'redux';
 import _ from 'lodash';

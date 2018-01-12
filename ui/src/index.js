@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Home from '../components/Technologies/home';
+import Tools from '../components/Tools/tools_home';
 import Showcase from '../components/showcase';
 import TechnologyList from '../components/Technologies/technology_list';
 import ContentPage from '../components/Technologies/content_page';
@@ -40,6 +41,7 @@ ReactDOM.render(
                         <Route path="/technologies/:type/:id" component={ContentPage}/>
                         <Route path="/technologies/:type" component={TechnologyList}/>
                         <Route path="/technologies" component={Home}/>
+                        <Route path="/tools/" component={Tools}/>
                         <Route path="/" component={App}/>
                     </Switch>
                 </div>
