@@ -46,7 +46,8 @@ var keys = {
     '45': 'Running a React app on Docker',
     '46': 'What is Big O Notation',
     '47': 'Euler 1 - Sum of all numbers to N',
-    '48': 'ES6 Basics Part 1'
+    '48': 'ES6 Basics Part 1',
+    '49': 'Euler 2 - Even Fibonacci'
 };
 
 exports.keys = keys;

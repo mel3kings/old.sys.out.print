@@ -278,13 +278,19 @@
   {
     "id": 47,
     "type": "algorithms",
-    "title": "Euler # 1: Sum of all number to n",
+    "title": "Euler 1 - Sum of all number",
     "description": ""
   },
   {
     "id": 48,
     "type": "js-frameworks",
     "title": "ES6 Basics Part 1",
+    "description": ""
+  },
+  {
+    "id": 49,
+    "type": "algorithms",
+    "title": "Euler 2 - Even Fibonacci",
     "description": ""
   }
 ]
