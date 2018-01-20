@@ -32,7 +32,8 @@ class TechHome extends React.Component {
     render() {
         return (
             <div className="container">
-                <br/><br/>
+                <h1> Technologies</h1>
+                <small className="text-muted">Various notes/tutorials on different technologies for web development</small>
                 <section id="authors" className="my-5 text-center">
                     <div className="row">
                         {this.renderBoxes()}
