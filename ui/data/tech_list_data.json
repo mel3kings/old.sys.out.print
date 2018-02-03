@@ -292,5 +292,11 @@
     "type": "algorithms",
     "title": "Euler 2 - Even Fibonacci",
     "description": ""
+  },
+  {
+    "id": 50,
+    "type": "aws",
+    "title": "How to setup LightSail with GoDaddy, route 53 or any DNS",
+    "description": ""
   }
 ]
