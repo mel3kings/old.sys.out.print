@@ -68,3 +68,20 @@ partition 2 - 0,1,2,3,4,5,6,7
 Each cluster is composed of broker with its ID
 i.e broker 1,2,3
 even if you have 100 brokers, just connecting to 1 connects you to the cluster
+
+KAFKA ports
+9092 - broker
+8081 schema regsitry
+8082 kafka rest proxy
+8083 kafka connect distrubted
+2181 zookeeper
+3030 webserver
+
+Pitfalls:
+LEADER NOT AVAILABLE - leader not have been setup for the topic
+
+Remember in kafka once you connect to one server you are connected to
+all, hence when consuming you only list to a bootstrap-server/broker
+
+offset is the marker for kafka, which in turn is also stored in a kafka topic
+group id keeps track from until you last read

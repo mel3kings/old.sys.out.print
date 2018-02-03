@@ -47,7 +47,8 @@ var keys = {
     '46': 'What is Big O Notation',
     '47': 'Euler 1 - Sum of all numbers to N',
     '48': 'ES6 Basics Part 1',
-    '49': 'Euler 2 - Even Fibonacci'
+    '49': 'Euler 2 - Even Fibonacci',
+    '50': 'How to setup LightSail with GoDaddy, route 53 or any DNS'
 };
 
 exports.keys = keys;
