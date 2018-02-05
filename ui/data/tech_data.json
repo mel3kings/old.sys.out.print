@@ -2,8 +2,7 @@
   {
     "id": 1,
     "name": "Java",
-    "subtitle": "Sun Oracle",
-    "image": "",
+    "image": "/src/img/logos/java.png",
     "external_link": "http://www.oracle.com/technetwork/java/javase/downloads/index.html",
     "link": "/technologies/java",
     "description": "Core Java Concepts, Lambda, Streams, Futures, Memory Allocation"
@@ -11,28 +10,26 @@
   {
     "id": 2,
     "name": "AWS",
-    "subtitle": "Amazon Web Services",
-    "image": "",
+    "image": "/src/img/logos/aws.png",
     "external_link": "https://aws.amazon.com/",
     "link": "/technologies/aws",
-    "description": "AWS Solution Architect Certification Notes"
+    "description": "Amazon Web Services how-tos and Solution Architect Certification Notes"
   },
   {
     "id": 3,
     "name": "Docker",
-    "subtitle": "",
     "link": "/technologies/docker",
     "external_link": "https://www.docker.com/",
-    "image": "",
+    "image": "/src/img/logos/docker.png",
     "description": "Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications"
   },
   {
-    "id": 4,
+    "id": 7,
     "name": "Akka",
     "subtitle": "",
     "link": "/technologies/akka",
     "external_link": "https://akka.io/",
-    "image": "",
+    "image": "/src/img/logos/akka.png",
     "description": "Akka is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala"
   },
   {
@@ -40,23 +37,23 @@
     "name": "No-SQL",
     "subtitle": "",
     "link": "/technologies/no-sql",
-    "image": "",
+    "image": "/src/img/logos/cassandra.png",
     "description": "A NoSQL database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases"
   },
   {
-    "id": 6,
+    "id": 4,
     "name": "JS-Frameworks",
     "subtitle": "",
     "link": "/technologies/js-frameworks",
-    "image": "",
+    "image": "/src/img/logos/js-frameworks.png",
     "description": "Different Application framework written in JavaScript."
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "Algorithms",
     "subtitle": "",
     "link": "/technologies/algorithms",
-    "image": "",
+    "image": "/src/img/logos/algorithm.png",
     "description": "Various solutions to programming challenges"
   }
 ]

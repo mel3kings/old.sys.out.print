@@ -15,31 +15,35 @@ class TechHome extends React.Component {
     renderBoxes() {
         return _.map(this.props.tech, data => {
             return (
-                <a href={data.link} className="pb-3 site-link col-lg-3 col-md-6" key={data.id}>
-                    <div className="card">
-                        <div className="card-body">
-                            <img src="{data.image}" alt="" className="img-fluid rounded-circle w-50 mb-3"/>
-                            <h3>{data.name}</h3>
-                            <h5 className="text-muted">{data.subtitle}</h5>
-                            <p>{data.description}</p>
-                        </div>
+                <div className="col-md-3 col-sm-3 col-xs-12" key={data.id}>
+
+                    <div className="h_boxes">
+                        <a href={data.link}>
+                            {data.image &&
+                            <img src={data.image} className="img-responsive" width="100%" alt="img"/>
+                            }
+                            <div className="h_details">
+                                <h3>{data.name}</h3>
+                                <h4>{data.subtitle}</h4>
+                                <p>{data.description}</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             );
         })
     }
 
     render() {
         return (
-            <div className="container">
-                <h1> Technologies</h1>
-                <small className="text-muted">Various notes/tutorials on different technologies for web development</small>
-                <section id="authors" className="my-5 text-center">
+            <section className="h_content">
+                <div className="container">
                     <div className="row">
                         {this.renderBoxes()}
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
         );
     }
 }
