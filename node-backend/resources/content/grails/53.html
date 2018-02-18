@@ -1,0 +1,88 @@
+<head>
+    <style>
+        body, td {
+            font-family: Segoe UI;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+<a name="408"/>
+
+<div><span><div><h3>Grails</h3> is web application framework that hopes to eliminates the complexity when building/setting up a new application. Think about how you setup all the things from scratch, configuring tomcat server, creating object relational mapping, setting up spring boot etc.</div><ul><li>Built in key features<ul><li>Spring/Hibernate built in</li><li>GORM - hibernate mapping</li><li>GSP - view technology</li><li>Controllers are done </li><li>Embedded Tomcat server - for hot deploy (no more restarts!)</li><li>instant i18n support</li><li>Transactional service</li></ul></li></ul><div><b><h3>Script Oriented Framework</h3></b></div><div>Once grails is installed, there are commands you need to remember, they are usually used when automatically creating application/controllers. </div><div>For example:</div><div><span
+        style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;">You can create rest app by running this command, this will prepare all the necessary folders/structures you need:</span></div><div><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9rem; font-weight: 400; color: rgba(0, 0, 0, 0.9); text-rendering: optimizeSpeed;"><span
+        style="color: rgb(136, 0, 136);">$</span> grails create-app myapp --profile=rest-api</code></div><div>   </div><div
+        style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"><span
+        style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;">You can create a rest controller by running this command</span></div><div><div
+        style="margin: 0px 0px 1.25em; padding: 0px; direction: ltr; color: rgba(0, 0, 0, 0.8); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 13.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><div
+        style="margin: 0px; padding: 0px; direction: ltr; position: relative;"><div
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.90625em; margin: 0px; padding: 1em; direction: ltr; color: rgba(0, 0, 0, 0.9); font-weight: 400; text-rendering: optimizeSpeed; border-radius: 4px; background: rgb(247, 247, 248);"><div><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9rem; font-weight: 400; color: rgba(0, 0, 0, 0.9); text-rendering: optimizeSpeed;">grails&gt; create-controller hello</code></div></div></div></div><div
+        style="margin: 0px; padding: 0px; direction: ltr; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><div>in turn it will create the following for you:</div><ol><li>HelloController.groovy</li><li>HelloControllerSpec.groovy (test case)</li><li>create a hello folder under views </li><li>Depending on which grails version it might update your application.yml as well</li></ol><div><br/></div><div>Running the below command will run that rest application:</div><div><i>grails&gt; run-app</i></div><div><br/></div><div>Now that was quick, to create a web rest service, it was essentially just running two commands! </div><div>Other commands include, there are alot more create-scripts that grails support, head over to their documentation with appropriate version to check them out.</div><ul><li>test-app - runs all the test under test folders</li><li>war - packages application</li></ul><div><br/></div><div><b><h3>Folder Structure convention:</h3></b></div><div><ul
+        style="margin: 0px 0px 1.25em 1.5em; padding: 0px; direction: ltr; font-size: 13.6px; list-style-position: outside; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgba(0, 0, 0, 0.8); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><div
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 16px; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">grails-app</code> - top level directory for Groovy sources</div><div
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr;"><ul
+        style="margin: 0px 0px 0px 1.25em; padding: 0px; direction: ltr; font-size: 1em; list-style-position: outside; font-family: inherit;"><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">conf</code> - <a
+        href="http://docs.grails.org/latest/guide/conf.html"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">Configuration sources</a></p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">controllers</code> - <a
+        href="http://docs.grails.org/latest/guide/theWebLayer.html#controllers"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">Web controllers</a> - The C in MVC.</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">domain</code> - The <a
+        href="http://docs.grails.org/latest/guide/GORM.html"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">application domain</a>.</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">i18n</code> - Support for <a
+        href="http://docs.grails.org/latest/guide/i18n.html"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">internationalization (i18n)</a>.</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">services</code> - The <a
+        href="http://docs.grails.org/latest/guide/services.html"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">service layer</a>.</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">taglib</code> - <a
+        href="http://docs.grails.org/latest/guide/theWebLayer.html#taglibs"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">Tag libraries</a>.</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">utils</code> - Grails specific utilities.</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">views</code> - <a
+        href="http://docs.grails.org/latest/guide/theWebLayer.html#gsp"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">Groovy Server Pages</a> or <a
+        href="http://views.grails.org/latest"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">JSON Views</a> - The V in MVC.</p></li></ul></div></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">scripts</code> - <a
+        href="http://docs.grails.org/latest/guide/commandLine.html"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">Code generation scripts</a>.</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><p
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 1rem; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">src/main/groovy</code> - Supporting sources</p></li><li
+        style="margin: 0px; padding: 0px; direction: ltr;"><div
+        style="margin: 0px 0px 0.625em; padding: 0px; direction: ltr; font-family: inherit; font-weight: 400; font-size: 16px; text-rendering: optimizeLegibility; letter-spacing: -0.01em;"><code
+        style="font-family: &quot;Droid Sans Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375em; font-weight: 400; color: rgba(0, 0, 0, 0.9); letter-spacing: 0px; padding: 0.1em 0.5ex; word-spacing: -0.15em; background-color: rgb(247, 247, 248); border-radius: 4px; text-rendering: optimizeSpeed; font-style: normal !important;">src/test/groovy</code> - <a
+        href="http://docs.grails.org/latest/guide/testing.html"
+        style="text-decoration: underline; color: rgb(33, 86, 165); background: transparent;">Unit and integration tests</a>.</div></li></ul></div><div><span
+        style="font-size: 16px;">Some files to note that are automatically created for you (depending on grails version): </span></div><ul><li>BuildConfig.groovy/build.gradle</li><li>Config.groovy/application.groovy</li><li>UrlMappings.groovy</li><li>BootStrap.groovy</li></ul><div
+        style="margin: 0px; padding: 0px; direction: ltr;"><br/></div><div
+        style="margin: 0px; padding: 0px; direction: ltr;">grails url-mappings-report - shows all existing urls</div><div
+        style="margin: 0px; padding: 0px; direction: ltr;"><br/></div></div></div><div><div
+        style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"><br/></div></div></span>
+</div>
+</body>

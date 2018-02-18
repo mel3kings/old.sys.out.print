@@ -63,5 +63,13 @@
     "link": "/technologies/kubernetes",
     "image": "/src/img/logos/kubernetes.png",
     "description": "Open Source Tech that orchestrates Desired State Management"
+  },
+  {
+    "id": 9,
+    "name": "Grails",
+    "subtitle": "",
+    "link": "/technologies/grails",
+    "image": "/src/img/logos/grails.jpg",
+    "description": "Lightweight Web application framework that focuses on business logic rather than plumbing"
   }
 ]

@@ -310,5 +310,11 @@
     "type": "kubernetes",
     "title": "Basic Kubernetes",
     "description": ""
+  },
+  {
+    "id": 53,
+    "type": "grails",
+    "title": "Introduction to Grails",
+    "description": ""
   }
 ]
