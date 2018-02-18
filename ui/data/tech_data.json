@@ -21,7 +21,7 @@
     "link": "/technologies/docker",
     "external_link": "https://www.docker.com/",
     "image": "/src/img/logos/docker.png",
-    "description": "Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications"
+    "description": "Docker is a platform used to build, ship, and run distributed applications"
   },
   {
     "id": 7,
@@ -30,7 +30,7 @@
     "link": "/technologies/akka",
     "external_link": "https://akka.io/",
     "image": "/src/img/logos/akka.png",
-    "description": "Akka is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala"
+    "description": "A toolkit for building concurrent, distributed, and resilient applications"
   },
   {
     "id": 5,
@@ -38,7 +38,7 @@
     "subtitle": "",
     "link": "/technologies/no-sql",
     "image": "/src/img/logos/cassandra.png",
-    "description": "A NoSQL database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases"
+    "description": "Database provides storage/retrieval of data without the use of relational tables"
   },
   {
     "id": 4,
@@ -46,7 +46,7 @@
     "subtitle": "",
     "link": "/technologies/js-frameworks",
     "image": "/src/img/logos/js-frameworks.png",
-    "description": "Different Application framework written in JavaScript."
+    "description": "Different Application framework written in JavaScript. Including React/Redux"
   },
   {
     "id": 6,
@@ -54,6 +54,14 @@
     "subtitle": "",
     "link": "/technologies/algorithms",
     "image": "/src/img/logos/algorithm.png",
-    "description": "Various solutions to programming challenges"
+    "description": "Various solutions to programming challenges, common interview questions, Eulers challenge, etc"
+  },
+  {
+    "id": 8,
+    "name": "Kubernetes",
+    "subtitle": "",
+    "link": "/technologies/kubernetes",
+    "image": "/src/img/logos/kubernetes.png",
+    "description": "Open Source Tech that orchestrates Desired State Management"
   }
 ]

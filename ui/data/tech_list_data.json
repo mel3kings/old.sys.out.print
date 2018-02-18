@@ -298,5 +298,17 @@
     "type": "aws",
     "title": "How to setup LightSail with GoDaddy, route 53 or any DNS",
     "description": ""
+  },
+  {
+    "id": 51,
+    "type": "java",
+    "title": "Throttling + Java Atomic Library",
+    "description": ""
+  },
+  {
+    "id": 52,
+    "type": "kubernetes",
+    "title": "Basic Kubernetes",
+    "description": ""
   }
 ]

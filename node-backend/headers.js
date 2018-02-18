@@ -48,7 +48,9 @@ var keys = {
     '47': 'Euler 1 - Sum of all numbers to N',
     '48': 'ES6 Basics Part 1',
     '49': 'Euler 2 - Even Fibonacci',
-    '50': 'How to setup LightSail with GoDaddy, route 53 or any DNS'
+    '50': 'How to setup LightSail with GoDaddy, route 53 or any DNS',
+    '51': 'Throttling + Java Atomic Library',
+    '52': 'Basic Kubernetes, Running Local Minikube'
 };
 
 exports.keys = keys;
