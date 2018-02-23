@@ -1,0 +1,73 @@
+
+<div><span><div>
+
+<ol style="list-style-type: decimal; color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Launch an instance with the Amazon Linux AMI. For more information, see <a
+        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html"
+        style="text-decoration: none; color: rgb(228, 135, 0);" target="_blank">Launching an Instance</a> in the <em>Amazon EC2 User Guide for Linux Instances</em>.</p></li><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Connect to your instance. For more information, see <a
+        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html"
+        style="text-decoration: none; color: rgb(228, 135, 0);" target="_blank">Connect to Your Linux Instance</a> in the <em>Amazon EC2 User Guide for Linux Instances</em>.</p></li><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Update the installed packages and package cache on your instance.</p><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); overflow: hidden; visibility: visible; display: block; right: 0px; background: transparent; position: absolute; margin: 3px;"><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(222, 222, 222); border-width: 1px;"
+        title="Copy"></div><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(25, 25, 25); border-width: 1px;"
+        title="Dark theme"></div></div><pre
+        style="font-size: 14px; font-weight: normal; font-family: Consolas, Courier, mono; border: 1px solid rgb(225, 225, 232); border-radius: 3px; padding: 0px; overflow: auto; position: relative;"><code
+        style="font-family: Consolas, Courier, mono; overflow: auto; display: block; padding: 28px 0.5em 0.5em; color: rgb(56, 58, 66); background: rgb(250, 250, 250);"><strong><code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">sudo yum <span
+        style="font-family: Consolas, Courier, mono;">update</span> -y</code></strong></code></pre></li><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Install the most recent Docker Community Edition package.</p><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); overflow: hidden; visibility: visible; display: block; right: 0px; background: transparent; position: absolute; margin: 3px;"><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(222, 222, 222); border-width: 1px;"
+        title="Copy"></div><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(25, 25, 25); border-width: 1px;"
+        title="Dark theme"></div></div><pre
+        style="font-size: 14px; font-weight: normal; font-family: Consolas, Courier, mono; border: 1px solid rgb(225, 225, 232); border-radius: 3px; padding: 0px; overflow: auto; position: relative;"><code
+        style="font-family: Consolas, Courier, mono; overflow: auto; display: block; padding: 28px 0.5em 0.5em; color: rgb(56, 58, 66); background: rgb(250, 250, 250);"><strong><code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">sudo yum <span
+        style="font-family: Consolas, Courier, mono;">install</span> -y docker</code></strong></code></pre></li><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Start the Docker service.</p><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); overflow: hidden; visibility: visible; display: block; right: 0px; background: transparent; position: absolute; margin: 3px;"><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(222, 222, 222); border-width: 1px;"
+        title="Copy"></div><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(25, 25, 25); border-width: 1px;"
+        title="Dark theme"></div></div><pre
+        style="font-size: 14px; font-weight: normal; font-family: Consolas, Courier, mono; border: 1px solid rgb(225, 225, 232); border-radius: 3px; padding: 0px; overflow: auto; position: relative;"><code
+        style="font-family: Consolas, Courier, mono; overflow: auto; display: block; padding: 28px 0.5em 0.5em; color: rgb(56, 58, 66); background: rgb(250, 250, 250);"><strong><code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">sudo service docker <span
+        style="font-family: Consolas, Courier, mono;">start</span></code></strong></code></pre></li><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Add the <code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">ec2-user</code> to the <code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">docker</code> group so you can execute Docker commands without using <code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">sudo</code>.</p><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); overflow: hidden; visibility: visible; display: block; right: 0px; background: transparent; position: absolute; margin: 3px;"><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(222, 222, 222); border-width: 1px;"
+        title="Copy"></div><div
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; font-size: 16px; color: rgb(68, 68, 68); border-style: solid; border-color: rgb(222, 222, 222) rgb(197, 197, 197) rgb(197, 197, 197); float: left; padding: 2px; margin: 0px 0px 0px 3px; width: 16px; height: 16px; text-align: center; border-radius: 4px; cursor: pointer; border-image-source: none; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-color: rgb(25, 25, 25); border-width: 1px;"
+        title="Dark theme"></div></div><pre
+        style="font-size: 14px; font-weight: normal; font-family: Consolas, Courier, mono; border: 1px solid rgb(225, 225, 232); border-radius: 3px; padding: 0px; overflow: auto; position: relative;"><code
+        style="font-family: Consolas, Courier, mono; overflow: auto; display: block; padding: 28px 0.5em 0.5em; color: rgb(56, 58, 66); background: rgb(250, 250, 250);"><strong><code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">sudo usermod -a -G docker ec2-<span
+        style="font-family: Consolas, Courier, mono;">user</span></code></strong></code></pre></li><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Log out and log back in again to pick up the new <code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">docker</code> group permissions. You can accomplish this by closing your current SSH terminal window and reconnecting to your instance in a new one. Your new SSH session will have the appropriate <code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">docker</code> group permissions.</p></li><li
+        style="font-size: 16px;"><p
+        style="font-family: &quot;Open Sans&quot;, &quot;Lucida Grande&quot;, &quot;Helvetica Neue&quot;, Arial; color: rgb(68, 68, 68); font-size: 16px;">Verify that the <code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">ec2-user</code> can run Docker commands without <code
+        style="font-family: Consolas, Courier, mono; overflow: auto;">sudo</code>.</p><div
+        style="font-size: 14px; font-weight: normal; font-family: Consolas, Courier, mono; border: 1px solid rgb(225, 225, 232); border-radius: 3px; padding: 0px; overflow: auto; position: relative;"><code
+        style="font-family: Consolas, Courier, mono; overflow: auto; display: block; padding: 28px 0.5em 0.5em; color: rgb(56, 58, 66); background: rgb(250, 250, 250);"><strong><code
+        style="font-family: Consolas, Courier, mono; overflow: auto;"><span
+        style="font-family: Consolas, Courier, mono;">docker</span> <span style="font-family: Consolas, Courier, mono;">info</span></code></strong></code></div></li></ol></div><div><br/></div><div>Reading: <a
+        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker</a></div></span>
+</div>

@@ -69,7 +69,15 @@
     "name": "Grails",
     "subtitle": "",
     "link": "/technologies/grails",
-    "image": "/src/img/logos/grails.jpg",
+    "image": "/src/img/logos/grails.png",
     "description": "Lightweight Web application framework that focuses on business logic rather than plumbing"
+  },
+  {
+    "id": 99,
+    "name": "Tools",
+    "subtitle": "",
+    "link": "/technologies/tools",
+    "image": "/src/img/logos/tools.png",
+    "description": "All other tips, tricks and tools that are all about helping you with your Software Development. "
   }
 ]

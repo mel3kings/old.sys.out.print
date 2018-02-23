@@ -52,7 +52,9 @@ var keys = {
     '51': 'Throttling + Java Atomic Library',
     '52': 'Basic Kubernetes, Running Local Minikube',
     '53': 'Short Introduction to Grails',
-    '54': 'Apache Kafka Basics - Topics, Partitions and Brokers'
+    '54': 'Apache Kafka Basics - Topics, Partitions and Brokers',
+    '55': 'How to install Docker on EC2',
+    '56': 'NGORK - Making An API call from Staging environment to your Local Host'
 };
 
 exports.keys = keys;

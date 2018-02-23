@@ -322,5 +322,17 @@
     "type": "big-data",
     "title": "Apache Kafka Basics - Topics, Partitions and Brokers",
     "description": ""
+  },
+  {
+    "id": 55,
+    "type": "docker",
+    "title": "How to install Docker in EC2",
+    "description": ""
+  },
+  {
+    "id": 56,
+    "type": "tools",
+    "title": "NGORK - Local Mock Servers",
+    "description": ""
   }
 ]

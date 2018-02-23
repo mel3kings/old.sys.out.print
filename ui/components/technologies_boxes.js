@@ -12,8 +12,10 @@ export default class TechnologiesBoxes extends React.Component{
                             <p class="d-none d-md-block">
                                 <ul class="list-group">
                                     <li class="list-group-item">Updated NO-SQL to Big-Data</li>
-                                    <li class="list-group-item">Apache Kafka (Under Big-Data)</li>
-                                    <li class="list-group-item">Grails (Groovy on Grails)</li>
+                                    <li class="list-group-item">Apache Kafka (Big-Data)</li>
+                                    <li class="list-group-item">How to Install Docker on EC2 (Docker)</li>
+                                    <li class="list-group-item">Tools Page</li>
+                                    <li class="list-group-item">Using NGROK (Tools) </li>
                                 </ul>
 
                             </p>
