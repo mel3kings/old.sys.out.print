@@ -34,11 +34,11 @@
   },
   {
     "id": 5,
-    "name": "No-SQL",
+    "name": "Big-Data",
     "subtitle": "",
-    "link": "/technologies/no-sql",
+    "link": "/technologies/big-data",
     "image": "/src/img/logos/cassandra.png",
-    "description": "Database provides storage/retrieval of data without the use of relational tables"
+    "description": "Ways on handling big data, Technologies like Cassandra, Kafka, Hadoop, etc"
   },
   {
     "id": 4,

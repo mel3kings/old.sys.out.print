@@ -51,7 +51,8 @@ var keys = {
     '50': 'How to setup LightSail with GoDaddy, route 53 or any DNS',
     '51': 'Throttling + Java Atomic Library',
     '52': 'Basic Kubernetes, Running Local Minikube',
-    '53': 'Short Introduction to Grails'
+    '53': 'Short Introduction to Grails',
+    '54': 'Apache Kafka Basics - Topics, Partitions and Brokers'
 };
 
 exports.keys = keys;

@@ -253,7 +253,7 @@
   },
   {
     "id": 43,
-    "type": "no-sql",
+    "type": "big-data",
     "title": "Cassandra",
     "description": ""
   },
@@ -315,6 +315,12 @@
     "id": 53,
     "type": "grails",
     "title": "Introduction to Grails",
+    "description": ""
+  },
+  {
+    "id": 54,
+    "type": "big-data",
+    "title": "Apache Kafka Basics - Topics, Partitions and Brokers",
     "description": ""
   }
 ]

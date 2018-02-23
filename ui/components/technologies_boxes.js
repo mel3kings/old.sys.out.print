@@ -8,6 +8,17 @@ export default class TechnologiesBoxes extends React.Component{
                 <div class="row">
                     <div class="col">
                         <div class="container pt-5">
+                            <h1>New Updates: Feb 24, 2018</h1>
+                            <p class="d-none d-md-block">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Updated NO-SQL to Big-Data</li>
+                                    <li class="list-group-item">Apache Kafka (Under Big-Data)</li>
+                                    <li class="list-group-item">Grails (Groovy on Grails)</li>
+                                </ul>
+
+                            </p>
+                        </div>
+                        <div class="container pt-5">
                             <h1>New Updates: Feb 18, 2018</h1>
                             <p class="d-none d-md-block">
                                 <ul class="list-group">
