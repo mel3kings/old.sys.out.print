@@ -35,6 +35,7 @@ docker build -t mel3kings/sysdotoutdotprint .
 
 docker run --rm --name ui -p 80:8080 -d --network mynetwork mel3kings/sysdotoutdotprint 
 docker run --rm --name node -p 3000:3000 -d --network mynetwork mel3kings/nodesysoutprint 
+docker run -u root --restart unless-stopped -d -p 8081:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
 ```
 deployment:
 Docker pull all: <br/>
