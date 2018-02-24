@@ -15,7 +15,7 @@ app.use("/", function (req, res, next) {
 });
 
 app.get('/', function (req, res) {
-    res.json({status: 'okay'});
+    res.json({status: 'Status is Okay'});
 });
 
 app.get('/get/:type/:id', function (req, res) {
