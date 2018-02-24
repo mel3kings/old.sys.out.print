@@ -33,8 +33,8 @@ docker commands:
 docker network create mynetwork
 docker build -t mel3kings/sysdotoutdotprint .
 
-docker run --name ui -p 80:8080 -d --network mynetwork mel3kings/sysdotoutdotprint 
-docker run --name node -p 3000:3000 -d --network mynetwork mel3kings/nodesysoutprint 
+docker run --rm --name ui -p 80:8080 -d --network mynetwork mel3kings/sysdotoutdotprint 
+docker run --rm --name node -p 3000:3000 -d --network mynetwork mel3kings/nodesysoutprint 
 ```
 deployment:
 Docker pull all: <br/>
