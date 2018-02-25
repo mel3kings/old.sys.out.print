@@ -8,6 +8,14 @@ export default class TechnologiesBoxes extends React.Component{
                 <div class="row">
                     <div class="col">
                         <div class="container pt-5">
+                            <h1>New Updates: Feb 25, 2018</h1>
+                            <p class="d-none d-md-block">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Implemented Continuous Integration/Deployment: Upcoming Jenkins Tutorial</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="container pt-5">
                             <h1>New Updates: Feb 24, 2018</h1>
                             <p class="d-none d-md-block">
                                 <ul class="list-group">
