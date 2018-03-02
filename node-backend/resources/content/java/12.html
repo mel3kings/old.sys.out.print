@@ -10,9 +10,15 @@
     </pre>
     <p>&nbsp;</p>
     <p>Error occurs when in controller you are trying to set it to null instead of clearing the set/list, the following
-        pseudo code will throw an exception as “A collection with cascade=”all-delete-orphan” was no longer referenced
-        by the owning entity instance”</p> ='prettyprint'>public String deleteChildren(HttpServletRequest request,
-    @ModelAttribute('person') Person person, BindingResult result, Model model) { \n person.setChildren(null); \n
-    repository.save(person); \n}</pre> <p>instead use:</p>
-    <pre>person.getChildren.clear(); repository.save(person);</pre>
+        pseudo code will throw an exception as “A collection with cascade=all-delete-orphan was no longer referenced
+        by the owning entity instance”</p>
+    <pre class ='prettyprint'>
+        public String deleteChildren(HttpServletRequest request, @ModelAttribute('person') Person person, BindingResult result, Model model){
+            person.setChildren(null);
+            repository.save(person);
+        }
+    </pre>
+    <p>instead use:</p>
+    <pre class='prettyprint'>person.getChildren.clear();
+        repository.save(person);</pre>
 </div>
