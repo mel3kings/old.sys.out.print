@@ -51,6 +51,23 @@ class Architectures extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <div className="col-md-5 col-sm-5 col-lg-5">
+                            <div className="h_boxes">
+                                <img className="card-img-top"
+                                     src="../../src/img/architectures/resilient.png"
+                                     alt="Card image cap"/>
+                                <div className="h_details">
+                                    <h4 className="card-title"><b>Resilient Architecture</b></h4>
+                                    <p className="text-justify">
+                                    In addition to auto-scaling services, we showcase here how we can offload requests to
+                                    a seperate messaging queue, to be later processed. Also throttle request if they
+                                    exceed the number of request we can accommodate</p>
+                                    <a href="https://github.com/mel3kings/resilient-upload-service"
+                                       className="btn btn-primary">Github</a>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
