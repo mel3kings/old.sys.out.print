@@ -340,5 +340,11 @@
     "type": "tools",
     "title": "Creating Local Jenkins Server",
     "description": ""
+  },
+  {
+    "id": 58,
+    "type": "big-data",
+    "title": "Apache Kafka - Multiple Brokers",
+    "description": ""
   }
 ]
