@@ -56,7 +56,9 @@ var keys = {
     '55': 'How to install Docker on EC2',
     '56': 'NGORK - Making An API call from Staging environment to your Local Host',
     '57': 'Creating Local CI/CD Using Jenkins Server (Docker + AWS)',
-    '58': 'Multiple Kafka Brokers with replication'
+    '58': 'Multiple Kafka Brokers with replication',
+    '59': 'Big O Notation for Dummies',
+    '60': 'Data Structure - Stack'
 };
 
 exports.keys = keys;

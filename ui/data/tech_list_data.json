@@ -346,5 +346,17 @@
     "type": "big-data",
     "title": "Apache Kafka - Multiple Brokers",
     "description": ""
+  },
+  {
+    "id": 59,
+    "type": "algorithms",
+    "title": "Big O Notation - Part 2 (More Detailed)",
+    "description": ""
+  },
+  {
+    "id": 60,
+    "type": "algorithms",
+    "title": "Data Structure - Stack",
+    "description": ""
   }
 ]

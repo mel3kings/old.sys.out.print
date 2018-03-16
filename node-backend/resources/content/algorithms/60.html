@@ -1,0 +1,50 @@
+<div>
+    <span><div><span style="font-weight: bold;"><font style="font-size: 14pt;">What is a Stack?</font></span> Stack is exactly what it sounds like, a stack of things. For example a stack of mail. You notice how  when you get your mails, you stack them on top of each other, and usually when you check them you go from the top. So the most oldest mail is found at the bottom, and you read the newest one.<br/></div><div><br/></div><div>This concept is known as way of getting data form the stack is also known: <span
+            style="font-weight: bold;">LIFO (Last in First Out) </span></div><div><font style="font-size: 12pt;"><b>Key Methods:</b></font></div><div><ul><li><font
+            style="font-size: 10pt;"><b>Push -</b> Add new data to the top of the stack</font><br/></li><li><font
+            style="font-size: 10pt;"><b>Pop -</b> Get and remove the data from the top </font></li><li><font
+            style="font-size: 10pt;"><b>Peak -</b> Fetch the data from the top but do not remove it</font></li></ul></div><div><br/></div><div><br/></div><div><img
+            src="../../src/img/60_files/Image.png" type="image/png" data-filename="Image.png" style="font-weight: bold;"/></div><div><font
+            style="font-size: 14pt;"><br/></font></div><div><b><font style="font-size: 14pt;">Implementing your own Stack:</font></b></div><div>This is just for better understanding how it works and a simplification of the Data Structure, it is not recommended that you use/implement your own Stack, as there is already an implementation of Stack (which is more safe from runtime issues) from whatever language you are using.</div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div><span
+            style="color: rgb(126, 107, 89);">package algorithm.datastructures;</span></div><div><br
+            style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">public class Stack {</span></div><div><span
+            style="color: rgb(126, 107, 89);">    private String[] data;</span></div><div><span
+            style="color: rgb(126, 107, 89);">    private int top;</span></div><div><br
+            style="color: rgb(126, 107, 89);"/></div><div><span style="color: rgb(126, 107, 89);">    public Stack(int maxSize){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        data = new String[maxSize];</span></div><div><span
+            style="color: rgb(126, 107, 89);">        top = -1; // at this point we do not have anything yet</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">    public void push(String value){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        top++; //increment top to signify newest data</span></div><div><span
+            style="color: rgb(126, 107, 89);">        data[top] = value;</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">    public String pop(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        String value = data[top];</span></div><div><span
+            style="color: rgb(126, 107, 89);">        top--; // decrement top</span></div><div><span
+            style="color: rgb(126, 107, 89);">        return value;</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">    // do not increment o decrement, just check if the value is there</span></div><div><span
+            style="color: rgb(126, 107, 89);">    public String peak(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        return data[top];</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">    public static void main(String[] args){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        Stack mailStack = new Stack(5);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        mailStack.push(&quot;Electricity Bills&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        mailStack.push(&quot;Rental Bills&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        mailStack.push(&quot;Water Bills&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        mailStack.push(&quot;Love Letter&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(mailStack.pop()); // Love Letter</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(mailStack.pop()); // Water Bills</span></div><div><span
+            style="color: rgb(126, 107, 89);">        mailStack.push(&quot;Government Letter&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(mailStack.peak()); // Government Bills</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(mailStack.pop()); // Government Bills</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(mailStack.pop()); // Rental Bills</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><br
+            style="color: rgb(126, 107, 89);"/></div><div><span style="color: rgb(126, 107, 89);">}</span></div></div><div><br/></div><div><font
+            style="font-size: 14pt;"><b>Example Implementation Use Case - reverseString:</b><br/></font></div><div><span
+            style="font-size: 18.6667px;">Problem: Print out the letters in a word in reverse order, for example Hello should print out: o l l e H</span></div><div><br/></div><div><span
+            style="font-size: 18.6667px;"><b>Solution (using java 8)</b></span></div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div>java.util.Stack&lt;Character&gt; characters = new java.util.Stack&lt;&gt;();</div><div>String word = &quot;Hello&quot;;</div><div>List&lt;Character&gt; list = word.chars() // convert string to a int stream (no direct stream call)</div><div>        .mapToObj(intValue-&gt; (char) intValue) // convert each int value back to character</div><div>        .collect(Collectors.toList()); // collect them to a list agvain</div><div>characters.addAll(list);</div><div>while(!characters.isEmpty()){</div><div>    System.out.println(characters.pop());</div><div>}</div></div><div><br/></div><div>Try it for yourself using a different language, you would need to get the characters one by one and add them to the stack, after that it is just a matter of popping the Stack.</div></span>
+</div>
