@@ -1,0 +1,49 @@
+<div>
+    <span><div><span style="font-size: 14pt; font-weight: bold;">What is Queue?</span> Queue is easier to understand compared to Stack, we see queues all the time in real world scenarios, like Queue of people for a movie or a bank. Generally it is a First Come First Serve, you aren't going to let in the movie house the last person that arrives right. </div><div><br/></div><div><span
+            style="font-weight: bold;">First Come First Serve</span> in the Computer Science world is also known as <span
+            style="font-weight: bold; font-size: 12pt;">FIFO (First In First Out)</span></div><div><font
+            style="font-size: 14pt;"><br/></font></div><div><span style="font-weight: bold; font-size: 12pt;">Key Methods</span></div><div><ul><li><span
+            style="font-weight: bold;">Add -</span> Inserts element to the last of the queue</li><li><span
+            style="font-weight: bold;">Poll/Remove -</span> Gets the first element from the Queue</li><li><span
+            style="font-weight: bold;">Peek -</span> Checks the first value of the queue, but does not remove it</li></ul><div><br/></div><div><b>Key Variables</b></div><div>Below are generally what the Queue internally keeps track of (not specifically called these names)</div><div><ul><li>Rear - where is the last of the Queue, this is were we insert the value</li><li>Front - Here is where we take the values when processing/polling</li><li>Size - number of elements there are</li></ul><div><br/></div><div>Say you have a queue of customers, waiting to see the Bank Teller</div><div><br/></div><div><b>Bank Teller&lt;- [Old Lady, Young Man, Engineer, Banker, Late College Kid]</b></div><div><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    ^ Front<span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>    </span><span>   ^Rear</span></span></div></div><div><span><br/></span></div><div>As per above, once a new customer comes in, he's not going to cut in line to the front of the <i>Old Lady</i> (well if he decent guy that is), but generally new entries comes in the the last of the Queue, so any new person coming in goes after the rear which in this example is the <i>Late College Kid</i></div><div><br/></div><div>For the Bank Tellers point view, He needs to know the front to see who is next in line for transacting with. Which in this case is the old lady.</div><div><br/></div><div><br/></div><div><font
+            style="font-size: 14pt;"><b>Example Implementation</b></font></div><div>Below is an example implementation of a Queue, this is only for simplicity sake, generally you would use a built-in Queue from your programming language, that handles any ArrayIndexOutOfBounds and is more safe to use than your own implementation.<br/><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div><span
+            style="color: rgb(126, 107, 89);">package algorithm.datastructures;</span></div><div><br
+            style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">public class Queue {</span></div><div><span
+            style="color: rgb(126, 107, 89);">    private static int rear = -1, front =0, size=0;</span></div><div><span
+            style="color: rgb(126, 107, 89);">    private String[] data;</span></div><div><br
+            style="color: rgb(126, 107, 89);"/></div><div><span style="color: rgb(126, 107, 89);">    public Queue(int size){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        data = new String[size];</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">    public void insert(String value){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        data[++rear] = value;</span></div><div><span
+            style="color: rgb(126, 107, 89);">        size++;</span></div><div><span style="color: rgb(126, 107, 89);">    }</span></div><div><br
+            style="color: rgb(126, 107, 89);"/></div><div><span style="color: rgb(126, 107, 89);">    public String remove(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        size--;</span></div><div><span style="color: rgb(126, 107, 89);">        return data[front++];</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">    public String peekFront(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        return data[front];</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><span style="color: rgb(126, 107, 89);">    public String peekRear(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        return data[rear];</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">    public static void main(String[] args){</span></div><div><span
+            style="color: rgb(126, 107, 89);">        Queue customers = new Queue(5);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        customers.insert(&quot;Old Lady&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        customers.insert(&quot;Young Man&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        customers.insert(&quot;Engineer&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        customers.insert(&quot;Banker&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(&quot;Next Customer to be procaessed : &quot; + customers.remove());</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(&quot;Next Customer to be processed : &quot; + customers.remove());</span></div><div><span
+            style="color: rgb(126, 107, 89);">        customers.insert(&quot;Late College Kid&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(&quot;Next in line is: &quot;+ customers.peekFront());</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(&quot;Last in line is: &quot;+ customers.peekRear());</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(&quot;Next Customer to be processed : &quot; + customers.remove());</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(&quot;Next Customer to be processed : &quot; + customers.remove());</span></div><div><span
+            style="color: rgb(126, 107, 89);">        System.out.println(&quot;Next Customer to be processed : &quot; + customers.remove());</span></div><div><span
+            style="color: rgb(126, 107, 89);">    }</span></div><div><span
+            style="color: rgb(126, 107, 89);">}</span></div></div></div><div><br/></div><div><b><font
+            style="font-size: 11pt;">Circular Queue</font></b></div><div>Is where when you exceed the Queue, you insert AND overwrite the first of the Queue. So in this case the Rich CEO Man comes in and the Bank Teller can only accommodate 5 in the Queue at a time</div></div><div><br/></div><div><span
+            style="font-weight: bold;">Bank Teller&lt;- [Old Lady, Young Man, Engineer, Banker, Late College Kid]  &lt;- Rich CEO Man</span></div><div>                        ^ Front                                                                   ^Rear</div><div><span
+            style="font-weight: bold;">Bank Teller&lt;- [<span style="font-weight: bold;">Rich CEO Man,</span> Young Man, Engineer, Banker, Late College Kid]  </span></div><div>                        ^ Front                                                                   ^Rear</div><div><br/></div><div>Obviously this is not a good example and since we are not using a Linked List, the Old Lady is kicked off the Queue altogether! Linked List will be covered in a different topic.</div><div><br/></div><div>Circular Queue is very unique in nature, and does not always apply to all scenarios, a good example us of it might be an Airport Baggage Carousel</div></span>
+</div>

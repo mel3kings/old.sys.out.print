@@ -11,6 +11,7 @@ export default class TechnologiesBoxes extends React.Component{
                             <h1>New Updates: March 2018</h1>
                             <p class="d-none d-md-block">
                                 <ul class="list-group">
+                                    <li class="list-group-item"><a href="/technologies/algorithms/61"><b>Data Structures - Queue</b></a></li>
                                     <li class="list-group-item"><a href="/technologies/algorithms/60"><b>Data Structures - Stack</b></a></li>
                                     <li class="list-group-item"><a href="/technologies/algorithms/59"><b>Big O Notation - Revisited</b></a></li>
                                     <li class="list-group-item"><a href="/technologies/big-data/58">Kafka Multiple Brokers Config</a></li>

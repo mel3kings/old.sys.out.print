@@ -58,7 +58,9 @@ var keys = {
     '57': 'Creating Local CI/CD Using Jenkins Server (Docker + AWS)',
     '58': 'Multiple Kafka Brokers with replication',
     '59': 'Big O Notation for Dummies',
-    '60': 'Data Structure - Stack'
+    '60': 'Data Structure - Stack',
+    '61': 'Data Structure - Queue',
+
 };
 
 exports.keys = keys;
