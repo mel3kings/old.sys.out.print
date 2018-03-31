@@ -73,6 +73,14 @@
     "description": "Lightweight Web application framework that focuses on business logic rather than plumbing"
   },
   {
+    "id": 10,
+    "name": "Python",
+    "subtitle": "",
+    "link": "/technologies/python",
+    "image": "/src/img/logos/python.png",
+    "description": "Interpreted high level programming language that focuses on code readability used for general purposes"
+  },
+  {
     "id": 99,
     "name": "Tools",
     "subtitle": "",

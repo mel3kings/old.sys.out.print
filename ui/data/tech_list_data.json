@@ -358,5 +358,18 @@
     "type": "algorithms",
     "title": "Data Structure - Stack",
     "description": ""
+  },
+  {
+    "id": 61,
+    "type": "algorithms",
+    "title": "Data Structure - Queue",
+    "description": ""
+  },
+  {
+    "id": 62,
+    "type": "python",
+    "title": "Python Basics",
+    "description": ""
   }
+
 ]
