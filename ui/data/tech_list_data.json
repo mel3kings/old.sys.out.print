@@ -370,6 +370,24 @@
     "type": "python",
     "title": "Python Basics",
     "description": ""
+  },
+  {
+    "id": 63,
+    "type": "python",
+    "title": "Python Basics - Lists",
+    "description": ""
+  },
+  {
+    "id": 64,
+    "type": "python",
+    "title": "Python Basics - Data Types",
+    "description": ""
+  },
+  {
+    "id": 65,
+    "type": "python",
+    "title": "Python Basics - Basic I/O",
+    "description": ""
   }
 
 ]
