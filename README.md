@@ -13,10 +13,12 @@ As the Architecture diagram shows, user hits a React website, which in at the ba
 * Node JS - Contains Back-end API, that servers HTML pages
 * Bootstrap 4 - CSS stuff
 * Docker - Containerized Application
+* Jenkins - Continuous Integration/Continuous Delivery
 
 
 
-## Building Dockerized React App
+## Building Dockerized React App - Through Jenkins
+Docker Commands:
 
 Dockerfile sets the command default as NPM start
 ```
@@ -46,6 +48,10 @@ stop and delete all containers:<br/>
 
 remove all docker images <br/>
 ```docker rmi $(docker images -q)```
+
+See how I use Jenkins to automate all the build and deploy for this project:
+http://sysdotoutdotprint.com/technologies/tools/57
+
 
 ### Known Issues
 CSS is not as good as I want it to be, pending redesign.

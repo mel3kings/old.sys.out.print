@@ -95,7 +95,7 @@ print('The {b} {q} {f}'.format(f='fox', b='brown', q='quick'))
 # In[17]:
 
 
-print(f'hello {}', 'e')
+print(f'hello {1}', 'e')
 
 
 # In[18]:
