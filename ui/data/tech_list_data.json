@@ -390,15 +390,21 @@
     "description": ""
   },
   {
-    "id": 65,
+    "id": 66,
     "type": "python",
     "title": "Python Basics - Control Flow",
     "description": ""
   },
   {
-    "id": 66,
+    "id": 67,
     "type": "python",
     "title": "Python Basics - Operators",
+    "description": ""
+  },
+  {
+    "id": 68,
+    "type": "python",
+    "title": "Python Basics - Methods",
     "description": ""
   }
 
