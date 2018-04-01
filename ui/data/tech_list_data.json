@@ -394,6 +394,12 @@
     "type": "python",
     "title": "Python Basics - Control Flow",
     "description": ""
+  },
+  {
+    "id": 66,
+    "type": "python",
+    "title": "Python Basics - Operators",
+    "description": ""
   }
 
 ]
