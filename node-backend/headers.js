@@ -61,8 +61,12 @@ var keys = {
     '60': 'Data Structure - Stack',
     '61': 'Data Structure - Queue',
     '62': 'Introduction to Python',
-    '63': 'Python Basics - Lists'
-
+    '63': 'Python Basics - Lists',
+    '64': 'Python Basics - Data Types',
+    '65': 'Python Basics - Basic I/O',
+    '66': 'Python Basics - Control Flow',
+    '67': 'Python Basics - Operators',
+    '68': 'Python Basics - Methods'
 };
 
 exports.keys = keys;
