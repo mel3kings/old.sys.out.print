@@ -41,6 +41,7 @@
     "lodash": "^4.17.4",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
+    "react-adsense": "0.0.5",
     "react-document-meta": "^2.1.2",
     "react-dom": "^16.2.0",
     "react-favicon": "0.0.11",

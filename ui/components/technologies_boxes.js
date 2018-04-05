@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AdSense from 'react-adsense';
 
 export default class TechnologiesBoxes extends React.Component{
 
@@ -6,7 +7,7 @@ export default class TechnologiesBoxes extends React.Component{
        return <section id="home-heading" class="p-5">
             <div class="dark-overlay">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-7">
                         <div class="container pt-5">
                             <h1>New Updates: March 2018</h1>
                             <p class="d-none d-md-block">
@@ -46,6 +47,21 @@ export default class TechnologiesBoxes extends React.Component{
                             <p class="d-none d-md-block">I try to cover all new technologies I can get my hands on, this just me playing with new tech coming from a
                                 Java developer point of view, and notes I collect. Click About Me to know more about my history in the industry</p>
                         </div>
+                    </div>
+                    <div class="col-3" id="insert">
+                        <AdSense.Google
+                            client='ca-pub-9837645739197927'
+                            slot='9279171029'
+                        />
+                        <AdSense.Google
+                            client='ca-pub-9837645739197927'
+                            slot='5092747452'
+                        />
+                        <AdSense.Google
+                            client='ca-pub-9837645739197927'
+                            slot='7685322363'
+                        />
+
                     </div>
                 </div>
             </div>
