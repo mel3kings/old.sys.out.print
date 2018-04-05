@@ -58,11 +58,11 @@
   },
   {
     "id": 8,
-    "name": "Kubernetes",
+    "name": "Infrastructure",
     "subtitle": "",
-    "link": "/technologies/kubernetes",
+    "link": "/technologies/infrastructure",
     "image": "/src/img/logos/kubernetes.png",
-    "description": "Open Source Tech that orchestrates Desired State Management"
+    "description": "Orchestration of Infrastructure like Kubernetes, Terraform, and General Topics"
   },
   {
     "id": 9,

@@ -1,0 +1,96 @@
+<div><span style="font-weight: bold;">Website/Documentation</span></div><div><a
+        href="https://www.terraform.io/intro/index.html">https://www.terraform.io/intro/index.html</a></div><div><br/></div><div><span
+        style="font-weight: bold;">What is Terraform?</span></div><div>Basically, in a oversimplification of it, Terraform is Infrastructure as code. Similar to how Docker generates images and containers based on yml files, and how kubernetes manages it’s infrastructure  through config files, Terraforms enables you to create AWS instance (or other cloud provider) via config files.</div><div><br/></div><div><span
+        style="font-weight: bold;">Prerequisites</span></div><div><ul><li><span style="font-size: 14px;">Knowledge and Access to AWS</span></li><li><font
+        style="font-size: 14px;"><span style="font-size: 14px; font-family: &quot;Helvetica Neue&quot;;">AWS cli configured</span></font></li></ul><div><br/></div></div><div><span
+        style="font-weight: bold;">Installing Terraform</span></div><div>Installing is Terraform for Mac OS is quite straightforward</div><div
+        style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902);-en-codeblock:true;"><div>brew install terraform </div></div><div><div>brew is another Mac OS tool: <a
+        href="https://brew.sh/"
+        style="font-family: Monaco; font-size: 12px; color: rgb(51, 51, 51);">https://brew.sh/</a> that is out of scope for this article<br/></div><div>Windows requires download the package and adding it to Environment PATH : <a
+        href="https://www.terraform.io/intro/getting-started/install.html">https://www.terraform.io/intro/getting-started/install.html</a></div><div><br/></div><div>Verifying if it has been properly been installed, and initialising config:</div><div
+        style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902);-en-codeblock:true;"><div>terraform</div><div>terraform init</div></div><div><br/></div><div>You will get something similar to:</div><div
+        style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902);-en-codeblock:true;"><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">terraform init</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">Initializing the backend...</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">Initializing provider plugins...</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">- downloading plugin for provider &quot;aws&quot;...</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">The following providers do not have any version constraints in configuration,</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">so the latest version was installed.</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">To prevent automatic upgrades to new major versions that may contain breaking</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">changes, it is recommended to add version = &quot;...&quot; constraints to the</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">corresponding provider blocks in configuration, with the constraint strings</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">suggested below.</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">* provider.aws: version = &quot;~&gt; 1.0&quot;</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">Terraform has been successfully initialized!</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">You may now begin working with Terraform. Try running &quot;terraform plan&quot; to see</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">any changes that are required for your infrastructure. All Terraform commands</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">should now work.</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">If you ever set or change modules or backend configuration for Terraform,</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">rerun this command to reinitialize your environment. If you forget, other</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">commands will detect it and remind you to do so if necessary.</span></div></div><div><b><br/></b></div><div><b>Creating AWS Instances using Terraform:</b></div></div><div>Create yourself a new terraform file, it can be any name, for my case I’ve created a micro.tf file, that contains the following:</div><div><br/></div><div><div
+        style="font-weight: bold;"><span style="color: #cc7832; font-weight: bold;">provider </span><span
+        style="color: #6a8759; font-weight: bold;">&quot;aws&quot; </span><span
+        style="font-weight: bold;">{</span></div><div style="font-weight: bold;"><span
+        style="font-weight: bold;">  </span><span style="color: #9876aa; font-weight: bold;">access_key </span><span
+        style="font-weight: bold;">= </span><span style="color: #6a8759; font-weight: bold;">&quot;&quot;</span></div><div
+        style="font-weight: bold;"><span style="color: #6a8759; font-weight: bold;">  </span><span
+        style="color: #9876aa; font-weight: bold;">secret_key </span><span style="font-weight: bold;">= </span><span
+        style="color: #6a8759; font-weight: bold;">&quot;&quot;</span></div><div style="font-weight: bold;"><span
+        style="color: #6a8759; font-weight: bold;">  </span><span
+        style="color: #9876aa; font-weight: bold;">region     </span><span style="font-weight: bold;">= </span><span
+        style="color: #6a8759; font-weight: bold;">&quot;ap-southeast-2&quot;</span></div><div
+        style="font-weight: bold;"><span style="font-weight: bold;">}</span></div><div style="font-weight: bold;"><br
+        style="font-weight: bold;"/></div><div style="font-weight: bold;"><span
+        style="color: #cc7832; font-weight: bold;">resource </span><span style="color: #769aa5; font-weight: bold;">&quot;aws_instance&quot; </span><span
+        style="color: #6a8759; font-weight: bold;">&quot;example&quot; </span><span style="font-weight: bold;">{</span></div><div
+        style="font-weight: bold;"><span style="font-weight: bold;">  </span><span
+        style="color: #9876aa; font-weight: bold;">ami           </span><span style="font-weight: bold;">= </span><span
+        style="color: #6a8759; font-weight: bold;">&quot;ami-43874721&quot;</span></div><div style="font-weight: bold;"><span
+        style="color: #6a8759; font-weight: bold;">  </span><span style="color: #9876aa; font-weight: bold;">instance_type </span><span
+        style="font-weight: bold;">= </span><span style="color: #6a8759; font-weight: bold;">&quot;t2.micro&quot;</span></div><div
+        style="font-weight: bold;"><span style="font-weight: bold;">}</span></div></div><div style="font-weight: bold;"><span
+        style="font-weight: bold;"><br/></span></div><div>Provider block contains your IAM access keys, initially Terraform was intended for building AWS instances, but this can be change to other service provider as well. If you do not specify the credentials here Terraform will look in your .aws/credentails folder if one exists.  </div><div><br/></div><div>The resource block is where the magic happens, basically you are telling terraform to create an “aws_instance” with “example” as the name with the following config</div><div><ul><li><font><font
+        face="Helvetica Neue">ami - is which image you want to base your instance form, make sure this is a valid AMI</font><br/></font></li><li><font
+        face="Helvetica Neue">Instance_type - is what kind of image you want it to be</font><br/></li><li><font
+        face="Helvetica Neue">The name “example” is just Terraform keeping track of the instance, this is NOT what it will be named in AWS</font></li></ul><div><br/></div></div><div><font
+        face="Helvetica Neue"><b>To actually perform the creation, run the following with the tf file in the same directory</b></font></div><div
+        style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902);-en-codeblock:true;"><div>terraform apply</div></div><div><br/></div><div>Pitfall: Make sure there is only one tf file for now.</div><div><br/></div><div>You will see, terraform trying to create the instance:</div><div
+        style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902);-en-codeblock:true;"><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"># ...</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">aws_instance.example: Refreshing state... (ID: i-64c268fe)</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">aws_instance.example: Destroying...</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">aws_instance.example: Destruction complete</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">aws_instance.example: Creating...</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  ami:                      &quot;&quot; =&gt; &quot;ami-b374d5a5&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  availability_zone:        &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  ebs_block_device.#:       &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  ephemeral_block_device.#: &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  instance_state:           &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  instance_type:            &quot;&quot; =&gt; &quot;t2.micro&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  key_name:                 &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  placement_group:          &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  private_dns:              &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  private_ip:               &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  public_dns:               &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  public_ip:                &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  root_block_device.#:      &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  security_groups.#:        &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  source_dest_check:        &quot;&quot; =&gt; &quot;true&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  subnet_id:                &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  tenancy:                  &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">  vpc_security_group_ids.#: &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">aws_instance.example: Still creating... (10s elapsed)</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">aws_instance.example: Still creating... (20s elapsed)</span></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">aws_instance.example: Creation complete</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);">Apply complete! Resources: 1 added, 0 changed, 1 destroyed.</span></div><div><br
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"/></div><div><span
+        style="font-family: Fira Mono; font-size: 13px; color: rgb(51, 51, 51);"># ...</span></div></div><div><br/></div><div>Terraform then saves and creates terraform.tfstate in the same folder, keeping track of the state of your instances.</div><div><br/></div><div><b>To destroy the instance:<br/></b></div><div
+        style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902);-en-codeblock:true;"><div>terraform destroy</div></div><div><br/>
+</div>

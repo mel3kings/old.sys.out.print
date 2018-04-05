@@ -9,13 +9,21 @@ export default class TechnologiesBoxes extends React.Component{
                 <div class="row">
                     <div class="col-7">
                         <div class="container pt-5">
+                            <h1>New Updates: April 2018</h1>
+                            <p class="d-none d-md-block">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><a href="/technologies/infrastructure/69"><b>Terraform - Infrastructure through code</b></a></li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="container pt-5">
                             <h1>New Updates: March 2018</h1>
                             <p class="d-none d-md-block">
                                 <ul class="list-group">
-                                    <li class="list-group-item"><a href="/technologies/python"><b>New Language - Python</b></a></li>
-                                    <li class="list-group-item"><a href="/technologies/algorithms/61"><b>Data Structures - Queue</b></a></li>
-                                    <li class="list-group-item"><a href="/technologies/algorithms/60"><b>Data Structures - Stack</b></a></li>
-                                    <li class="list-group-item"><a href="/technologies/algorithms/59"><b>Big O Notation - Revisited</b></a></li>
+                                    <li class="list-group-item"><a href="/technologies/python">New Language - Python</a></li>
+                                    <li class="list-group-item"><a href="/technologies/algorithms/61">Data Structures - Queue</a></li>
+                                    <li class="list-group-item"><a href="/technologies/algorithms/60">Data Structures - Stack</a></li>
+                                    <li class="list-group-item"><a href="/technologies/algorithms/59">Big O Notation - Revisited</a></li>
                                     <li class="list-group-item"><a href="/technologies/big-data/58">Kafka Multiple Brokers Config</a></li>
                                     <li class="list-group-item"><a href="/technologies/tools/57">Creating Local CI/CD Using Jenkins Server (Docker + AWS)</a></li>
                                     <li class="list-group-item"><a href="/architectures">New Architecture (Kafka + Grails) > Architectures page</a></li>

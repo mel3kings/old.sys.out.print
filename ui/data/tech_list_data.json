@@ -307,7 +307,7 @@
   },
   {
     "id": 52,
-    "type": "kubernetes",
+    "type": "infrastructure",
     "title": "Basic Kubernetes",
     "description": ""
   },
@@ -405,6 +405,12 @@
     "id": 68,
     "type": "python",
     "title": "Python Basics - Methods",
+    "description": ""
+  },
+  {
+    "id": 69,
+    "type": "infrastructure",
+    "title": "Terraform - Infrastructure through code",
     "description": ""
   }
 

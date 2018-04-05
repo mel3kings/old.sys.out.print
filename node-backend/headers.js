@@ -66,7 +66,8 @@ var keys = {
     '65': 'Python Basics - Basic I/O',
     '66': 'Python Basics - Control Flow',
     '67': 'Python Basics - Operators',
-    '68': 'Python Basics - Methods'
+    '68': 'Python Basics - Methods',
+    '69': 'Terraform - Creating AWS Instances through Code'
 };
 
 exports.keys = keys;
