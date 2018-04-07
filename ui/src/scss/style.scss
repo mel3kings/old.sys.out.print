@@ -114,6 +114,10 @@ footer#main-footer {
   animation: loading 20s infinite linear;
 }
 
+.list-group-item{
+  border: white;
+}
+
 @keyframes loading {
   0% {
     transform: rotate(0deg);
