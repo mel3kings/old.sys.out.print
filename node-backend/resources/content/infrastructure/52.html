@@ -12,11 +12,9 @@
         style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"/></div>
 <div>In Kubernetes you need to create a deployment, 
 
-    <span style="color: rgb(51, 51, 51); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"> Deployment instructs Kubernetes how to create and update instances of your application, an example of how to create a deployment:</span>
+    <span style="color: rgb(51, 51, 51); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"> Deployment instructs Kubernetes how to create and update instances of your application.</span>
 </div>
-<div><span
-        style="color: rgb(255, 255, 255); font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.5px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(85, 85, 85); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">kubectl run mel-app --image=mel3kings/sysdotoutdotprint:latest --port=8080 </span>
-</div>
+
 <div><br/></div>
 <div>Everytime you create a deployment, <u><i><b>pods are automatically created for you</b></i></u>, Pods are either a
     single container or a group of shared containers, that have shared volumes:
@@ -86,27 +84,9 @@
                 style="box-sizing: border-box; font-family: &quot;Roboto Mono&quot;, monospace; background: none rgb(247, 247, 247); margin: 0px; border: 0px; font-size: 14px; padding: 2px 4px; color: rgb(48, 48, 48); border-radius: 4px; display: inline-block; vertical-align: baseline; font-weight: bold;">kube-dns</code>.
         </li>
     </ul>
-    <div
-            style="box-sizing: border-box; background: none; margin: 0px 0px 0.75em; border: 0px; list-style: disc;">
-        <div><span
-                style="font-size: 16px;"><span
-                style="font-family: Roboto, sans-serif;">Create a Service Command:</span></span></div>
-        <div><span
-                style="color: rgb(255, 255, 255); font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.5px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(85, 85, 85); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">kubectl expose deployment/mel-app --type=&quot;NodePort&quot; --port 8080</span>
+</div>
+<!--
 
-        </div>
-    </div>
-</div>
-<div><h4>Pitfalls</h4></div>
-<div>Since in your local you are using minikube, once you expose your application, you need to know your minikube's ip
-    address. you can get this by running: minikube ip,
-</div>
-<div>you can then get your service node port by running: kubectl describe services by default it is<span
-        style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">: 30000-32767</span>
-
-</div>
-<div>So hitting your application once exposed through a port will be:</div>
-<div>http://&lt;minikube_ip&gt;:&lt;service_node_port</div>
 <div><h4>Scaling</h4></div>
 <div>Perhaps one of the most powerful feature of Kubernetes is the ability for it to easily scale, with just a simple
     command:
@@ -123,42 +103,12 @@
         src="../../src/img/52_files/k8s scale.PNG" type="image/png" data-filename="k8s scale.PNG"
         style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"/>
 
-</div>
-<div><h4>Installation</h4></div>
+</div>-->
+<div><h4>Getting Started</h4></div>
 <div><b>Minikube </b>- is a tool for your local machine to try out the Kubernetes, it is an automated application that
     helps create a single node architecture in your local PC. <a
             href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a></div>
 <div><br/></div>
 <div>download kubectl: <a
         href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-chocolatey-on-windows">https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-chocolatey-on-windows</a>
-</div>
-<div><br/></div>
-<div><h4>Commands Reviewer:</h4></div>
-<div>minikube version</div>
-<div>minikube start - start a cluster</div>
-<div><br/></div>
-<div><b>Create Deployment:</b></div>
-<div><span
-        style="color: rgb(255, 255, 255); font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.5px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(85, 85, 85); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">kubectl run mel-app --image=mel3kings/sysdotoutdotprint:latest --port=8080 </span>
-
-</div>
-<div style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"><b>Create Service:</b></div>
-<div><span
-        style="color: rgb(255, 255, 255); font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.5px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(85, 85, 85); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">kubectl expose deployment/mel-app --type=&quot;NodePort&quot; --port 8080</span>
-
-</div>
-<div style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"><b>Get Commands:</b></div>
-<ul>
-    <li
-            style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;">kubectl get deployments
-    </li>
-    <li
-            style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;">kubectl get pods
-    </li>
-    <li
-            style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;">kubectl cluster-info
-    </li>
-    <li>kubectl get nodes</li>
-</ul><br/><br/><br/><br/>
-<div><br/></div></span>
 </div>

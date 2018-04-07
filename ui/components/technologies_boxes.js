@@ -13,6 +13,12 @@ export default class TechnologiesBoxes extends React.Component{
                             <p class="d-none d-md-block">
                                 <ul class="list-group">
                                     <li class="list-group-item">
+                                        <a href="/technologies/infrastructure/52">
+                                            <img src="../../src/img/logos/kubernetes.png" type="image/png" height={25} width={25}/>
+                                            Introduction to Kubernetes (Revised)
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
                                         <img src="../../src/img/icon/terra.jpg" type="image/jpg" height={25} width={25}/>
                                         <a href="/technologies/infrastructure/69"><b>Terraform - Infrastructure through code</b></a></li>
                                 </ul>

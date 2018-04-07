@@ -50,7 +50,7 @@ var keys = {
     '49': 'Euler 2 - Even Fibonacci',
     '50': 'How to setup LightSail with GoDaddy, route 53 or any DNS',
     '51': 'Throttling + Java Atomic Library',
-    '52': 'Basic Kubernetes, Running Local Minikube',
+    '52': 'Introduction to Kubernetes',
     '53': 'Short Introduction to Grails',
     '54': 'Apache Kafka Basics - Topics, Partitions and Brokers',
     '55': 'How to install Docker on EC2',
