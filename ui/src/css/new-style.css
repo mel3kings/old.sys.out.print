@@ -24,10 +24,9 @@ body {
 }
 
 .h_details {
-    border: 1px solid rgba(209,201,201,0.48);
+    border: 1px solid white;
     text-align: center;
     overflow: hidden;
-    box-shadow: 0px 0px 1px 0px #a09d9d;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
