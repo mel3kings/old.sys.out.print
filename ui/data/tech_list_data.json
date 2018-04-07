@@ -412,6 +412,12 @@
     "type": "infrastructure",
     "title": "Terraform - Infrastructure through code",
     "description": ""
+  },
+  {
+    "id": 70,
+    "type": "infrastructure",
+    "title": "Local Kubernetes with Minikube",
+    "description": ""
   }
 
 ]
