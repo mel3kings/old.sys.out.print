@@ -17,6 +17,8 @@ export default class TechnologiesBoxes extends React.Component{
                                             <img src="../../src/img/logos/kubernetes.png" type="image/png" height={25} width={25}/>
                                             Scaling with Kubernetes
                                         </a>
+                                    </li>
+                                    <li>
                                         <a href="/technologies/infrastructure/70">
                                             <img src="../../src/img/logos/kubernetes.png" type="image/png" height={25} width={25}/>
                                             Running a Local Kubernetes Cluster through Minikube
