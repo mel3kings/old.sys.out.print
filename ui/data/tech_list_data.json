@@ -418,6 +418,13 @@
     "type": "infrastructure",
     "title": "Local Kubernetes with Minikube",
     "description": ""
+  },
+  {
+    "id": 71,
+    "type": "infrastructure",
+    "title": "Kubernetes Scaling",
+    "description": ""
   }
+
 
 ]
