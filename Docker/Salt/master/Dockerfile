@@ -9,7 +9,5 @@ RUN curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
 RUN chmod 777 bootstrap-salt.sh
 RUN ./bootstrap-salt.sh -M
 # master commands
-RUN salt-key --list-all
-RUN service salt-master start
-RUN echo 'DONE'
-CMD ["bash"]
+COPY master /etc/salt/
+CMD ["salt-master", "-l", "debug"]

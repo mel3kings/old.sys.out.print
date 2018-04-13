@@ -10,6 +10,11 @@ RUN chmod 777 bootstrap-salt.sh
 RUN ./bootstrap-salt.sh -M
 # minion commands
 COPY minion /etc/salt/
-RUN service salt-minion start
+COPY run_me.sh /etc/salt
+COPY run_me2.sh /etc/salt
+COPY run.py /etc/salt
+RUN chmod 777 /etc/salt/run_me.sh
+RUN chmod 777 /etc/salt/run_me2.sh
+RUN chmod 777 /etc/salt/run.py
 RUN echo 'DONE'
-CMD ["bash"]
+CMD ["salt-minion", "-l", "debug"]
