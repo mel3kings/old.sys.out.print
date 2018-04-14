@@ -69,7 +69,8 @@ var keys = {
     '68': 'Python Basics - Methods',
     '69': 'Terraform - Creating AWS Instances through Code',
     '70': 'Running Local Kubernetes with Minikube',
-    '71': 'Scaling with Kubernetes'
+    '71': 'Scaling with Kubernetes',
+    '72': 'Data Structure - Singly Linked List'
 };
 
 exports.keys = keys;

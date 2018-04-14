@@ -424,6 +424,12 @@
     "type": "infrastructure",
     "title": "Kubernetes Scaling",
     "description": ""
+  },
+  {
+    "id": 72,
+    "type": "algorithms",
+    "title": "Data Structure - Singly Linked List",
+    "description": ""
   }
 
 

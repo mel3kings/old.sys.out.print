@@ -12,6 +12,9 @@ export default class TechnologiesBoxes extends React.Component{
                             <h1>New Updates: April 2018</h1>
                             <p class="d-none d-md-block">
                                 <ul class="list-group">
+                                        <li class="list-group-item"><a href="/technologies/algorithms/72">
+                                            <img src="../../src/img/logos/algorithm.png" type="image/png" height={25} width={25}/>
+                                            Data Structures - Singly Linked List</a></li>
                                     <li class="list-group-item">
                                         <a href="/technologies/infrastructure/71">
                                             <img src="../../src/img/logos/kubernetes.png" type="image/png" height={25} width={25}/>
