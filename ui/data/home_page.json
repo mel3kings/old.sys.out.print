@@ -1,0 +1,104 @@
+[
+  {
+    "deep_link": "algorithms/72",
+    "image_source": "algorithm.png",
+    "title": "Data Structures - Singly Linked List"
+  },
+  {
+    "deep_link": "infrastructure/70",
+    "image_source": "kubernetes.png",
+    "title": "Running a Local Kubernetes Cluster through Minikube"
+  },
+  {
+    "deep_link": "infrastructure/52",
+    "image_source": "kubernetes.png",
+    "title": "Introduction to Kubernetes (Revised)"
+  },
+  {
+    "image_source": "terra.jpg",
+    "deep_link": "infrastructure/69",
+    "title": "Terraform - Infrastructure through code"
+  },
+  {
+    "image_source": "python.png",
+    "deep_link": "python",
+    "title": "New Language - Python"
+  },
+  {
+    "deep_link": "algorithms/61",
+    "image_source": "algorithm.png",
+    "title": "Data Structures - Queue"
+  },
+  {
+    "deep_link": "algorithms/60",
+    "image_source": "algorithm.png",
+    "title": "Data Structures - Stack"
+  },
+  {
+    "deep_link": "algorithms/59",
+    "image_source": "algorithm.png",
+    "title": "Big O Notation - Revisited"
+  },
+  {
+    "deep_link": "big-data/58",
+    "image_source": "kafka.png",
+    "title": "Kafka Multiple Brokers Config"
+  },
+  {
+    "deep_link": "tools/57",
+    "image_source": "tools.png",
+    "title": "Creating Local CI/CD Using Jenkins Server (Docker + AWS)"
+  },
+  {
+    "image_source": "kafka.png",
+    "deep_link": "big-data/54",
+    "title": "Apache Kafka (Big-Data)"
+  },
+  {
+    "deep_link": "docker/55",
+    "image_source": "docker.png",
+    "title": "How to Install Docker on EC2"
+  },
+  {
+    "deep_link": "tools",
+    "image_source": "tools.png",
+    "title": "Tools Page"
+  },
+  {
+    "deep_link": "tools",
+    "image_source": "tools.png",
+    "title": "Using NGROK"
+  },
+  {
+    "deep_link": "infrastructure/52",
+    "image_source": "kubernetes.png",
+    "title": "Kubernetes Basics"
+  },
+  {
+    "deep_link": "java/51",
+    "image_source": "java.png",
+    "title": "Throttling + Java Atomic Library"
+  },
+  {
+    "deep_link": "grails/53",
+    "image_source": "grails.png",
+    "title": "Grails (Groovy on Grails)"
+  },
+  {
+    "deep_link": "algorithms/47",
+    "image_source": "algorithm.png",
+    "title": "Eulers Challenges under Algorithm"
+  },
+  {
+    "deep_link": "aws/50",
+    "image_source": "aws.png",
+    "title": "LightSail > GoDaddy/Route 53 Setup"
+  },
+  {
+    "deep_link": "docker/45",
+    "image_source": "docker.png",
+    "title": "Running a React app on Docker"
+  }
+]
+
+

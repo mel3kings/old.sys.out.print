@@ -5,7 +5,17 @@ export const RENDER_TECH_PAGE = 'render_tech';
 export const RENDER_TECH_PAGE_DETAILS = 'render_tech_page_details';
 export const RENDER_TECH_LIST_PAGE = 'render_tech_list';
 export const RENDER_CONTENT_PAGE = 'render_content';
+export const RENDER_HOME_PAGE = 'render_home_page';
 export const ANALYTICS = 'google_analytics';
+
+export function renderHomePage(){
+    const request = axios.get('../data/home_page.json');
+    console.log('triggered ' + request);
+    return {
+        type: RENDER_HOME_PAGE,
+        payload: request
+    }
+}
 
 export function renderTechPage() {
     const request = axios.get('../data/tech_data.json');
