@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import AdSense from 'react-adsense';
 import {bindActionCreators} from 'redux';
 import {
     renderTechPage,
@@ -27,11 +28,25 @@ class ContentPage extends React.Component {
                 }
             }
         };
-        return <div className="container">
-            <DocumentMeta {...meta} />
-            <h2>{this.props.tech.header}</h2>
-            {ReactHtmlParser(this.props.tech.data)}
-        </div>
+        return <section id="home-heading" className="p-5">
+            <div className="row">
+                <div className="container">
+                    <DocumentMeta {...meta} />
+                    <h2>{this.props.tech.header}</h2>
+                    {ReactHtmlParser(this.props.tech.data)}
+                </div>
+                <div className="col-2">
+                    <AdSense.Google
+                        client='ca-pub-9837645739197927'
+                        slot='7685322363'
+                        style={{width: 300, height: 150, float: 'right'}}/>
+                    <AdSense.Google
+                        client='ca-pub-9837645739197927'
+                        slot='7685322363'
+                        style={{width: 300, height: 300, float: 'right'}}/>
+                </div>
+            </div>
+        </section>
     }
 
     componentDidMount() {
