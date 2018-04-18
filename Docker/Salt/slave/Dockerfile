@@ -12,7 +12,7 @@ RUN ./bootstrap-salt.sh -M
 COPY minion /etc/salt/
 COPY run_me.sh /etc/salt
 COPY run_me2.sh /etc/salt
-COPY run.py /etc/salt
+COPY cm_deploy.py /etc/salt
 RUN chmod 777 /etc/salt/run_me.sh
 RUN chmod 777 /etc/salt/run_me2.sh
 RUN chmod 777 /etc/salt/run.py
