@@ -70,7 +70,8 @@ var keys = {
     '69': 'Terraform - Creating AWS Instances through Code',
     '70': 'Running Local Kubernetes with Minikube',
     '71': 'Scaling with Kubernetes',
-    '72': 'Data Structure - Singly Linked List'
+    '72': 'Data Structure - Singly Linked List',
+    '73': 'SaltStack - Orchestrating Microservices'
 };
 
 exports.keys = keys;

@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "infrastructure/73",
+    "image_source": "saltstack.png",
+    "title": "NEW: Salt Stack - Orchestrating Microservices"
+  },
+  {
     "deep_link": "algorithms/72",
     "image_source": "algorithm.png",
     "title": "Data Structures - Singly Linked List"
