@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "infrastructure/74",
+    "image_source": "kubernetes.png",
+    "title": "NEW: Kubernetes Dashboard"
+  },
+  {
     "deep_link": "infrastructure/73",
     "image_source": "saltstack.png",
     "title": "NEW: Salt Stack - Orchestrating Microservices"
@@ -105,5 +110,4 @@
     "title": "Running a React app on Docker"
   }
 ]
-
 

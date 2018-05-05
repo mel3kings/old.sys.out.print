@@ -436,6 +436,12 @@
     "type": "infrastructure",
     "title": "Salt Stack",
     "description": ""
+  },
+  {
+    "id": 74,
+    "type" : "infrastructure",
+    "title": "Kubernetes Dashboard",
+    "description": ""
   }
 
 

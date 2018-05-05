@@ -71,7 +71,8 @@ var keys = {
     '70': 'Running Local Kubernetes with Minikube',
     '71': 'Scaling with Kubernetes',
     '72': 'Data Structure - Singly Linked List',
-    '73': 'SaltStack - Orchestrating Microservices'
+    '73': 'SaltStack - Orchestrating Microservices',
+    '74': 'Kubernetes Dashboard'
 };
 
 exports.keys = keys;
