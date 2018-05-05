@@ -53,9 +53,18 @@ See how I use Jenkins to automate all the build and deploy for this project:
 http://sysdotoutdotprint.com/technologies/tools/57
 
 
-### Known Issues
-CSS is not as good as I want it to be, pending redesign.
+### TODO
+* Start serving images from node
+* Consolidate data files
+* Possibly move to nosql
+* Setup shop
+* Create about me
+* Node JS pages
+* Big Data!
+* Finish Python
+* More Kubernetes
+* Algorithms
 
-###Site Details:
+### Site Details:
 * URL: http://sysdotoutdotprint.com/
 * Author: Melchor Tatlonghari
