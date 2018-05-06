@@ -7,7 +7,7 @@ var properties = require('./headers');
 var _  = require('lodash');
 app.listen(port);
 // middleware of express static, we are using this to get css/or any resources
-app.use("/assets", express.static(__dirname + '/resources'));
+app.use("/images", express.static(__dirname + '/resources'));
 
 app.use("/", function (req, res, next) {
     console.log("Received request on " + req.url + " any query string: " + req.query);

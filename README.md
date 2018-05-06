@@ -54,7 +54,6 @@ http://sysdotoutdotprint.com/technologies/tools/57
 
 
 ### TODO
-* Start serving images from node
 * Consolidate data files
 * Possibly move to nosql
 * Setup shop

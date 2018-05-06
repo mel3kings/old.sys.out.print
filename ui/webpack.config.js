@@ -32,6 +32,14 @@ module.exports = {
                 },
                 changeOrigin: true,
                 secure: false
+            }, "/images/*":{
+                target: {
+                    host: "node",
+                    protocol: 'http:',
+                    port: 3000
+                },
+                changeOrigin: true,
+                secure: false
             },
         },
     }
