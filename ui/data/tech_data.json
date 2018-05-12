@@ -82,6 +82,14 @@
   },
   {
     "id": 11,
+    "name": "Node",
+    "subtitle": "",
+    "link": "/technologies/node",
+    "image": "/src/img/logos/node.png",
+    "description": "Node.js is cross-platform JavaScript run-time environment that executes JavaScript code server-side"
+  },
+  {
+    "id": 12,
     "name": "Tools",
     "subtitle": "",
     "link": "/technologies/tools",

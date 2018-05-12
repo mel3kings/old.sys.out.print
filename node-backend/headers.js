@@ -72,7 +72,8 @@ var keys = {
     '71': 'Scaling with Kubernetes',
     '72': 'Data Structure - Singly Linked List',
     '73': 'SaltStack - Orchestrating Microservices',
-    '74': 'Kubernetes Dashboard'
+    '74': 'Kubernetes Dashboard',
+    '75': 'NodeJS Introduction'
 };
 
 exports.keys = keys;

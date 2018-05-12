@@ -1,13 +1,18 @@
 [
   {
+    "deep_link": "node/75",
+    "image_source": "node.png",
+    "title": "NEW: NodeJS Introduction"
+  },
+  {
     "deep_link": "infrastructure/74",
     "image_source": "kubernetes.png",
-    "title": "NEW: Kubernetes Dashboard"
+    "title": "Kubernetes Dashboard"
   },
   {
     "deep_link": "infrastructure/73",
     "image_source": "saltstack.png",
-    "title": "NEW: Salt Stack - Orchestrating Microservices"
+    "title": "Salt Stack - Orchestrating Microservices"
   },
   {
     "deep_link": "algorithms/72",
