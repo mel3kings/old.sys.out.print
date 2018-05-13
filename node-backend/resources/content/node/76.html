@@ -1,0 +1,23 @@
+<div>
+    <span><div>In order to make Node more modular we make use of exports and require. In traditional programming, we wouldn't want to have all the files in one big file. </div><div><br/></div><div>Modules are a small block of functionality, that together performs an intended purpose.</div><div><br/></div><div><b>exports (module.exports)</b> - enables a function/object to be accessible to other js files</div><div><b>require </b>- imports that function/object</div><div><b><br/></b></div><div><b>For Example:</b></div><div>We have a service, that wants to invokes doing work and then perform a greeting, and we don't want all those methods/functions in one js file.</div><div><br/></div><div><i><b>Greeter.js</b><br/></i></div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div><span
+            style="color: rgb(126, 107, 89);">var greetMe = function () {</span></div><div><span
+            style="color: rgb(126, 107, 89);">    console.log('hello again!')</span></div><div><span
+            style="color: rgb(126, 107, 89);">}</span></div><div><span
+            style="color: rgb(126, 107, 89);">greetMe()</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">module.exports = greetMe;</span></div></div><div>module.exports - this line, we are exporting just the function itself.</div><div><i><br/></i></div><div><i><b>Worker.js</b></i></div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div><span
+            style="color: rgb(126, 107, 89);">function doWork(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">    console.log(&quot;doing work&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">}</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">var data = &quot;Some database data&quot;;</span></div><div><span
+            style="color: rgb(126, 107, 89);">module.exports = {</span></div><div><span
+            style="color: rgb(126, 107, 89);">    doWork: doWork,</span></div><div><span
+            style="color: rgb(126, 107, 89);">    data : data</span></div><div><span style="color: rgb(126, 107, 89);">};</span></div></div><div>Worker on the other hand, we want to export more than just a function, we want to export some data AND a function, so the syntax is above.</div><div><br/></div><div>Finally to glue it altogether:</div><div><b>Service.js</b></div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div><span
+            style="color: rgb(126, 107, 89);">var worker = require('./Worker');</span></div><div><span
+            style="color: rgb(126, 107, 89);">var greeter = require('./Greeter');</span></div><div><br
+            style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">worker.doWork();</span></div><div><span style="color: rgb(126, 107, 89);">console.log(&quot;Now i have access to: &quot; + worker.data);</span></div><div><span
+            style="color: rgb(126, 107, 89);">greeter();</span></div></div><div><br/></div><div>At this point Service, now has all the access to the methods/functions/variables from other classes. This enables us to make Node more modular. </div><div><br/></div></span>
+</div>

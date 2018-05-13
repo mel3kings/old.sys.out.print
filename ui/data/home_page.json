@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "node/76",
+    "image_source": "node.png",
+    "title": "NEW: Modular NodeJS: Require Exports"
+  },
+  {
     "deep_link": "node/75",
     "image_source": "node.png",
     "title": "NEW: NodeJS Introduction"
