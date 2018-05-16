@@ -454,6 +454,12 @@
     "type" : "node",
     "title": "NodeJS Require and Exports",
     "description": ""
+  },
+  {
+    "id": 77,
+    "type" : "node",
+    "title": "NodeJS Event Emitter",
+    "description": ""
   }
 
 

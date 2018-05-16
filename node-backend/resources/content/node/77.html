@@ -1,0 +1,34 @@
+<div>
+    <span><div><div><b>Events</b> are in another word triggers, that the application performs certain actions. </div><div><br/></div><div>NodeJS generally does not have Event objects, so Node just creates their objects to simulate events that the applications react to.</div><div><br/></div><div><b>JS Refresher:</b> two key concepts in node before we can dive in Node Event Emitter. We are able to access dynamically object variables:</div><div>All the code below return the name &quot;mel&quot;:</div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div>var person = {<br/></div><div>name : &quot;mel&quot;</div><div>};</div><div><br/></div><div>console.log(person.name);</div><div>console.log(person['name']);</div><div>var key = &quot;name&quot;;</div><div>console.log(person[key]);</div></div><div><br/></div><div>Next concept is how we can put functions in an array, and we can just iterate over them with forEach:</div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div><span
+            style="color: rgb(126, 107, 89);">var arr = [];</span><br/></div><div><span
+            style="color: rgb(126, 107, 89);">arr.push(function(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">    console.log('hello');</span></div><div><span
+            style="color: rgb(126, 107, 89);">});</span></div><div><span style="color: rgb(126, 107, 89);">arr.push(function(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">    console.log('hello');</span></div><div><span
+            style="color: rgb(126, 107, 89);">});</span></div><div><span style="color: rgb(126, 107, 89);">arr.push(function(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">    console.log('hello');</span></div><div><span
+            style="color: rgb(126, 107, 89);">});</span></div><div><span style="color: rgb(126, 107, 89);">arr.forEach(function(item){</span></div><div><span
+            style="color: rgb(126, 107, 89);">    item();</span></div><div><span
+            style="color: rgb(126, 107, 89);">});</span></div></div><div><br/></div><div>Node Event Emitter creates a pseudo event listener, whereas you can specify different set of actions given an event. This is a common concept in programming as well. </div><div><br/></div><ol><li><div>Below we have three events, TEST, SAVE, EXIT. </div></li><li><div>We have a Node library 'events'</div></li><li><div>We create specific actions with 'on'</div></li><li><div>So for example, on event SAVE do the following action and so on</div></li><li><div>We invoke the event listener we do 'emit'</div></li></ol><div><br/></div><div
+            style="box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.15);-en-codeblock:true;"><div><span
+            style="color: rgb(126, 107, 89);">var Emitter = require('events');</span></div><div><span
+            style="color: rgb(126, 107, 89);">var emtr = new Emitter();</span></div><div><span
+            style="color: rgb(126, 107, 89);">var events = {</span></div><div><span style="color: rgb(126, 107, 89);">    TEST: 'test',</span></div><div><span
+            style="color: rgb(126, 107, 89);"> <b>   SAVE: 'save', // this is the same concept above where we a dynamically invoking methods, this lessens the probability of a typo</b></span></div><div><span
+            style="color: rgb(126, 107, 89);"><b>  </b>  EXIT: 'exit'</span></div><div><span
+            style="color: rgb(126, 107, 89);">};</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);"><b>emtr.on(events.SAVE, function(){ // same concept as above whereas it is actually just an array, but inside it there is an if switch to invoke only if events is SAVE</b></span></div><div><span
+            style="color: rgb(126, 107, 89);"><b>   console.log('Event saved');</b></span></div><div><span
+            style="color: rgb(126, 107, 89);"><b>});</b></span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">emtr.on(events.exit, function(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">    console.log(&quot;Event exit&quot;);</span></div><div><span
+            style="color: rgb(126, 107, 89);">});</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);">emtr.on(events.TEST, function(){</span></div><div><span
+            style="color: rgb(126, 107, 89);">    console.log('code testing');</span></div><div><span
+            style="color: rgb(126, 107, 89);">});</span></div><div><br style="color: rgb(126, 107, 89);"/></div><div><span
+            style="color: rgb(126, 107, 89);"><b>emtr.emit(events.SAVE);</b></span></div><div><span
+            style="color: rgb(126, 107, 89);">emtr.emit(events.TEST);</span></div><div><span
+            style="color: rgb(126, 107, 89);">emtr.emit(events.EXIT);</span></div></div><div><br/></div></div></span>
+</div>

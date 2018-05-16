@@ -74,7 +74,8 @@ var keys = {
     '73': 'SaltStack - Orchestrating Microservices',
     '74': 'Kubernetes Dashboard',
     '75': 'NodeJS Introduction',
-    '76': 'Modular NodeJS - Require and Exports'
+    '76': 'Modular NodeJS - Require and Exports',
+    '77': 'NodeJS - Event Emitter'
 };
 
 exports.keys = keys;

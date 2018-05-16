@@ -28,7 +28,7 @@ class TechnologiesBoxes extends React.Component{
                 <div className="row">
                     <div className="col-7">
                         <div className="container pt-5">
-                            <b>New Topics: (as of April 2018)</b>
+                            <b>New Topics:</b>
                                 <ul className="list-group">
                                     {this.renderMonths()}
                                 </ul>
