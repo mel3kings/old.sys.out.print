@@ -76,7 +76,9 @@ var keys = {
     '75': 'NodeJS Introduction',
     '76': 'Modular NodeJS - Require and Exports',
     '77': 'NodeJS - Event Emitter',
-    '78': 'Conceptual Aside: Streams, Buffers and Pipes'
+    '78': 'Conceptual Aside: Streams, Buffers and Pipes',
+    '79': 'Conceptual Aside: Protocols, TCP and IP'
+
 };
 
 exports.keys = keys;

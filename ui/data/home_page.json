@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "algorithms/79",
+    "image_source": "algorithm.png",
+    "title": "NEW: Conceptual Aside: Protocols, TCP, IP"
+  },
+  {
     "deep_link": "algorithms/78",
     "image_source": "algorithm.png",
     "title": "NEW: Conceptual Aside: Buffer, Stream and Pipes"
