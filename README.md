@@ -46,8 +46,8 @@ Docker pull all: <br/>
 stop and delete all containers:<br/>
 ```docker rm -f $(docker ps -a -q) ```
 
-remove all docker images <br/>
-```docker rmi $(docker images -q)```
+remove all dangling docker images <br/>
+```docker rmi $(docker images -a --filter=dangling=true -q)```
 
 See how I use Jenkins to automate all the build and deploy for this project:
 http://sysdotoutdotprint.com/technologies/tools/57
