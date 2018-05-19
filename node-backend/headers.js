@@ -75,7 +75,8 @@ var keys = {
     '74': 'Kubernetes Dashboard',
     '75': 'NodeJS Introduction',
     '76': 'Modular NodeJS - Require and Exports',
-    '77': 'NodeJS - Event Emitter'
+    '77': 'NodeJS - Event Emitter',
+    '78': 'Conceptual Aside: Streams, Buffers and Pipes'
 };
 
 exports.keys = keys;

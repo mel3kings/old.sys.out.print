@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "algorithms/78",
+    "image_source": "algorithm.png",
+    "title": "NEW: Conceptual Aside: Buffer, Stream and Pipes"
+  },
+  {
     "deep_link": "node/77",
     "image_source": "node.png",
     "title": "NEW: NodeJS: Event Emitter"
