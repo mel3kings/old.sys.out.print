@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "node/81",
+    "image_source": "node.png",
+    "title": "NEW: NodeJS Web Server"
+  },
+  {
     "deep_link": "algorithms/80",
     "image_source": "algorithm.png",
     "title": "NEW: Conceptual Aside: Address and Ports"
