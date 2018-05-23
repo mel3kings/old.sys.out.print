@@ -481,11 +481,14 @@
   },
   {
     "id": 81,
-    "type" : "",
+    "type" : "node",
     "title": "Node Web Server",
     "description": ""
+  },
+  {
+    "id": 82,
+    "type" : "algorithms",
+    "title": "Linear Search",
+    "description": ""
   }
-
-
-
 ]

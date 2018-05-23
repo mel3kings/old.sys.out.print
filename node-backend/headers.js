@@ -79,8 +79,8 @@ var keys = {
     '78': 'Conceptual Aside: Streams, Buffers and Pipes',
     '79': 'Conceptual Aside: Protocols, TCP and IP',
     '80': 'Conceptual Aside: Protocols, Address and Ports',
-    '81': 'Node Web Server'
-
+    '81': 'Node Web Server',
+    '82': 'Algorithm - Linear Search'
 };
 
 exports.keys = keys;
