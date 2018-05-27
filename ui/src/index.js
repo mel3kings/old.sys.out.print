@@ -7,7 +7,7 @@ import Showcase from '../components/showcase';
 import TechnologyList from '../components/Technologies/technology_list';
 import ContentPage from '../components/Technologies/content_page';
 import TechnologiesBoxes from '../components/technologies_boxes';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
 import promise from 'redux-promise';
 import {Provider} from 'react-redux';
@@ -39,6 +39,8 @@ ReactDOM.render(
             <BrowserRouter>
                 <div>
                     <Switch>
+                        <Redirect from='/index.php/2017/03/28/comparable-vs-comparator' to='/technologies/java/3'/>
+                        <Redirect from='/index.php/2017/03/28/comparable-vs-comparator/' to='/technologies/java/3'/>
                         <Route path="/technologies/:type/:id" component={ContentPage}/>
                         <Route path="/technologies/:type" component={TechnologyList}/>
                         <Route path="/technologies" component={Home}/>
