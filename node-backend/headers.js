@@ -80,7 +80,8 @@ var keys = {
     '79': 'Conceptual Aside: Protocols, TCP and IP',
     '80': 'Conceptual Aside: Protocols, Address and Ports',
     '81': 'Node Web Server',
-    '82': 'Algorithm - Linear Search'
+    '82': 'Algorithm - Linear Search',
+    '83': 'Algorithm - Binary Search'
 };
 
 exports.keys = keys;

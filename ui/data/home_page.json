@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "algorithms/83",
+    "image_source": "algorithm.png",
+    "title": "NEW: Binary Search"
+  },
+  {
     "deep_link": "algorithms/82",
     "image_source": "algorithm.png",
     "title": "NEW: Linear Search"
@@ -22,7 +27,7 @@
   {
     "deep_link": "algorithms/78",
     "image_source": "algorithm.png",
-    "title": "NEW: Conceptual Aside: Buffer, Stream and Pipes"
+    "title": "Conceptual Aside: Buffer, Stream and Pipes"
   },
   {
     "deep_link": "node/77",

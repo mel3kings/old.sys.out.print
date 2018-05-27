@@ -490,5 +490,11 @@
     "type" : "algorithms",
     "title": "Linear Search",
     "description": ""
+  },
+  {
+    "id": 83,
+    "type" : "algorithms",
+    "title": "Binary Search",
+    "description": ""
   }
 ]
