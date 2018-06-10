@@ -1,5 +1,9 @@
 package algorithm;
 
+/**
+ * Search the value by checking if the value
+ * is in the bigger half or smaller half, keep dividing the array
+ */
 public class BinarySearch {
     public static void main(String[] args) {
         int search[] = {1, 22, 33, 44, 56, 67, 78, 89, 90, 101};
