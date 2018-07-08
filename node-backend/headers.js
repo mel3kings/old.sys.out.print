@@ -82,7 +82,8 @@ var keys = {
     '81': 'Node Web Server',
     '82': 'Algorithm - Linear Search',
     '83': 'Algorithm - Binary Search',
-    '84': '5 minute drills: Declaration, Access Control, Object Orientation'
+    '84': '5 minute drills: Declaration, Access Control, Object Orientation',
+    '85': '5 minute drills: Assignment, Garbage Collection, Operators'
 };
 
 exports.keys = keys;
