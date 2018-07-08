@@ -1,5 +1,10 @@
 [
   {
+    "deep_link": "java/84",
+    "image_source": "java.png",
+    "title": "NEW: 5 minute drill: Declaration, Access Control and Object Orientation"
+  },
+  {
     "deep_link": "algorithms/83",
     "image_source": "algorithm.png",
     "title": "NEW: Binary Search"

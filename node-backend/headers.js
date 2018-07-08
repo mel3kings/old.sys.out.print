@@ -81,7 +81,8 @@ var keys = {
     '80': 'Conceptual Aside: Protocols, Address and Ports',
     '81': 'Node Web Server',
     '82': 'Algorithm - Linear Search',
-    '83': 'Algorithm - Binary Search'
+    '83': 'Algorithm - Binary Search',
+    '84': '5 minute drills: Declaration, Access Control, Object Orientation'
 };
 
 exports.keys = keys;
