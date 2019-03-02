@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo building sysout
+      - docker login -u="mel3kings" -p="$PASSWORD"
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t mel3kings/sysdotoutdotprint .
+      - cd node-backend
+      - docker build -t mel3kings/nodesysoutprint .
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push mel3kings/nodesysoutprint:latest
+      - docker push mel3kings/sysdotoutdotprint:latest
