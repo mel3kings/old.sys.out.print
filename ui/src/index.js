@@ -7,7 +7,7 @@ import Showcase from '../components/showcase';
 import TechnologyList from '../components/Technologies/technology_list';
 import ContentPage from '../components/Technologies/content_page';
 import TechnologiesBoxes from '../components/technologies_boxes';
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect, Link} from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
 import promise from 'redux-promise';
 import {Provider} from 'react-redux';
@@ -26,6 +26,9 @@ class App extends React.Component {
         return (
             <div>
                 <Showcase/>
+                ASDASDAS
+                <Link to="/technologies">Home</Link>
+
                 <TechnologiesBoxes/>
             </div>
         );
@@ -52,4 +55,5 @@ ReactDOM.render(
             </BrowserRouter>
         </Provider>
     </div>
+
     , document.querySelector('.react'));

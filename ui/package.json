@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack -p",
+    "build-prod" : "webpack --mode production"
   },
   "parserOptions": {
     "ecmaVersion": 6,
@@ -63,13 +64,14 @@
   },
   "devDependencies": {
     "babel-preset-stage-1": "^6.24.1",
-    "gulp-webserver": "^0.9.1",
-    "html-webpack-plugin": "^2.30.1",
+    "css-loader": "^2.1.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-html-replace": "^1.6.2",
     "gulp-react": "^3.1.0",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "gulp-webserver": "^0.9.1",
+    "html-webpack-plugin": "^2.30.1"
   }
 }

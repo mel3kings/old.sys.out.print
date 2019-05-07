@@ -1,46 +1,34 @@
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackConfig = new htmlWebpackPlugin({
+    template: __dirname + '/index.html',
+    filename: 'indexASd.html',
+    inject: 'body'
+});
+
 module.exports = {
-    entry: [
-        './src/index.js'
-    ],
+    entry: __dirname + '/src/index.js',
     output: {
-        path: __dirname,
-        publicPath: '/',
+        path: __dirname + '/dist',
         filename: 'bundle.js'
     },
     module: {
-        loaders: [{
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['react', 'es2015', 'stage-1']
+        loaders: [
+            {
+                test: /\.js?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: [ 'es2015', 'react' ]
+                }
             }
-        }]
+        ]
     },
-    resolve: {
-        extensions: ['.html', '.js', '.jsx']
-    },
+    plugins: [ htmlWebpackConfig ],
     devServer: {
-        historyApiFallback: true,
-        contentBase: './',
-        disableHostCheck: true,
-        proxy: {
-            "/get/*":{
-                target: {
-                    host: "node",
-                    protocol: 'http:',
-                    port: 3000
-                },
-                changeOrigin: true,
-                secure: false
-            }, "/images/*":{
-                target: {
-                    host: "node",
-                    protocol: 'http:',
-                    port: 3000
-                },
-                changeOrigin: true,
-                secure: false
-            },
-        },
+        inline: true,
+        port: 8080,
+        historyApiFallback: {
+            index: '/'
+        }
     }
 };
