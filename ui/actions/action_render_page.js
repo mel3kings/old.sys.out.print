@@ -9,7 +9,7 @@ export const RENDER_HOME_PAGE = 'render_home_page';
 export const ANALYTICS = 'google_analytics';
 
 export function renderHomePage(){
-    const request = axios.get('../data/home_page.json');
+    const request = axios.get('data/home_page.json');
     console.log('triggered ' + request);
     return {
         type: RENDER_HOME_PAGE,
@@ -18,7 +18,7 @@ export function renderHomePage(){
 }
 
 export function renderTechPage() {
-    const request = axios.get('../data/tech_data.json');
+    const request = axios.get('data/tech_data.json');
     return {
         type: RENDER_TECH_PAGE,
         payload: request
@@ -26,7 +26,7 @@ export function renderTechPage() {
 }
 
 export function renderTechPageDetails(name) {
-    const filteredRequest = axios.get('../data/tech_data.json').then(response => {
+    const filteredRequest = axios.get('data/tech_data.json').then(response => {
         return _.filter(response.data, (a) => {
             return a.name.toLowerCase() == name.toLowerCase()
         });
